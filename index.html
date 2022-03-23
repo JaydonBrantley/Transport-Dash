@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css_lib/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Home</title>
 </head>
 <body>
@@ -38,27 +39,207 @@
                 </div>
               </li>
             </ul>
+            <div>
+              <a class="usser btn btn-dark" href="#" role="button" aria-label="User"><i class="fas fa-user fa-2x"></i></a>
+              <a class="logout btn btn-dark" href="#" role="button" aria-label="Logout"><i class="fas fa-sign-out fa-2x"></i></a>
+            </div>
           </div>
         </div>
       </nav>
 
+      <div class="container-heading mt-3 mb-3 ms-2">
+        <h4><i class="fas fa-bus"></i> BUS ROUTE DATA</h4>
+      </div>
 
 
 
+      <!--COUTNRY LIST-->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#Cookeville">Cookeville</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Algood">Algood</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Crossville</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">McMinnville</a>
+          </div>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+          <!--data cards for all locations-->
+          <div class="container-data-all">
+            <div class="data-card bg-dark mt-4 mb-2 ms-2">
+              <div class="card-body">
+                <h5 class="card-title text-center">Most used stops</h5>
+                <div>
+                  <canvas id="MostUsedStops-all" width="500" height="500" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card bg-dark mt-4 mb-2 ms-2">
+              <div class="card-body">
+                <h5 class="card-title text-center">Passanger Count</h5>
+                <div>
+                  <canvas id="PassangerCount-all" width="500" height="500" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card bg-dark mt-4 mb-2 ms-2">
+              <div class="card-body">
+                <h5 class="card-title text-center">Miles traveled</h5>
+                <div>
+                  <canvas id="MilesTraveled-all" width="500" height="500" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
-
-
-
-
-
-
-
-
-
-
+        
+        </div>
+        <div class="tab-pane fade" id="Cookeville">
+          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+        </div>
+        <div class="tab-pane fade" id="Algood">
+          <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+        </div>
+        <div class="tab-pane fade" id="Crossville">
+          <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+        </div>
+      </div>
 
     <script src="js/js_lib/jquery-3.6.0.min.js"></script>
     <script src="js/js_lib/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const MostUsedStop = document.getElementById('MostUsedStops-all');
+      const MostUsedStops = new Chart (MostUsedStop, {
+          type: 'bar',
+          data: {
+              labels: ['STOP1', 'STOP2', 'STOP3', 'STOP4', 'STOP5', 'STOP6','STOP7','STOP8','STOP9'],
+              datasets: [{
+                  label: 'MostUsedStops',
+                  data: [1,2,3,4,5,6,7,8,9],
+                  backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+        });
+    </script>
+
+    <script>
+      const PassangerCount = document.getElementById('PassangerCount-all');
+      const PassangerCounts = new Chart (PassangerCount, {
+          type: 'line',
+          data: {
+              labels: ['STOP1', 'STOP2', 'STOP3', 'STOP4', 'STOP5', 'STOP6','STOP7','STOP8','STOP9'],
+              datasets: [{
+                  label: 'MostUsedStops',
+                  data: [1,2,3,4,5,6,7,8,9],
+                  backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+        });
+    </script>
+
+    <script>
+            const MilesTraveled = document.getElementById('MilesTraveled-all');
+            const MilesTraveled1 = new Chart (MilesTraveled, {
+          type: 'doughnut',
+          data: {
+              labels: ['STOP1', 'STOP2', 'STOP3', 'STOP4', 'STOP5', 'STOP6','STOP7','STOP8','STOP9'],
+              datasets: [{
+                  label: 'MostUsedStops',
+                  data: [1,2,3,4,5,6,7,8,9],
+                  backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+        });
+    </script>
+
 </body>
 </html>

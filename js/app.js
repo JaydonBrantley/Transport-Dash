@@ -1,22 +1,29 @@
-/*$(document).on('click','#btnUserProfile',function(){
+$(document).on('click','#btnUserProfile',function(){
     Swal.fire({
         title: 'Profile',
-        html: `<div class="container">
+        html: `<div class="container align-left">
                 <p><b>User:</b> FirstName LastName</p>
                 <p><b>Phone:</b> 931-123-4567</p>
                 <p><b>Email:</b> firstnamelastname@example.com</p>
                 </div>`,
     })
-}) */
+})
 
 
-$(document).on('click','#btnUserProfile',function(){
+$(document).on('click','#btnLogout',function(){
     Swal.fire({
-        title: 'Sweet!',
-        text: 'Modal with a custom image.',
-        imageUrl: 'https://unsplash.it/400/200',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Custom image',
+        title: 'Logout?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#bfbfbf',
+        confirmButtonText: 'Logout!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Logged Out!',
+          )
+        }
       })
+      
 })

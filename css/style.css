@@ -1,4 +1,19 @@
+/* Colors For Nav Bar */
+#navbar{
+    background-color: rgb(59,69,82);
+    color: green;
+}
 
+.nav-link{
+    color: black;
+}
+
+.user, .logout{
+    background-color: rgb(59,69,82);
+    border-width: 0ch;
+}
+
+/*Data Cards*/
 .container-heading{
     display: flex;
     justify-content: flex-start;
@@ -12,6 +27,7 @@
 }
 
 .data-card{
+    background-color: rgb(59,69,82) ;
     color: white;
     width: fit-content;
 }

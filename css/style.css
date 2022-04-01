@@ -1,16 +1,25 @@
 /* Colors For Nav Bar */
+.navbar-brand{
+    color: white;
+}
+
 #navbar{
     background-color: rgb(59,69,82);
-    color: green;
 }
 
 .nav-link{
-    color: black;
+    color: white;
 }
 
 .user, .logout{
     background-color: rgb(59,69,82);
     border-width: 0ch;
+}
+
+/*TABS*/
+
+#tab{
+    color: black;
 }
 
 /*Data Cards*/

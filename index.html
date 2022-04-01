@@ -54,18 +54,18 @@
       <!--COUTNRY LIST-->
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="tab" href="#Cookeville">Cookeville</a>
+          <a id="tab" class="nav-link active" data-bs-toggle="tab" href="#Cookeville">Cookeville</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#Algood">Algood</a>
+          <a id="tab" class="nav-link" data-bs-toggle="tab" href="#Algood">Algood</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#Crossville">Crossville</a>
+          <a id="tab" class="nav-link" data-bs-toggle="tab" href="#Crossville">Crossville</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+          <a id="tab" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" data-bs-toggle="tab" href="#McMinnville">McMinnville</a>
+            <a id="tab" class="dropdown-item" data-bs-toggle="tab" href="#McMinnville">McMinnville</a>
           </div>
         </li>
       </ul>
@@ -76,15 +76,15 @@
           <div class="container-data-all">
             <div class="data-card  mt-4 mb-2 ms-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Avg. Passanger On Board Per Revenue Hour</h5>
+                <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
                 <div>
-                  <canvas id="PassangeronBoard-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                  <canvas id="PassengeronBoard-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
             <div class="data-card  mt-4 mb-2 ms-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Avg. Trip Length Per Mile</h5>
+                <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
                 <div>
                   <canvas id="AvgTripLength-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
                 </div>
@@ -92,15 +92,15 @@
             </div>
             <div class="data-card  mt-4 mb-2 ms-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Passanger Revenue Per Hour</h5>
+                <h5 class="card-title text-center">Passenger Revenue </h5>
                 <div>
-                  <canvas id="PassangerRevenuePerHour-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                  <canvas id="PassengerRevenuePerHour-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
             <div class="data-card  mt-4 mb-2 ms-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Cost Per Hour</h5>
+                <h5 class="card-title text-center">Cost</h5>
                 <div>
                   <canvas id="Cost-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
                 </div>
@@ -136,7 +136,7 @@
     
 
     <script>
-      const PassangeronBoard = document.getElementById('PassangeronBoard-Cookeville');
+      const PassangeronBoard = document.getElementById('PassengeronBoard-Cookeville');
       const PassangersonBoard = new Chart (PassangeronBoard, {
           type: 'bar',
           data: {
@@ -212,31 +212,29 @@
     </script>
 
     <script>
-            const PassangerRevenuePerHour = document.getElementById('PassangerRevenuePerHour-Cookeville');
-            const PassangersRevenuePerHour = new Chart (PassangerRevenuePerHour, {
+            const PassengerRevenuePerHour = document.getElementById('PassengerRevenuePerHour-Cookeville');
+            const PassengersRevenuePerHour = new Chart (PassengerRevenuePerHour, {
           type: 'bar',
           data: {
               labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
               datasets: [{
-                  label: 'MostUsedStops',
+                  label: 'Green Route Per Hour',
                   data: [121,190,111,152],
                   backgroundColor: [
-                  'rgba(255, 99, 132)',
-                  'rgba(255, 159, 64)',
-                  'rgba(255, 205, 86)',
-                  'rgba(75, 192, 192)',
-                  'rgba(54, 162, 235)',
-                  'rgba(153, 102, 255)',
-                  'rgba(201, 203, 207)'
+                  'rgb(50,162,71)'
                   ],
                   borderColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(255, 159, 64, 0.2)',
-                  'rgba(255, 205, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(201, 203, 207, 0.2)'
+                  'rgb(50,162,71)'
+                  ],
+                  borderWidth: 1
+              },{
+                  label: 'Green Route Per Hour',
+                  data: [121,190,111,152],
+                  backgroundColor: [
+                  'rgb(70,116,185)'
+                  ],
+                  borderColor: [
+                  'rgb(70,116,185)'
                   ],
                   borderWidth: 1
               }]
@@ -261,22 +259,20 @@ data: {
         label: 'Per Hour',
         data: [100,200,300,400],
         backgroundColor: [
-        'rgba(255, 99, 132)',
-        'rgba(255, 159, 64)',
-        'rgba(255, 205, 86)',
-        'rgba(75, 192, 192)',
-        'rgba(54, 162, 235)',
-        'rgba(153, 102, 255)',
-        'rgba(201, 203, 207)'
+        'rgb(50,162,71)'
         ],
         borderColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        'rgba(255, 205, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(201, 203, 207, 0.2)'
+        'rgb(50,162,71)'
+        ],
+        borderWidth: 1
+    },{
+        label: 'Per Hour',
+        data: [100,200,300,400],
+        backgroundColor: [
+        'rgb(70,116,185)'
+        ],
+        borderColor: [
+        'rgb(70,116,185)'
         ],
         borderWidth: 1
     }]

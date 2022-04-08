@@ -1,3 +1,4 @@
+//SWEET ALERTS
 $(document).on('click','#btnUserProfile',function(){
     Swal.fire({
         title: 'Profile',
@@ -26,4 +27,9 @@ $(document).on('click','#btnLogout',function(){
         }
       })
       
+})
+
+//SWITCH VIEWS BTN
+$(document).on('click','#switchviews',function(){
+  $('.container-green').slideToggle('.container-green');
 })

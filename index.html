@@ -24,19 +24,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Census Data</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Employee</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Map</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                </div>
+                <a class="nav-link" href="#">Customer Insight</a>
               </li>
             </ul>
             <div>
@@ -72,8 +60,15 @@
 
       <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="Cookeville">
-          <!--data cards for all locations-->
-          <div class="container-data-all">
+          <!--BUTTON TO SWITCH VIEWS-->
+
+          <div class="switchbtn">
+            <button class="btn btn-success col-2 offset 5 mt-3" id="switchviews">Switch Views </button>
+          </div>
+
+          <!--GRAPHS FOR ALL LOCATIONS-->
+          <div class="container-green">
+            <!--GREEN ROUTE-->
             <div class="data-card  mt-4 mb-2 ms-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
@@ -98,20 +93,41 @@
                 </div>
               </div>
             </div>
-            <div class="data-card  mt-4 mb-2 ms-2">
-              <div class="card-body">
-                <h5 class="card-title text-center">Cost</h5>
-                <div>
-                  <canvas id="Cost-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                </div>
-              </div>
-            </div>
-
           </div>
 
+            <!--BLUE ROUTE-->
+            <div disabled class="container-blue">
 
-        
+              <div class="data-card  mt-4 mb-2 ms-2">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
+                  <div>
+                    <canvas id="PassangeronBoardBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="data-card  mt-4 mb-2 ms-2">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
+                  <div>
+                    <canvas id="AvgTripLengthBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card  mt-4 mb-2 ms-2">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Passenger Revenue</h5>
+                  <div>
+                    <canvas id="PassengerRevenueBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
         </div>
+
         <div class="tab-pane fade" id="Algood">
           <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
         </div>
@@ -131,164 +147,7 @@
     <script src="js/lib/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    
-
-    <script>
-      const PassangeronBoard = document.getElementById('PassengeronBoard-Cookeville');
-      const PassangersonBoard = new Chart (PassangeronBoard, {
-          type: 'bar',
-          data: {
-              labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
-              datasets: [{
-                  label: 'Green Route',
-                  data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                  backgroundColor: [
-                  'rgb(50,162,71)'
-                  ],
-                  borderColor: [
-                  'rgb(50,162,71)'
-                  ],
-                  borderWidth: 2
-              },{
-                  label: 'Blue Route',
-                  data: [131,150,106,192,167,151,125,135,104,112,143,104],
-                  backgroundColor: [
-                  'rgb(70,116,185)'
-                  ],
-                  borderColor: [
-                  'rgb(70,116,185)'
-                  ],
-                  borderWidth: 2
-              }]
-          },
-          options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  }
-              }
-          }
-        });
-    </script>
-
-    <script>
-      const AvgTripLength = document.getElementById('AvgTripLength-Cookeville');
-      const AvgTripLengths = new Chart (AvgTripLength, {
-          type: 'bar',
-          data: {
-              labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
-              datasets: [{
-                  label: 'Green Route',
-                  data: [19,10,20,14,7,12,6,18,13,1,20,3],
-                  backgroundColor: [
-                  'rgb(50,162,71)'
-                  ],
-                  borderColor: [
-                  'rgb(50,162,71)'
-                  ],
-                  borderWidth: 1
-              },{
-                  label: 'Blue Route',
-                  data: [8,12,4,2,7,16,11,20,8,9,5,19],
-                  backgroundColor: [
-                  'rgb(70,116,185)'
-                  ],
-                  borderColor: [
-                  'rgb(70,116,185)'
-                  ],
-                  borderWidth: 2
-              }]
-          },
-          options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  }
-              }
-          }
-        });
-    </script>
-
-    <script>
-            const PassengerRevenuePerHour = document.getElementById('PassengerRevenuePerHour-Cookeville');
-            const PassengersRevenuePerHour = new Chart (PassengerRevenuePerHour, {
-          type: 'bar',
-          data: {
-              labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
-              datasets: [{
-                  label: 'Green Route Per Hour',
-                  data: [121,190,111,152],
-                  backgroundColor: [
-                  'rgb(50,162,71)'
-                  ],
-                  borderColor: [
-                  'rgb(50,162,71)'
-                  ],
-                  borderWidth: 1
-              },{
-                  label: 'Green Route Per Hour',
-                  data: [121,190,111,152],
-                  backgroundColor: [
-                  'rgb(70,116,185)'
-                  ],
-                  borderColor: [
-                  'rgb(70,116,185)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  }
-              }
-          }
-        });
-    </script>
-
-<script>
-  const Cost = document.getElementById('Cost-Cookeville');
-  const Costs = new Chart (Cost, {
-type: 'bar',
-data: {
-    labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
-    datasets: [{
-        label: 'Per Hour',
-        data: [100,200,300,400],
-        backgroundColor: [
-        'rgb(50,162,71)'
-        ],
-        borderColor: [
-        'rgb(50,162,71)'
-        ],
-        borderWidth: 1
-    },{
-        label: 'Per Hour',
-        data: [100,200,300,400],
-        backgroundColor: [
-        'rgb(70,116,185)'
-        ],
-        borderColor: [
-        'rgb(70,116,185)'
-        ],
-        borderWidth: 1
-    }]
-},
-options: {
-    scales: {
-        y: {
-            beginAtZero: true
-        }
-    }
-}
-});
-</script>
-
-    
-    
-
 </body>
 </html>

@@ -67,42 +67,15 @@
           </div>
 
           <!--GRAPHS FOR ALL LOCATIONS-->
-          <div class="container-green">
+          <div class="container-fluid">
             <!--GREEN ROUTE-->
-            <div class="data-card  mt-4 mb-2 ms-2">
-              <div class="card-body">
-                <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                <div>
-                  <canvas id="PassengeronBoard-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="data-card  mt-4 mb-2 ms-2">
-              <div class="card-body">
-                <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                <div>
-                  <canvas id="AvgTripLength-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="data-card  mt-4 mb-2 ms-2">
-              <div class="card-body">
-                <h5 class="card-title text-center">Passenger Revenue </h5>
-                <div>
-                  <canvas id="PassengerRevenuePerHour-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            <!--BLUE ROUTE-->
-            <div disabled class="container-blue">
+            <div class="container-green">
 
               <div class="data-card  mt-4 mb-2 ms-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
                   <div>
-                    <canvas id="PassangeronBoardBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    <canvas id="PassengeronBoard-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
@@ -111,19 +84,54 @@
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
                   <div>
-                    <canvas id="AvgTripLengthBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="data-card  mt-4 mb-2 ms-2">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Passenger Revenue</h5>
-                  <div>
-                    <canvas id="PassengerRevenueBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    <canvas id="AvgTripLength-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
 
+              <div class="data-card  mt-4 mb-2 ms-2">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Passenger Revenue </h5>
+                  <div>
+                    <canvas id="PassengerRevenuePerHour-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+              <!--BLUE ROUTE-->
+              <div class="container-blue" style="display:none">
+
+                <div class="data-card  mt-4 mb-2 ms-2">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
+                    <div>
+                      <canvas id="PassangeronBoardBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="data-card  mt-4 mb-2 ms-2">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
+                    <div>
+                      <canvas id="AvgTripLengthBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="data-card  mt-4 mb-2 ms-2">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Passenger Revenue</h5>
+                    <div>
+                      <canvas id="PassengerRevenueBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
             </div>
 
         </div>

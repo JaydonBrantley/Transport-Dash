@@ -31,5 +31,21 @@ $(document).on('click','#btnLogout',function(){
 
 //SWITCH VIEWS BTN
 $(document).on('click','#switchviews',function(){
-  $('.container-green').slideToggle('.container-green');
+  let delayFirst = 500;
+  let delaySecond = 1000;
+
+  if($('.container-blue').css('display')=='none') {
+    $('.container-green').slideToggle('.container-green');
+  setTimeout(function(){
+    $('.container-blue').slideToggle('.container-blue');
+  }, 500);
+  }
+  
+  else if($('.container-green').css('display')=='none') {
+    $('.container-blue').slideToggle('.container-blue');
+  setTimeout(function(){
+    $('.container-green').slideToggle('.container-green');
+  }, 500);
+  };
+  
 })

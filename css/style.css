@@ -16,6 +16,11 @@
     border-width: 0ch;
 }
 
+.logo{
+    width: 150;
+    height: 50;
+}
+
 /*TABS*/
 
 #tab{

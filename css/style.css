@@ -16,6 +16,12 @@
     border-width: 0ch;
 }
 
+.nav-btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 .logo{
     width: 150;
     height: 50;
@@ -35,19 +41,17 @@
 }
 
 /*Data Cards*/
-.container-heading{
+.heading{
     display: flex;
-    justify-content: flex-start;
-}
-
-.container-green{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-.container-blue{
+.chartbox{
+    width: 600px;
+    height: 400px;
+}
+
+.container-green, .container-blue{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -57,5 +61,6 @@
 .data-card{
     background-color: rgb(59,69,82) ;
     color: white;
-    width: fit-content;
+    min-width: none;
+    min-height: none;
 }

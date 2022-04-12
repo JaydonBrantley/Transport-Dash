@@ -34,12 +34,12 @@
           </div>
         </div>
       </nav>
-
-      <div class="container-heading mt-3 mb-3 ms-2">
+        <!--TITLE-->
+      <div class="heading mt-3 mb-3 ms-2">
         <h4><i class="fas fa-bus"></i> BUS ROUTE DATA</h4>
       </div>
 
-      <!--COUTNRY LIST-->
+      <!--COUNTY LIST-->
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a id="tab" class="nav-link active" data-bs-toggle="tab" href="#Cookeville">Cookeville</a>
@@ -61,80 +61,70 @@
       <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="Cookeville">
           <!--BUTTON TO SWITCH VIEWS-->
-
           <div class="switchbtn">
             <button class="btn btn-success col-2 offset 5 mt-3" id="switchviews">Switch Views </button>
           </div>
-
           <!--GRAPHS FOR ALL LOCATIONS-->
           <div class="container-fluid">
             <!--GREEN ROUTE-->
             <div class="container-green">
-
-              <div class="data-card  mt-4 mb-2 ms-2">
+              <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
                   <div>
-                    <canvas id="PassengeronBoard-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    <canvas id="PassengeronBoard-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-
-              <div class="data-card  mt-4 mb-2 ms-2">
+              <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
                   <div>
-                    <canvas id="AvgTripLength-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    <canvas id="AvgTripLength-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-
-              <div class="data-card  mt-4 mb-2 ms-2">
+              <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Passenger Revenue </h5>
                   <div>
-                    <canvas id="PassengerRevenuePerHour-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
+                    <canvas id="PassengerRevenuePerHour-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-
             </div>
-
-              <!--BLUE ROUTE-->
-              <div class="container-blue" style="display:none">
-
-                <div class="data-card  mt-4 mb-2 ms-2">
-                  <div class="card-body">
-                    <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                    <div>
-                      <canvas id="PassangeronBoardBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                    </div>
+            <!--BLUE ROUTE-->
+            <div class="container-blue" style="display:none;">
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
+                  <div class="chartbox">
+                    <canvas id="PassangeronBoardBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
-
-                <div class="data-card  mt-4 mb-2 ms-2">
-                  <div class="card-body">
-                    <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                    <div>
-                      <canvas id="AvgTripLengthBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                    </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
+                  <div class="chartbox">
+                    <canvas id="AvgTripLengthBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
-
-                <div class="data-card  mt-4 mb-2 ms-2">
-                  <div class="card-body">
-                    <h5 class="card-title text-center">Passenger Revenue</h5>
-                    <div>
-                      <canvas id="PassengerRevenueBlue-Cookeville" width="750" height="500" style="background-color: white;"></canvas>
-                    </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Passenger Revenue </h5>
+                  <div class="chartbox">
+                    <canvas id="PassengerRevenueBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
-
                 </div>
-
               </div>
             </div>
-
+          </div>
         </div>
+        <!--END COOKEVILLE-->
+
+
 
         <div class="tab-pane fade" id="Algood">
           <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
@@ -147,9 +137,7 @@
         </div>
       </div>
 
-
-
-      </div>
+      
 
     <script src="js/lib/jquery-3.6.0.min.js"></script>
     <script src="js/lib/bootstrap.bundle.min.js"></script>

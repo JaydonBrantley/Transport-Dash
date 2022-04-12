@@ -1,30 +1,30 @@
 //CHARTS FOR COOKEVILLE
                 //ALL GREEN ROUTES
-            const PassangeronBoard = document.getElementById('PassengeronBoard-Cookeville');
-            const PassangersonBoard = new Chart (PassangeronBoard, {
-                type: 'bar',
-                data: {
-                    labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
-                    datasets: [{
-                        label: 'Green Route',
-                        data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                        backgroundColor: [
-                        'rgb(50,162,71)'
-                        ],
-                        borderColor: [
-                        'rgb(50,162,71)'
-                        ],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
+                const PassengeronBoard = document.getElementById('PassengeronBoard-Cookeville');
+                const PassangersonBoard = new Chart (PassengeronBoard, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
+                        datasets: [{
+                            label: 'Green Route',
+                            data: [206,249,143,127,242,145,112,200,290,180,233,270],
+                            backgroundColor: [
+                            'rgb(50,162,71)'
+                            ],
+                            borderColor: [
+                            'rgb(50,162,71)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
                         }
                     }
-                }
-                });
+                    });
 
                 const AvgTripLength = document.getElementById('AvgTripLength-Cookeville');
                 const AvgTripLengths = new Chart (AvgTripLength, {

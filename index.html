@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css_lib/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylsheet" href="css/css_lib/dragula.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Home</title>
 </head>
-<body>
+<body onload="init()">
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid">
           <img class="logo" src="images/UCHRA_LOGO.png">
@@ -20,7 +21,7 @@
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link active" href="#">Dashboard
-                  <span class="visually-hidden">(current)</span>
+                  <span class="visually-hidden"></span>
                 </a>
               </li>
               <li class="nav-item">
@@ -67,11 +68,11 @@
           <!--GRAPHS FOR ALL LOCATIONS-->
           <div class="container-fluid">
             <!--GREEN ROUTE-->
-            <div class="container-green">
+            <div class="container-green" id="drag-container">
               <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                  <div>
+                  <div class="chartbox">
                     <canvas id="PassengeronBoard-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
@@ -79,7 +80,7 @@
               <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                  <div>
+                  <div class="chartbox">
                     <canvas id="AvgTripLength-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
@@ -87,8 +88,32 @@
               <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Passenger Revenue </h5>
-                  <div>
+                  <div class="chartbox">
                     <canvas id="PassengerRevenuePerHour-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="UnlinkedPassnager-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Stops Boarded Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="StopsBoarded-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Stops Alighted Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="StopsAlighted-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
@@ -119,15 +144,84 @@
                   </div>
                 </div>
               </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="UnlinkedPassnagerBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Stops Boarded Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="StopsBoardedBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Stops Alighted Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="StopsAlightedBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!--END COOKEVILLE-->
-
-
-
         <div class="tab-pane fade" id="Algood">
-          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          <div class="container-algood">
+            <div class="data-card mt-3 mb-3 mx-3">
+              <div class="card-body">
+                <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
+                <div class="chartbox">
+                  <canvas id="PassengeronBoard-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card mt-3 mb-3 mx-3">
+              <div class="card-body">
+                <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
+                <div class="chartbox">
+                  <canvas id="AvgTripLength-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card mt-3 mb-3 mx-3">
+              <div class="card-body">
+                <h5 class="card-title text-center">Passenger Revenue </h5>
+                <div class="chartbox">
+                  <canvas id="PassengerRevenuePerHour-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card mt-3 mb-3 mx-3">
+              <div class="card-body">
+                <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
+                <div class="chartbox">
+                  <canvas id="UnlinkedPassnager-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card mt-3 mb-3 mx-3">
+              <div class="card-body">
+                <h5 class="card-title text-center">Stops Boarded Per Route</h5>
+                <div class="chartbox">
+                  <canvas id="StopsBoarded-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="data-card mt-3 mb-3 mx-3">
+              <div class="card-body">
+                <h5 class="card-title text-center">Stops Alighted Per Route</h5>
+                <div class="chartbox">
+                  <canvas id="StopsAlighted-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="Crossville">
           <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
@@ -137,13 +231,13 @@
         </div>
       </div>
 
-      
-
-    <script src="js/lib/jquery-3.6.0.min.js"></script>
-    <script src="js/lib/bootstrap.bundle.min.js"></script>
+    <script src="js/js_lib/jquery-3.6.0.min.js"></script>
+    <script src="js/js_lib/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/app.js"></script>
     <script src="js/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/$VERSION/dragula.min.js'></script>
+    <script src="js/js_lib/dragula.min.js"></script>
 </body>
 </html>

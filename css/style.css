@@ -51,11 +51,12 @@
     height: 400px;
 }
 
-.container-green, .container-blue{
+.container-green, .container-blue, .container-algood{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .data-card{

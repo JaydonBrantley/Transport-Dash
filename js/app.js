@@ -49,3 +49,8 @@ $(document).on('click','#switchviews',function(){
   };
   
 })
+
+//DRAGULA FUNCTION
+function init(){
+  dragula([document.querySelector('#drag-container')]);
+}

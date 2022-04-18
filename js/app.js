@@ -47,7 +47,46 @@ $(document).on('click','#switchviews',function(){
     $('.container-green').slideToggle('.container-green');
   }, 500);
   };
+})
+
+//SWITCH VIEWS BTN-CROSSVILLE
+$(document).on('click','#switchviews-crossville',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  if($('.containerblue-crossville').css('display')=='none') {
+    $('.containergold-crossville').slideToggle('.containergold-crossville');
+  setTimeout(function(){
+    $('.containerblue-crossville').slideToggle('.containerblue-crossville');
+  }, 500);
+  }
   
+  else if($('.containergold-crossville').css('display')=='none') {
+    $('.containerblue-crossville').slideToggle('.containerblue-crossville');
+  setTimeout(function(){
+    $('.containergold-crossville').slideToggle('.containergold-crossville');
+  }, 500);
+  };
+})
+
+//SWITCH VIEWS BTN-MCMINNVILLE
+$(document).on('click','#switchviews-mcminnville',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  if($('.containerred-mcminnville').css('display')=='none') {
+    $('.containerblue-mcminnville').slideToggle('.containerblue-mcminnville');
+  setTimeout(function(){
+    $('.containerred-mcminnville').slideToggle('.containerred-mcminnville');
+  }, 500);
+  }
+  
+  else if($('.containerblue-mcminnville').css('display')=='none') {
+    $('.containerred-mcminnville').slideToggle('.containerred-mcminnville');
+  setTimeout(function(){
+    $('.containerblue-mcminnville').slideToggle('.containerblue-mcminnville');
+  }, 500);
+  };
 })
 
 

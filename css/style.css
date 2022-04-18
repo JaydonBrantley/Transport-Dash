@@ -11,12 +11,12 @@
     color: white;
 }
 
-.user, .logout{
+.nav-icons{
     background-color: rgb(59,69,82);
     border-width: 0ch;
 }
 
-.nav-btn{
+.nav-icons{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -51,7 +51,7 @@
     height: 400px;
 }
 
-.container-green, .container-blue, .container-algood{
+.container-green, .container-blue, .container-algood, .containerblue-crossville, .containergold-crossville, .containerred-mcminnville, .containerblue-mcminnville{
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -189,7 +189,7 @@
                     data: {
                         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
                         datasets: [{
-                            label: 'Green Route',
+                            label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
                             'rgb(70,116,185)'
@@ -215,7 +215,7 @@
                       data: {
                           labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
                           datasets: [{
-                              label: 'Green Route Per Hour',
+                              label: 'Blue Route Per Hour',
                               data: [121,190,111,152],
                               backgroundColor: [
                               'rgb(70,116,185)'
@@ -241,7 +241,7 @@
                     data: {
                         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
                         datasets: [{
-                            label: 'Green Route',
+                            label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
                             'rgb(70,116,185)'
@@ -267,7 +267,7 @@
                     data: {
                         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
                         datasets: [{
-                            label: 'Green Route',
+                            label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
                             'rgb(70,116,185)'
@@ -293,7 +293,7 @@
                     data: {
                         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
                         datasets: [{
-                            label: 'Green Route',
+                            label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
                             'rgb(70,116,185)'
@@ -320,7 +320,7 @@
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
-                            label: 'Green Route',
+                            label: 'Purple Route',
                             data: [206,249,143,127,242,145,112,200,290,180,233,270],
                             backgroundColor: [
                             'rgb(147,80,159)'
@@ -346,7 +346,7 @@
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
-                            label: 'Green Route',
+                            label: 'Purple Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
                             'rgb(147,80,159)'
@@ -372,7 +372,7 @@
                     data: {
                         labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
                         datasets: [{
-                            label: 'Green Route Per Hour',
+                            label: 'Purple Route',
                             data: [121,190,111,152],
                             backgroundColor: [
                             'rgb(147,80,159)'
@@ -398,7 +398,7 @@
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
-                            label: 'Green Route Per Hour',
+                            label: 'Purple Route',
                             data: [121,190,111,152],
                             backgroundColor: [
                             'rgb(147,80,159)'
@@ -424,7 +424,7 @@
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
-                            label: 'Green Route Per Hour',
+                            label: 'Purple Route',
                             data: [121,190,111,152],
                             backgroundColor: [
                             'rgb(147,80,159)'
@@ -450,13 +450,171 @@
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
-                            label: 'Green Route Per Hour',
+                            label: 'Purple Route',
                             data: [121,190,111,152],
                             backgroundColor: [
                             'rgb(147,80,159)'
                             ],
                             borderColor: [
                             'rgb(147,80,159)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                    });
+
+//CROSSVILLE
+                    //BLUE ROUTE
+                const PassengeronBoardblueCR = document.getElementById('PassengeronBoard-blueCR');
+                const PassengersonBoardblueCR = new Chart (PassengeronBoardblueCR, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+                        datasets: [{
+                            label: 'blue Route',
+                            data: [206,249,143,127,242,145,112,200,290,180,233,270],
+                            backgroundColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                    });
+
+                const AvgTripLengthblueCR = document.getElementById('AvgTripLength-blueCR');
+                const AvgTripLengthsblueCR = new Chart (AvgTripLengthblueCR, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+                        datasets: [{
+                            label: 'blue Route',
+                            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+                            backgroundColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                const PassengerRevenuePerHourblueCR = document.getElementById('PassengerRevenuePerHour-blueCR');
+                const PassengersRevenuePerHourblueCR = new Chart (PassengerRevenuePerHourblueCR, {
+                    type: 'bar',
+                    data: {
+                        labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
+                        datasets: [{
+                            label: 'blue Route',
+                            data: [121,190,111,152],
+                            backgroundColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                    });
+
+                const UnlinkedPassnagerblueCR = document.getElementById('UnlinkedPassnager-blueCR');
+                const UnlinkedPassnagersblueCR = new Chart (UnlinkedPassnagerblueCR, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+                        datasets: [{
+                            label: 'blue Route',
+                            data: [121,190,111,152],
+                            backgroundColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                    });
+
+                const StopsBoardedblueCR = document.getElementById('StopsBoarded-blueCR');
+                const StopBoardedblueCR = new Chart (StopsBoardedblueCR, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+                        datasets: [{
+                            label: 'blue Route',
+                            data: [121,190,111,152],
+                            backgroundColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                    });
+
+                const StopsAlightedblueCR = document.getElementById('StopsAlighted-blueCR');
+                const StopAlightedblueCR = new Chart (StopsAlightedblueCR, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+                        datasets: [{
+                            label: 'blue Route',
+                            data: [121,190,111,152],
+                            backgroundColor: [
+                            'rgb(70,116,185)'
+                            ],
+                            borderColor: [
+                            'rgb(70,116,185)'
                             ],
                             borderWidth: 1
                         }]

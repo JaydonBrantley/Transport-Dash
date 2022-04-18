@@ -51,11 +51,8 @@
         <li class="nav-item">
           <a id="tab" class="nav-link" data-bs-toggle="tab" href="#Crossville">Crossville</a>
         </li>
-        <li class="nav-item dropdown">
-          <a id="tab" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-          <div class="dropdown-menu">
-            <a id="tab" class="dropdown-item" data-bs-toggle="tab" href="#McMinnville">McMinnville</a>
-          </div>
+        <li class="nav-item">
+          <a id="tab" class="nav-link" data-bs-toggle="tab" href="#McMinnville">McMinnville</a>
         </li>
       </ul>
 
@@ -68,7 +65,7 @@
           <!--GRAPHS FOR ALL LOCATIONS-->
           <div class="container-fluid">
             <!--GREEN ROUTE-->
-            <div class="container-green" id="drag-container">
+            <div class="container-green">
               <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
@@ -172,6 +169,7 @@
           </div>
         </div>
         <div class="tab-pane fade" id="Algood">
+          <!--ALGOOD-->
           <div class="container-algood">
             <div class="data-card mt-3 mb-3 mx-3">
               <div class="card-body">
@@ -224,9 +222,64 @@
           </div>
         </div>
         <div class="tab-pane fade" id="Crossville">
-          <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
-        </div>
+           <!--BUTTON TO SWITCH VIEWS-->
+           <div class="switchbtn">
+            <button class="btn btn-success col-2 offset 5 mt-3" id="switchviews">Switch Views </button>
+          </div>
+          <!--CROSSVILLE-->
+            <div class="container-algood">
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
+                  <div class="chartbox">
+                    <canvas id="PassengeronBoard-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
+                  <div class="chartbox">
+                    <canvas id="AvgTripLength-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Passenger Revenue </h5>
+                  <div class="chartbox">
+                    <canvas id="PassengerRevenuePerHour-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="UnlinkedPassnager-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Stops Boarded Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="StopsBoarded-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="data-card mt-3 mb-3 mx-3">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Stops Alighted Per Route</h5>
+                  <div class="chartbox">
+                    <canvas id="StopsAlighted-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="tab-pane fade" id="McMinnville">
+          <!--MCMINNVILLE-->
           <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
         </div>
       </div>

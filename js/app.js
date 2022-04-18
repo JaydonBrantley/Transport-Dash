@@ -29,10 +29,10 @@ $(document).on('click','#btnLogout',function(){
       
 })
 
-//SWITCH VIEWS BTN
+//SWITCH VIEWS BTN-COOKEVILLE
 $(document).on('click','#switchviews',function(){
-  let delayFirst = 500;
-  let delaySecond = 1000;
+  let delayFirst = 200;
+  let delaySecond = 200;
 
   if($('.container-blue').css('display')=='none') {
     $('.container-green').slideToggle('.container-green');
@@ -50,7 +50,8 @@ $(document).on('click','#switchviews',function(){
   
 })
 
+
 //DRAGULA FUNCTION
 function init(){
-  dragula([document.querySelector('#drag-container')]);
+  dragula([document.querySelector('.container-green')]);
 }

@@ -92,5 +92,12 @@ $(document).on('click','#switchviews-mcminnville',function(){
 
 //DRAGULA FUNCTION
 function init(){
-  dragula([document.querySelector('.container-green')]);
+  dragula([document.querySelector('.container-green'),
+           document.querySelector('.container-blue'),
+           document.querySelector('.container-algood'),
+           document.querySelector('.containerblue-crossville'),
+           document.querySelector('.containergold-crossville'),
+           document.querySelector('.containerred-mcminnville'),
+           document.querySelector('.containerblue-mcminnville'),
+  ]);
 }

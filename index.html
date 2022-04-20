@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css_lib/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylsheet" href="css/css_lib/dragula.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bevacqua/dragula@3.7.3/dist/dragula.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Home</title>
 </head>
@@ -28,11 +28,11 @@
                 <a class="nav-link" href="#">Customer Insight</a>
               </li>
             </ul>
-            <div class="nav-icons">
-              <a id="btnUserProfile" class="user btn btn-dark" href="#" role="button" aria-label="User"><i class="fas fa-user fa-2x"></i></a>
-              <a id="btnLogout" class="logout btn btn-dark" href="#" role="button" aria-label="Logout"><i class="fas fa-sign-out fa-2x"></i></a>
-            </div>
           </div>
+            <div class="nav-icons">
+              <a id="btnUserProfile" class="user btn" href="#" role="button" aria-label="User" style="color: white;"><i class="fas fa-user fa-2x"></i></a>
+              <a id="btnLogout" class="logout btn" href="#" role="button" aria-label="Logout" style="color: white;"><i class="fas fa-sign-out fa-2x"></i></a>
+            </div>
         </div>
       </nav>
         <!--TITLE-->
@@ -55,7 +55,6 @@
           <a id="tab" class="nav-link" data-bs-toggle="tab" href="#McMinnville">McMinnville</a>
         </li>
       </ul>
-
       <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="Cookeville">
           <!--BUTTON TO SWITCH VIEWS-->
@@ -85,8 +84,8 @@
               <div class="data-card mt-3 mb-3 mx-3">
                 <div class="card-body">
                   <h5 class="card-title text-center">Passenger Revenue </h5>
-                  <div class="chartbox">
-                    <canvas id="PassengerRevenuePerHour-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <div>
+                    <canvas id="PassengerRevenuePerHour-Cookeville" width="400" height="200" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
@@ -443,10 +442,9 @@
     <script src="js/js_lib/jquery-3.6.0.min.js"></script>
     <script src="js/js_lib/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bevacqua/dragula@3.7.3/dist/dragula.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/$VERSION/dragula.min.js'></script>
-    <script src="js/js_lib/dragula.min.js"></script>
 </body>
 </html>

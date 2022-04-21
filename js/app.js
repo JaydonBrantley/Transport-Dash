@@ -29,12 +29,24 @@ $(document).on('click','#btnLogout',function(){
       
 })
 
+
+//CHANGE BUTTON COLOR
+function setColor(btn, color){
+  $(btn).css('background-color',color);
+    $(btn).css('border',color);
+}
+
+
 //SWITCH VIEWS BTN-COOKEVILLE
 $(document).on('click','#switchviews',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
+  let blue = "rgb(71,117,185)";
+  let green = "rgb(50,162,71)";
+
   if($('.container-blue').css('display')=='none') {
+    setColor('#switchviews',green);
     $('.container-green').slideToggle('.container-green');
   setTimeout(function(){
     $('.container-blue').slideToggle('.container-blue');
@@ -42,6 +54,7 @@ $(document).on('click','#switchviews',function(){
   }
   
   else if($('.container-green').css('display')=='none') {
+    setColor('#switchviews',blue);
     $('.container-blue').slideToggle('.container-blue');
   setTimeout(function(){
     $('.container-green').slideToggle('.container-green');
@@ -54,7 +67,11 @@ $(document).on('click','#switchviews-crossville',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
+  let blue = "rgb(71,117,185)";
+  let gold = "rgb(167,169,54)";
+
   if($('.containerblue-crossville').css('display')=='none') {
+    setColor('#switchviews-crossville',gold);
     $('.containergold-crossville').slideToggle('.containergold-crossville');
   setTimeout(function(){
     $('.containerblue-crossville').slideToggle('.containerblue-crossville');
@@ -62,6 +79,7 @@ $(document).on('click','#switchviews-crossville',function(){
   }
   
   else if($('.containergold-crossville').css('display')=='none') {
+    setColor('#switchviews-crossville',blue);
     $('.containerblue-crossville').slideToggle('.containerblue-crossville');
   setTimeout(function(){
     $('.containergold-crossville').slideToggle('.containergold-crossville');
@@ -74,7 +92,11 @@ $(document).on('click','#switchviews-mcminnville',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
+  let blue = "rgb(71,117,185)";
+  let red = "rgb(238,29,35)";
+
   if($('.containerred-mcminnville').css('display')=='none') {
+    setColor('#switchviews-mcminnville',blue);
     $('.containerblue-mcminnville').slideToggle('.containerblue-mcminnville');
   setTimeout(function(){
     $('.containerred-mcminnville').slideToggle('.containerred-mcminnville');
@@ -82,6 +104,7 @@ $(document).on('click','#switchviews-mcminnville',function(){
   }
   
   else if($('.containerblue-mcminnville').css('display')=='none') {
+    setColor('#switchviews-mcminnville',red);
     $('.containerred-mcminnville').slideToggle('.containerred-mcminnville');
   setTimeout(function(){
     $('.containerblue-mcminnville').slideToggle('.containerblue-mcminnville');

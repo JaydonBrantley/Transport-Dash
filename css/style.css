@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Roboto:wght@100;300;500;700&display=swap');
 
-/* Colors For Nav Bar */
+*{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+}
+
+
+/* Nav Bar */
 .navbar-brand{
     color: white;
 }
@@ -35,18 +42,15 @@
 
 .switchbtn{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-right: 52px;
 }
+
 
 /*Data Cards*/
 .heading{
     display: flex;
     justify-content: center;
-}
-
-.chartbox{
-    width: 600px;
-    height: 400px;
 }
 
 .container-green, .container-blue, .container-algood, .containerblue-crossville, .containergold-crossville, .containerred-mcminnville, .containerblue-mcminnville{
@@ -56,10 +60,20 @@
     flex-wrap: wrap;
 }
 
+.lvl-2{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
 .data-card{
     background-color: rgb(59,69,82) ;
     color: white;
     min-width: none;
     min-height: none;
     cursor: grab;
+}
+
+.canvas{
+    cursor: pointer;
 }

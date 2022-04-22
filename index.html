@@ -36,7 +36,7 @@
         </div>
       </nav>
         <!--TITLE-->
-      <div class="heading mt-3 mb-3 ms-2">
+      <div class="heading mt-3 ms-2">
         <h4><i class="fas fa-bus"></i> BUS ROUTE DATA</h4>
       </div>
 
@@ -58,109 +58,112 @@
       <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade show active" id="Cookeville">
           <!--BUTTON TO SWITCH VIEWS-->
-          <div class="switchbtn">
-            <button class="btn btn-success col-2 offset 5 mt-3" style="background-color:rgb(71,117,185)" id="switchviews">Switch Views </button>
+          <div class="switchbtn mt-2 mb-2">
+            <h4 class="mt-2 text-center"><i class="fas fa-route"></i>Green Route</h4>
+            <button class="btn-switch btn col-1 offset-5" style="background-color:rgb(71,117,185)" id="switchviews"><i class="fa fa-filter" aria-hidden="true"></i>Filter</button>
           </div>
           <!--GRAPHS FOR ALL LOCATIONS-->
           <div class="container-fluid">
             <!--GREEN ROUTE-->
             <div class="container-green">
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                  <div class="chartbox">
-                    <canvas id="PassengeronBoard-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="data-card mt-3 mb-3 mx-3">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                  <div class="chartbox">
-                    <canvas id="AvgTripLength-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="data-card mt-3 mb-3 mx-3">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Passenger Revenue </h5>
                   <div>
-                    <canvas id="PassengerRevenuePerHour-Cookeville" width="400" height="200" style="background-color: white;"></canvas>
+                    <canvas class="canvas" id="PassengeronBoard-Cookeville" width="1300" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="UnlinkedPassnager-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Passenger Revenue</h5>
+                  <div>
+                    <canvas class="canvas" id="PassengerRevenuePerHour-Cookeville" width="400" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsBoarded-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+              <div class="lvl-2">
+                <div class="data-card mt-2 mb-2 mx-2">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
+                    <div >
+                      <canvas class="canvas" id="AvgTripLength-Cookeville" width="550" height="400" style="background-color: white;"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-card mt-2 mb-2 mx-2">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Stops Boarded Per Route</h5>
+                    <div >
+                      <canvas class="canvas" id="StopsBoarded-Cookeville" width="550" height="400" style="background-color: white;"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-card mt-2 mb-2 mx-2">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Stops Alighted Per Route</h5>
+                    <div >
+                      <canvas class="canvas" id="StopsAlighted-Cookeville" width="550" height="400" style="background-color: white;"></canvas>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsAlighted-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                  <div >
+                    <canvas class="canvas" id="UnlinkedPassenger-Cookeville" width="1760" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
             </div>
             <!--BLUE ROUTE-->
             <div class="container-blue" style="display:none">
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                  <div class="chartbox">
-                    <canvas id="PassangeronBoardBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="PassengeronBoardBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                  <div class="chartbox">
-                    <canvas id="AvgTripLengthBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="AvgTripLengthBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Passenger Revenue </h5>
-                  <div class="chartbox">
-                    <canvas id="PassengerRevenueBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Passenger Revenue</h5>
+                  <div class="pie-chart">
+                    <canvas class="canvas" id="PassengerRevenueBlue-Cookeville" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="UnlinkedPassnagerBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                  <div >
+                    <canvas class="canvas" id="UnlinkedPassengerBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsBoardedBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="StopsBoardedBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsAlightedBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="StopsAlightedBlue-Cookeville" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
@@ -170,51 +173,51 @@
         <div class="tab-pane fade" id="Algood">
           <!--ALGOOD-->
           <div class="container-algood">
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                <div class="chartbox">
-                  <canvas id="PassengeronBoard-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="PassengeronBoard-Algood" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                <div class="chartbox">
-                  <canvas id="AvgTripLength-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="AvgTripLength-Algood" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Passenger Revenue </h5>
-                <div class="chartbox">
-                  <canvas id="PassengerRevenuePerHour-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                <h5 class="card-title text-center">Passenger Revenue</h5>
+                <div class="pie-chart">
+                  <canvas class="canvas" id="PassengerRevenuePerHour-Algood" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="UnlinkedPassnager-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                <div >
+                  <canvas class="canvas" id="UnlinkedPassenger-Algood" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="StopsBoarded-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="StopsBoarded-Algood" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="StopsAlighted-Algood" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="StopsAlighted-Algood" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
@@ -224,106 +227,106 @@
         <div class="tab-pane fade" id="Crossville">
            <!--BUTTON TO SWITCH VIEWS-->
            <div class="switchbtn">
-            <button class="btn btn-success col-2 offset 5 mt-3" style="background-color:rgb(167,169,54)" id="switchviews-crossville">Switch Views</button>
+            <button class="btn col-1 offset 5 mt-3" style="background-color:rgb(167,169,54)" id="switchviews-crossville"><i class="fa fa-filter" aria-hidden="true">Filter</i></button>
           </div>
           <!--BLUE ROUTE-->
             <div class="containerblue-crossville">
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                  <div class="chartbox">
-                    <canvas id="PassengeronBoard-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="PassengeronBoard-blueCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                  <div class="chartbox">
-                    <canvas id="AvgTripLength-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="AvgTripLength-blueCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Passenger Revenue </h5>
-                  <div class="chartbox">
-                    <canvas id="PassengerRevenuePerHour-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Passenger Revenue</h5>
+                  <div class="pie-chart">
+                    <canvas class="canvas" id="PassengerRevenuePerHour-blueCR" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="UnlinkedPassnager-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                  <div >
+                    <canvas class="canvas" id="UnlinkedPassenger-blueCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsBoarded-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="StopsBoarded-blueCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsAlighted-blueCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="StopsAlighted-blueCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
             </div>
             <!--GOLD ROUTE-->
             <div class="containergold-crossville" style="display:none">
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                  <div class="chartbox">
-                    <canvas id="PassengeronBoard-goldCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="PassengeronBoard-goldCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                  <div class="chartbox">
-                    <canvas id="AvgTripLength-goldCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="AvgTripLength-goldCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Passenger Revenue </h5>
-                  <div class="chartbox">
-                    <canvas id="PassengerRevenuePerHour-goldCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Passenger Revenue</h5>
+                  <div class="pie-chart">
+                    <canvas class="canvas" id="PassengerRevenuePerHour-goldCR" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="UnlinkedPassnager-goldCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                  <div >
+                    <canvas class="canvas" id="UnlinkedPassenger-goldCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsBoarded-goldCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="StopsBoarded-goldCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
-              <div class="data-card mt-3 mb-3 mx-3">
+              <div class="data-card mt-2 mb-2 mx-2">
                 <div class="card-body">
                   <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                  <div class="chartbox">
-                    <canvas id="StopsAlighted-goldCR" width="600" height="400" style="background-color: white;"></canvas>
+                  <div >
+                    <canvas class="canvas" id="StopsAlighted-goldCR" width="600" height="400" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
@@ -332,106 +335,106 @@
           <!--MCMINNVILLE-->
         <div class="tab-pane fade" id="McMinnville">
           <div class="switchbtn">
-            <button class="btn btn-success col-2 offset 5 mt-3" style="background-color:rgb(71,117,185)" id="switchviews-mcminnville">Switch Views</button>
+            <button class="btn col-1 offset 5 mt-3" style="background-color:rgb(71,117,185)" id="switchviews-mcminnville"><i class="fa fa-filter" aria-hidden="true">Filter</i></button>
           </div>
           <!--RED ROUTE-->
           <div class="containerred-mcminnville">
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                <div class="chartbox">
-                  <canvas id="PassengeronBoard-redMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="PassengeronBoard-redMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                <div class="chartbox">
-                  <canvas id="AvgTripLength-redMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="AvgTripLength-redMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Passenger Revenue </h5>
-                <div class="chartbox">
-                  <canvas id="PassengerRevenuePerHour-redMC" width="600" height="400" style="background-color: white;"></canvas>
+                <h5 class="card-title text-center">Passenger Revenue</h5>
+                <div class="pie-chart">
+                  <canvas class="canvas" id="PassengerRevenuePerHour-redMC" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="UnlinkedPassnager-redMC" width="600" height="400" style="background-color: white;"></canvas>
+                <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                <div >
+                  <canvas class="canvas" id="UnlinkedPassenger-redMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="StopsBoarded-redMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="StopsBoarded-redMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="StopsAlighted-redMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="StopsAlighted-redMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
           </div>
           <!--BLUE ROUTE-->
           <div class="containerblue-mcminnville" style="display:none">
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Passenger On Board Per Revenue Hour</h5>
-                <div class="chartbox">
-                  <canvas id="PassengeronBoard-blueMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="PassengeronBoard-blueMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Average Trip Length Per Mile</h5>
-                <div class="chartbox">
-                  <canvas id="AvgTripLength-blueMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="AvgTripLength-blueMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Passenger Revenue </h5>
-                <div class="chartbox">
-                  <canvas id="PassengerRevenuePerHour-blueMC" width="600" height="400" style="background-color: white;"></canvas>
+                <h5 class="card-title text-center">Passenger Revenue</h5>
+                <div class="pie-chart">
+                  <canvas class="canvas" id="PassengerRevenuePerHour-blueMC" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
-                <h5 class="card-title text-center">Unlinked Passnager Trips Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="UnlinkedPassnager-blueMC" width="600" height="400" style="background-color: white;"></canvas>
+                <h5 class="card-title text-center">Unlinked Passenger Trips Per Route</h5>
+                <div >
+                  <canvas class="canvas" id="UnlinkedPassenger-blueMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Stops Boarded Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="StopsBoarded-blueMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="StopsBoarded-blueMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>
-            <div class="data-card mt-3 mb-3 mx-3">
+            <div class="data-card mt-2 mb-2 mx-2">
               <div class="card-body">
                 <h5 class="card-title text-center">Stops Alighted Per Route</h5>
-                <div class="chartbox">
-                  <canvas id="StopsAlighted-blueMC" width="600" height="400" style="background-color: white;"></canvas>
+                <div >
+                  <canvas class="canvas" id="StopsAlighted-blueMC" width="600" height="400" style="background-color: white;"></canvas>
                 </div>
               </div>
             </div>

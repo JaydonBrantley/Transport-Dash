@@ -8,7 +8,7 @@
                         datasets: [{
                             label: 'Green Route',
                             data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                            backgroundColor: 'rgb(50,162,71,0.5)',
+                            backgroundColor: 'rgb(50,162,71,0.7)',
                             borderColor: 'rgb(50,162,71)',
                             borderWidth: 2,
                             tension: 0.4,
@@ -34,7 +34,7 @@
                             label: 'Green Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(50,162,71,0.5)'
+                            'rgb(50,162,71,0.7)'
                             ],
                             borderColor: [
                             'rgb(50,162,71)'
@@ -62,10 +62,10 @@
                             label: 'Green Route Per Hour',
                             data: [10,20,30,40],
                             backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -94,14 +94,16 @@
                         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
                         datasets: [{
                             label: 'Green Route Per Hour',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,184,153,142,111,124,165,187,198],
                             backgroundColor: [
-                            'rgb(50,162,71,0.5)'
+                            'rgb(50,162,71,0.7)'
                             ],
                             borderColor: [
                             'rgb(50,162,71)'
                             ],
-                            borderWidth: 1
+                            borderWidth: 1,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -121,14 +123,16 @@
                         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
                         datasets: [{
                             label: 'Green Route Per Hour',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,121,190,111,152,184,153,142,111],
                             backgroundColor: [
-                            'rgb(50,162,71,0.5)'
+                            'rgb(50,162,71,0.7)'
                             ],
                             borderColor: [
                             'rgb(50,162,71)'
                             ],
-                            borderWidth: 1
+                            borderWidth: 1,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -148,8 +152,8 @@
                         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
                         datasets: [{
                             label: 'Green Route Per Hour',
-                            data: [121,190,111,152],
-                            backgroundColor: ['rgb(50,162,71,0.5)'],
+                            data: [121,190,111,152,121,190,111,152,121,190,111,152],
+                            backgroundColor: ['rgb(50,162,71,0.7)'],
                             borderColor: ['rgb(50,162,71)'],
                             borderWidth: 2,
                             borderRadius: 5,
@@ -176,7 +180,7 @@
                     datasets: [{
                         label: 'Blue Route',
                         data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                        backgroundColor: ['rgb(70,116,185,0.5)'],
+                        backgroundColor: ['rgb(70,116,185,0.7)'],
                         borderColor: ['rgb(70,116,185)'],
                         borderWidth: 2,
                         tension: 0.4,
@@ -202,7 +206,7 @@
                             label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(70,116,185,0.5)'
+                            'rgb(70,116,185,0.7)'
                             ],
                             borderColor: [
                             'rgb(70,116,185)'
@@ -230,10 +234,10 @@
                               label: 'Blue Route Per Hour',
                               data: [10,20,30,40],
                               backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -263,12 +267,14 @@
                             label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(70,116,185,0.5)'
+                            'rgb(70,116,185,0.7)'
                             ],
                             borderColor: [
                             'rgb(70,116,185)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -290,12 +296,14 @@
                             label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(70,116,185,0.5)'
+                            'rgb(70,116,185,0.7)'
                             ],
                             borderColor: [
                             'rgb(70,116,185)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -316,7 +324,7 @@
                         datasets: [{
                             label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
-                            backgroundColor: ['rgb(70,116,185,0.5)'],
+                            backgroundColor: ['rgb(70,116,185,0.7)'],
                             borderColor: ['rgb(70,116,185)'],
                             borderWidth: 2,
                             borderRadius: 5,
@@ -342,8 +350,8 @@
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
                             label: 'Purple Route',
-                            data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                            backgroundColor: ['rgb(147,80,159,0.5)'],
+                            data: [206,249,143,127,242,145,112,200,290,180,233,270,127,242,145,112],
+                            backgroundColor: ['rgb(147,80,159,0.7)'],
                             borderColor: ['rgb(147,80,159)'],
                             borderWidth: 2,
                             tension: 0.4,
@@ -367,9 +375,9 @@
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
                             label: 'Purple Route',
-                            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+                            data: [19,10,20,14,7,12,6,18,13,1,20,3,14,7,12,3],
                             backgroundColor: [
-                            'rgb(147,80,159,0.5)'
+                            'rgb(147,80,159,0.7)'
                             ],
                             borderColor: [
                             'rgb(147,80,159)'
@@ -397,10 +405,10 @@
                             label: 'Purple Route',
                             data: [10,20,30,40],
                             backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -428,14 +436,16 @@
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
                             label: 'Purple Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
                             backgroundColor: [
-                            'rgb(147,80,159,0.5)'
+                            'rgb(147,80,159,0.7)'
                             ],
                             borderColor: [
                             'rgb(147,80,159)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -456,14 +466,16 @@
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
                             label: 'Purple Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
                             backgroundColor: [
-                            'rgb(147,80,159,0.5)'
+                            'rgb(147,80,159,0.7)'
                             ],
                             borderColor: [
                             'rgb(147,80,159)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -483,8 +495,8 @@
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
                             label: 'Purple Route',
-                            data: [121,190,111,152],
-                            backgroundColor: ['rgb(147,80,159,0.5)'],
+                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
+                            backgroundColor: ['rgb(147,80,159,0.7)'],
                             borderColor: ['rgb(147,80,159)'],
                             borderWidth: 2,
                             borderRadius: 5,
@@ -511,7 +523,7 @@
                         datasets: [{
                             label: 'Blue Route',
                             data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                            backgroundColor: ['rgb(70,116,185,0.5)'],
+                            backgroundColor: ['rgb(70,116,185,0.7)'],
                             borderColor: ['rgb(70,116,185)'],
                             borderWidth: 2,
                             tension: 0.4,
@@ -537,7 +549,7 @@
                             label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(70,116,185,0.5)'
+                            'rgb(70,116,185,0.7)'
                             ],
                             borderColor: [
                             'rgb(70,116,185)'
@@ -565,10 +577,10 @@
                             label: 'Blue Route',
                             data: [10,20,30,40],
                             backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -596,14 +608,16 @@
                         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
                         datasets: [{
                             label: 'Blue Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,102,206,142,125,123,167,182,],
                             backgroundColor: [
-                            'rgb(70,116,185,0.5)'
+                            'rgb(70,116,185,0.7)'
                             ],
                             borderColor: [
                             'rgb(70,116,185)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -624,14 +638,16 @@
                         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
                         datasets: [{
                             label: 'Blue Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,162,190,111,152,102,206,142,125,123],
                             backgroundColor: [
-                            'rgb(70,116,185,0.5)'
+                            'rgb(70,116,185,0.7)'
                             ],
                             borderColor: [
                             'rgb(70,116,185)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -651,8 +667,8 @@
                         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
                         datasets: [{
                             label: 'Blue Route',
-                            data: [121,190,111,152],
-                            backgroundColor: ['rgb(70,116,185,0.5)'],
+                            data: [121,190,111,152,121,190,111,152,105,190,111,152,102,206,142],
+                            backgroundColor: ['rgb(70,116,185,0.7)'],
                             borderColor: ['rgb(70,116,185)'],
                             borderWidth: 2
                         }]
@@ -677,7 +693,7 @@
                         datasets: [{
                             label: 'Gold Route',
                             data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                            backgroundColor: ['rgb(167,169,54,0.5)'],
+                            backgroundColor: ['rgb(167,169,54,0.7)'],
                             borderColor: ['rgb(167,169,54)'],
                             borderWidth: 2,
                             tension: 0.4,
@@ -703,7 +719,7 @@
                             label: 'Gold Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(167,169,54,0.5)'
+                            'rgb(167,169,54,0.7)'
                             ],
                             borderColor: [
                             'rgb(167,169,54)'
@@ -731,10 +747,10 @@
                             label: 'Gold Route',
                             data: [10,20,30,40],
                             backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -762,14 +778,16 @@
                         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
                         datasets: [{
                             label: 'Gold Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,105,190,111,152,102,206,142],
                             backgroundColor: [
-                            'rgb(167,169,54,0.5)'
+                            'rgb(167,169,54,0.7)'
                             ],
                             borderColor: [
                             'rgb(167,169,54)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -790,14 +808,16 @@
                         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
                         datasets: [{
                             label: 'Gold Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,117,152,105,190,156,152,102,206,],
                             backgroundColor: [
-                            'rgb(167,169,54,0.5)'
+                            'rgb(167,169,54,0.7)'
                             ],
                             borderColor: [
                             'rgb(167,169,54)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -817,8 +837,8 @@
                         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
                         datasets: [{
                             label: 'Gold Route',
-                            data: [121,190,111,152],
-                            backgroundColor: ['rgb(167,169,54,0.5)'],
+                            data: [121,190,171,152,112,152,105,190,161,152,102,206,],
+                            backgroundColor: ['rgb(167,169,54,0.7)'],
                             borderColor: ['rgb(167,169,54)'],
                             borderWidth: 2,
                             borderRadius: 5,
@@ -846,7 +866,7 @@
                         datasets: [{
                             label: 'Red Route',
                             data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                            backgroundColor: ['rgb(238,29,35,0.5)'],
+                            backgroundColor: ['rgb(238,29,35,0.7)'],
                             borderColor: ['rgb(238,29,35)'],
                             borderWidth: 2,
                             tension: 0.4,
@@ -872,7 +892,7 @@
                             label: 'Red Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(238,29,35,0.5)'
+                            'rgb(238,29,35,0.7)'
                             ],
                             borderColor: [
                             'rgb(238,29,35)'
@@ -900,10 +920,10 @@
                             label: 'Red Route',
                             data: [10,20,30,40],
                             backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -931,14 +951,16 @@
                         labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
                         datasets: [{
                             label: 'Red Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,107,120,145,194,124,168],
                             backgroundColor: [
-                            'rgb(238,29,35,0.5)'
+                            'rgb(238,29,35,0.7)'
                             ],
                             borderColor: [
                             'rgb(238,29,35)'
                             ],
                             borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -958,14 +980,16 @@
                         labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
                         datasets: [{
                             label: 'Red Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,107,120,145,194,124,168],
                             backgroundColor: [
-                            'rgb(238,29,35,0.5)'
+                            'rgb(238,29,35,0.7)'
                             ],
                             borderColor: [
                             'rgb(238,29,35)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -985,8 +1009,8 @@
                         labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
                         datasets: [{
                             label: 'Red Route',
-                            data: [121,190,111,152],
-                            backgroundColor: ['rgb(238,29,35,0.5)'],
+                            data: [121,190,111,152,125,107,120,145,194,124,168,152,197],
+                            backgroundColor: ['rgb(238,29,35,0.7)'],
                             borderColor: ['rgb(238,29,35)'],
                             borderWidth: 2,
                             borderRadius: 5,
@@ -1013,7 +1037,7 @@
                         datasets: [{
                             label: 'Blue Route',
                             data: [206,249,143,127,242,145,112,200,290,180,233,270],
-                            backgroundColor: ['rgb(37,79,162,0.5)'],
+                            backgroundColor: ['rgb(37,79,162,0.7)'],
                             borderColor: ['rgb(37,79,162)'],
                             borderWidth: 2,
                             tension: 0.4,
@@ -1039,7 +1063,7 @@
                             label: 'Blue Route',
                             data: [19,10,20,14,7,12,6,18,13,1,20,3],
                             backgroundColor: [
-                            'rgb(37,79,162,0.5)'
+                            'rgb(37,79,162,0.7)'
                             ],
                             borderColor: [
                             'rgb(37,79,162)'
@@ -1067,10 +1091,10 @@
                             label: 'Blue Route',
                             data: [121,190,111,152],
                             backgroundColor: [
-                                'rgb(50,162,71,0.5)',
-                                'rgb(70,116,185,0.5)',
-                                'rgb(167,169,54,0.5)',
-                                'rgb(147,80,159,0.5)',
+                                'rgb(50,162,71,0.7)',
+                                'rgb(70,116,185,0.7)',
+                                'rgb(167,169,54,0.7)',
+                                'rgb(147,80,159,0.7)',
                             ],
                             borderColor: [
                                 'rgb(50,162,71)',
@@ -1098,14 +1122,16 @@
                         labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
                         datasets: [{
                             label: 'Blue Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,152,184,153,142,111,124,165,187],
                             backgroundColor: [
-                            'rgb(37,79,162,0.5)'
+                            'rgb(37,79,162,0.7)'
                             ],
                             borderColor: [
                             'rgb(37,79,162)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -1126,14 +1152,16 @@
                         labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
                         datasets: [{
                             label: 'Blue Route',
-                            data: [121,190,111,152],
+                            data: [121,190,111,152,152,184,153,142,111,124,165,187],
                             backgroundColor: [
-                            'rgb(37,79,162,0.5)'
+                            'rgb(37,79,162,0.7)'
                             ],
                             borderColor: [
                             'rgb(37,79,162)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -1153,8 +1181,8 @@
                         labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
                         datasets: [{
                             label: 'Blue Route',
-                            data: [121,190,111,152],
-                            backgroundColor: ['rgb(37,79,162,0.5)'],
+                            data: [121,190,111,152,184,153,142,111,124,165,187,198],
+                            backgroundColor: ['rgb(37,79,162,0.7)'],
                             borderColor: ['rgb(37,79,162)'],
                             borderWidth: 2,
                             borderRadius: 5,

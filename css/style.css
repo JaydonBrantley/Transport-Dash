@@ -44,6 +44,11 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 52px;
+    color: white;
+}
+
+.switch-btn{
+    color: white;
 }
 
 /*Data Cards*/

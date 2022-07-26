@@ -16,18 +16,12 @@
     height: 60;
 }
 
-.small-box{
-    width: 380.75;
-    height: 142.23;
-}
-
-.todays-header{
+.content-title{
     display: flex;
     justify-content: center;
 }
 
-.daily-data{
+.ckv-green{
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    flex-direction: row;
 }

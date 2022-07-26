@@ -1,7 +1,7 @@
 //CHARTS FOR COOKEVILLE
                 //GREEN ROUTES
-                const PassengeronBoard = document.getElementById('PassengeronBoard-Cookeville');
-                const PassangersonBoard = new Chart (PassengeronBoard, {
+                const AvgPassenger = document.getElementById('graph-001');
+                const AvgPassengers = new Chart (AvgPassenger, {
                     type: 'line',
                     data: {
                         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
@@ -25,7 +25,7 @@
                     }
                     });
 
-                const AvgTripLength = document.getElementById('AvgTripLength-Cookeville');
+                const AvgTripLength = document.getElementById('graph-002');
                 const AvgTripLengths = new Chart (AvgTripLength, {
                     type: 'line',
                     data: {

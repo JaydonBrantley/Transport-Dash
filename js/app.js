@@ -38,26 +38,26 @@ function setColor(btn, color){
 
 
 //SWITCH VIEWS BTN-COOKEVILLE
-$(document).on('click','#switchviews',function(){
+$(document).on('click','#swap-ckv',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
   let blue = "rgb(71,117,185)";
   let green = "rgb(50,162,71)";
 
-  if($('.container-blue').css('display')=='none') {
-    setColor('#switchviews',green);
-    $('.container-green').slideToggle('.container-green');
+  if($('.ckv-blue').css('display')=='none') {
+    setColor('#swap-ckv',green);
+    $('.ckv-green').slideToggle('.ckv-green');
   setTimeout(function(){
-    $('.container-blue').slideToggle('.container-blue');
+    $('.ckv-blue').slideToggle('.ckv-blue');
   }, 500);
   }
   
-  else if($('.container-green').css('display')=='none') {
-    setColor('#switchviews',blue);
-    $('.container-blue').slideToggle('.container-blue');
+  else if($('.ckv-green').css('display')=='none') {
+    setColor('#swap-ckv',blue);
+    $('.ckv-blue').slideToggle('.ckv-blue');
   setTimeout(function(){
-    $('.container-green').slideToggle('.container-green');
+    $('.ckv-green').slideToggle('.ckv-green');
   }, 500);
   };
 })

@@ -5,93 +5,40 @@
     font-weight: 300;
 }
 
-
-/* Nav Bar */
-.navbar-brand{
-    color: white;
-}
-
-#navbar{
-    background-color: rgb(59,69,82);
-}
-
-.nav-link{
-    color: white;
-}
-
-.nav-icons{
-    background-color: none;
-    border-width: 0ch;
+.uchra-logo{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: baseline;
 }
 
 .logo{
-    width: 150;
-    height: 50;
+    width: 160;
+    height: 60;
 }
 
-/*TABS*/
-
-#tab{
-    color: black;
-}
-
-/*Swicth View btn*/
-
-.switchbtn{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 52px;
-    color: white;
-}
-
-.switch-btn{
-    color: white;
-}
-
-/*Data Cards*/
-.heading{
+.content-title{
     display: flex;
     justify-content: center;
 }
 
-.container-green, .container-blue, .container-algood, .containerblue-crossville, .containergold-crossville, .containerred-mcminnville, .containerblue-mcminnville{
+.content-graphs{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
-.data-card{
-    background-color: rgb(59,69,82) ;
-    color: white;
-    cursor: grab;
+.ckv-green{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
-.canvas{
-    cursor: pointer;
+.card{
+    width: max-content;
+    height: max-content;
 }
 
-/* CK BLUE ROUTE*/
-
-.PassengeronBoardBlue-Cookeville, .PassengeronBoard-Algood, .PassengeronBoard-blueCR, .PassengeronBoard-goldCR, .PassengeronBoard-redMC, .PassengeronBoard-blueMC{
-    width: 1300;
-    height: 400;
-}
-
-.PassengerRevenueBlue-Cookeville, .PassengerRevenuePerHour-Algood, .PassengerRevenuePerHour-blueCR, .PassengerRevenuePerHour-goldCR, .PassengerRevenuePerHour-redMC, .PassengerRevenuePerHour-blueMC{
-    width: 400;
-    height: 400;
-}
-
-.AvgTripLengthBlue-Cookeville, .StopsBoardedBlue-Cookeville, .StopsAlightedBlue-Cookeville, .AvgTripLength-Algood, .StopsBoarded-Algood, .StopsAlighted-Algood, .AvgTripLength-blueCR, .StopsBoarded-blueCR, .StopsAlighted-blueCR, .AvgTripLength-goldCR, .StopsBoarded-goldCR, .StopsAlighted-goldCR, .AvgTripLength-redMC, .StopsBoarded-redMC, .StopsAlighted-redMC, .AvgTripLength-blueMC, .StopsBoarded-blueMC, .StopsAlighted-blueMC{
-    width: 550;
-    height: 400;
-}
-
-.UnlinkedPassengerBlue-Cookeville, .UnlinkedPassenger-Algood, .UnlinkedPassenger-blueCR, .UnlinkedPassenger-goldCR, .UnlinkedPassenger-redMC, .UnlinkedPassenger-blueMC{
-    width: 1750;
-    height: 400;
+.swap-ckv{
+    display: flex;
+    justify-content: flex-end;
 }

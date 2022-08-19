@@ -1,5 +1,5 @@
-const PassengeronBoardA = document.getElementById('PassengeronBoard-Algood');
-                const PassangersonBoardA = new Chart (PassengeronBoardA, {
+                const AvgPassenger = document.getElementById('alg-101-purple');
+                const AvgPassengers = new Chart (AvgPassenger, {
                     type: 'line',
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
@@ -23,8 +23,41 @@ const PassengeronBoardA = document.getElementById('PassengeronBoard-Algood');
                     }
                     });
 
-                const AvgTripLengthA = document.getElementById('AvgTripLength-Algood');
-                const AvgTripLengthsA = new Chart (AvgTripLengthA, {
+                const PassengerRevenue = document.getElementById('alg-102-purple');
+                const PassengersRevenue = new Chart (PassengerRevenue, {
+                        type: 'pie',
+                        data: {
+                            labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
+                            datasets: [{
+                                label: 'Purple Route',
+                                data: [10,20,30,40],
+                                backgroundColor: [
+                                    'rgb(50,162,71,0.7)',
+                                    'rgb(70,116,185,0.7)',
+                                    'rgb(167,169,54,0.7)',
+                                    'rgb(147,80,159,0.7)',
+                                ],
+                                borderColor: [
+                                    'rgb(50,162,71)',
+                                    'rgb(70,116,185)',
+                                    'rgb(167,169,54)',
+                                    'rgb(147,80,159)',
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                        });
+
+                const AvgTrip = document.getElementById('alg-103-purple');
+                const AvgTrips = new Chart (AvgTrip, {
                     type: 'line',
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
@@ -51,27 +84,23 @@ const PassengeronBoardA = document.getElementById('PassengeronBoard-Algood');
                     }
                 });
 
-                const PassengerRevenuePerHourA = document.getElementById('PassengerRevenuePerHour-Algood');
-                const PassengersRevenuePerHourA = new Chart (PassengerRevenuePerHourA, {
-                    type: 'pie',
+                const StopBoarded = document.getElementById('alg-104-purple');
+                const StopsBoarded = new Chart (StopBoarded, {
+                    type: 'bar',
                     data: {
-                        labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
+                        labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
                         datasets: [{
                             label: 'Purple Route',
-                            data: [10,20,30,40],
+                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
                             backgroundColor: [
-                                'rgb(50,162,71,0.7)',
-                                'rgb(70,116,185,0.7)',
-                                'rgb(167,169,54,0.7)',
-                                'rgb(147,80,159,0.7)',
+                            'rgb(147,80,159,0.7)'
                             ],
                             borderColor: [
-                                'rgb(50,162,71)',
-                                'rgb(70,116,185)',
-                                'rgb(167,169,54)',
-                                'rgb(147,80,159)',
+                            'rgb(147,80,159)'
                             ],
-                            borderWidth: 2
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
                         }]
                     },
                     options: {
@@ -84,8 +113,33 @@ const PassengeronBoardA = document.getElementById('PassengeronBoard-Algood');
                     }
                     });
 
-                const UnlinkedPassengerA = document.getElementById('UnlinkedPassenger-Algood');
-                const UnlinkedPassengersA = new Chart (UnlinkedPassengerA, {
+                const StopAlighted = document.getElementById('alg-105-purple');
+                const StopsAlighted = new Chart (StopAlighted, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
+                        datasets: [{
+                            label: 'Purple Route',
+                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
+                            backgroundColor: ['rgb(147,80,159,0.7)'],
+                            borderColor: ['rgb(147,80,159)'],
+                            borderWidth: 2,
+                            borderRadius: 5,
+                            borderSkipped: false,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                    });
+
+                const UnlinkedPassenger = document.getElementById('alg-106-purple');
+                const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
                     type: 'bar',
                     data: {
                         labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
@@ -105,60 +159,6 @@ const PassengeronBoardA = document.getElementById('PassengeronBoard-Algood');
                     },
                     options: {
                         indexAxis: 'y',
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                    });
-
-                const StopsBoardedA = document.getElementById('StopsBoarded-Algood');
-                const StopBoardedA = new Chart (StopsBoardedA, {
-                    type: 'bar',
-                    data: {
-                        labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
-                        datasets: [{
-                            label: 'Purple Route',
-                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
-                            backgroundColor: [
-                            'rgb(147,80,159,0.7)'
-                            ],
-                            borderColor: [
-                            'rgb(147,80,159)'
-                            ],
-                            borderWidth: 2,
-                            borderRadius: 5,
-                            borderSkipped: false,
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                    });
-
-                const StopsAlightedA = document.getElementById('StopsAlighted-Algood');
-                const StopAlightedA = new Chart (StopsAlightedA, {
-                    type: 'bar',
-                    data: {
-                        labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
-                        datasets: [{
-                            label: 'Purple Route',
-                            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
-                            backgroundColor: ['rgb(147,80,159,0.7)'],
-                            borderColor: ['rgb(147,80,159)'],
-                            borderWidth: 2,
-                            borderRadius: 5,
-                            borderSkipped: false,
-                        }]
-                    },
-                    options: {
                         responsive: true,
                         scales: {
                             y: {

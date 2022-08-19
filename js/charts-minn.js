@@ -1,6 +1,6 @@
 
- const PassengeronBoardredMC = document.getElementById('PassengeronBoard-redMC');
- const PassengersonBoardredMC = new Chart (PassengeronBoardredMC, {
+ const AvgPassenger = document.getElementById('minn-101-red');
+ const AvgPassengers = new Chart (AvgPassenger, {
      type: 'line',
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
@@ -24,8 +24,41 @@
      }
      });
 
- const AvgTripLengthredMC = document.getElementById('AvgTripLength-redMC');
- const AvgTripLengthsredMC = new Chart (AvgTripLengthredMC, {
+const PassengerRevenue = document.getElementById('minn-102-red');
+const PassengersRevenue = new Chart (PassengerRevenue, {
+         type: 'pie',
+         data: {
+             labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
+             datasets: [{
+                 label: 'Red Route',
+                 data: [10,20,30,40],
+                 backgroundColor: [
+                     'rgb(50,162,71,0.7)',
+                     'rgb(70,116,185,0.7)',
+                     'rgb(167,169,54,0.7)',
+                     'rgb(147,80,159,0.7)',
+                 ],
+                 borderColor: [
+                     'rgb(50,162,71)',
+                     'rgb(70,116,185)',
+                     'rgb(167,169,54)',
+                     'rgb(147,80,159)',
+                 ],
+                 borderWidth: 2
+             }]
+         },
+         options: {
+             responsive: true,
+             scales: {
+                 y: {
+                     beginAtZero: true
+                 }
+             }
+         }
+         });
+
+const AvgTrip = document.getElementById('minn-103-red');
+const AvgTrips = new Chart (AvgTrip, {
      type: 'line',
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
@@ -52,41 +85,8 @@
      }
  });
 
- const PassengerRevenuePerHourredMC = document.getElementById('PassengerRevenuePerHour-redMC');
- const PassengersRevenuePerHourredMC = new Chart (PassengerRevenuePerHourredMC, {
-     type: 'pie',
-     data: {
-         labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
-         datasets: [{
-             label: 'Red Route',
-             data: [10,20,30,40],
-             backgroundColor: [
-                 'rgb(50,162,71,0.7)',
-                 'rgb(70,116,185,0.7)',
-                 'rgb(167,169,54,0.7)',
-                 'rgb(147,80,159,0.7)',
-             ],
-             borderColor: [
-                 'rgb(50,162,71)',
-                 'rgb(70,116,185)',
-                 'rgb(167,169,54)',
-                 'rgb(147,80,159)',
-             ],
-             borderWidth: 2
-         }]
-     },
-     options: {
-         responsive: true,
-         scales: {
-             y: {
-                 beginAtZero: true
-             }
-         }
-     }
-     });
-
- const UnlinkedPassengerredMC = document.getElementById('UnlinkedPassenger-redMC');
- const UnlinkedPassengersredMC = new Chart (UnlinkedPassengerredMC, {
+const StopBoarded = document.getElementById('minn-104-red');
+const StopsBoarded = new Chart (StopBoarded, {
      type: 'bar',
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
@@ -114,37 +114,8 @@
      }
      });
 
- const StopsBoardedredMC = document.getElementById('StopsBoarded-redMC');
- const StopBoardedredMC = new Chart (StopsBoardedredMC, {
-     type: 'bar',
-     data: {
-         labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
-         datasets: [{
-             label: 'Red Route',
-             data: [121,190,111,152,107,120,145,194,124,168],
-             backgroundColor: [
-             'rgb(238,29,35,0.7)'
-             ],
-             borderColor: [
-             'rgb(238,29,35)'
-             ],
-             borderWidth: 2,
-             borderRadius: 5,
-             borderSkipped: false,
-         }]
-     },
-     options: {
-         responsive: true,
-         scales: {
-             y: {
-                 beginAtZero: true
-             }
-         }
-     }
-     });
-
- const StopsAlightedredMC = document.getElementById('StopsAlighted-redMC');
- const StopAlightedredMC = new Chart (StopsAlightedredMC, {
+const StopAlighted = document.getElementById('minn-105-red');
+const StopsAlighted = new Chart (StopAlighted, {
      type: 'bar',
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
@@ -168,6 +139,35 @@
          }
      }
      });
+
+const UnlinkedPassenger = document.getElementById('minn-106-red');
+const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
+         type: 'bar',
+         data: {
+             labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
+             datasets: [{
+                 label: 'Red Route',
+                 data: [121,190,111,152,107,120,145,194,124,168],
+                 backgroundColor: [
+                 'rgb(238,29,35,0.7)'
+                 ],
+                 borderColor: [
+                 'rgb(238,29,35)'
+                 ],
+                 borderWidth: 2,
+                 borderRadius: 5,
+                 borderSkipped: false,
+             }]
+         },
+         options: {
+             responsive: true,
+             scales: {
+                 y: {
+                     beginAtZero: true
+                 }
+             }
+         }
+         });
 
      //BLUE ROUTE
  const PassengeronBoardblueMC = document.getElementById('PassengeronBoard-blueMC');

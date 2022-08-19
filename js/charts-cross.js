@@ -1,5 +1,5 @@
-const PassengeronBoardblueCR = document.getElementById('PassengeronBoard-blueCR');
-const PassengersonBoardblueCR = new Chart (PassengeronBoardblueCR, {
+const AvgPassenger = document.getElementById('cross-101-blue');
+const AvgPassengers = new Chart(AvgPassenger, {
     type: 'line',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -23,8 +23,41 @@ const PassengersonBoardblueCR = new Chart (PassengeronBoardblueCR, {
     }
     });
 
-const AvgTripLengthblueCR = document.getElementById('AvgTripLength-blueCR');
-const AvgTripLengthsblueCR = new Chart (AvgTripLengthblueCR, {
+const PassengerRevenue = document.getElementById('cross-102-blue');
+const PassengersRevenue = new Chart(PassengerRevenue, {
+        type: 'pie',
+        data: {
+            labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
+            datasets: [{
+                label: 'Blue Route',
+                data: [10,20,30,40],
+                backgroundColor: [
+                    'rgb(50,162,71,0.7)',
+                    'rgb(70,116,185,0.7)',
+                    'rgb(167,169,54,0.7)',
+                    'rgb(147,80,159,0.7)',
+                ],
+                borderColor: [
+                    'rgb(50,162,71)',
+                    'rgb(70,116,185)',
+                    'rgb(167,169,54)',
+                    'rgb(147,80,159)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+        });
+
+const AvgTrip = document.getElementById('cross-103-blue');
+const AvgTrips = new Chart(AvgTrip, {
     type: 'line',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -51,71 +84,8 @@ const AvgTripLengthsblueCR = new Chart (AvgTripLengthblueCR, {
     }
 });
 
-const PassengerRevenuePerHourblueCR = document.getElementById('PassengerRevenuePerHour-blueCR');
-const PassengersRevenuePerHourblueCR = new Chart (PassengerRevenuePerHourblueCR, {
-    type: 'pie',
-    data: {
-        labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
-        datasets: [{
-            label: 'Blue Route',
-            data: [10,20,30,40],
-            backgroundColor: [
-                'rgb(50,162,71,0.7)',
-                'rgb(70,116,185,0.7)',
-                'rgb(167,169,54,0.7)',
-                'rgb(147,80,159,0.7)',
-            ],
-            borderColor: [
-                'rgb(50,162,71)',
-                'rgb(70,116,185)',
-                'rgb(167,169,54)',
-                'rgb(147,80,159)',
-            ],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-    });
-
-const UnlinkedPassengerblueCR = document.getElementById('UnlinkedPassenger-blueCR');
-const UnlinkedPassengersblueCR = new Chart (UnlinkedPassengerblueCR, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
-        datasets: [{
-            label: 'Blue Route',
-            data: [121,190,111,152,102,206,142,125,123,167,182,],
-            backgroundColor: [
-            'rgb(70,116,185,0.7)'
-            ],
-            borderColor: [
-            'rgb(70,116,185)'
-            ],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        indexAxis: 'y',
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-    });
-
-const StopsBoardedblueCR = document.getElementById('StopsBoarded-blueCR');
-const StopBoardedblueCR = new Chart (StopsBoardedblueCR, {
+const StopBoarded = document.getElementById('cross-104-blue');
+const StopsBoarded = new Chart(StopBoarded, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -143,8 +113,8 @@ const StopBoardedblueCR = new Chart (StopsBoardedblueCR, {
     }
     });
 
-const StopsAlightedblueCR = document.getElementById('StopsAlighted-blueCR');
-const StopAlightedblueCR = new Chart (StopsAlightedblueCR, {
+const StopAlighted = document.getElementById('cross-105-blue');
+const StopsAlighted = new Chart(StopAlighted, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -159,6 +129,36 @@ const StopAlightedblueCR = new Chart (StopsAlightedblueCR, {
     options: {
         responsive: true,
         indexAxis: 'y',
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+    });
+
+const UnlinkedPassenger = document.getElementById('cross-106-blue');
+const UnlinkedPassengers = new Chart(UnlinkedPassenger, {
+    type: 'bar',
+    data: {
+        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+        datasets: [{
+            label: 'Blue Route',
+            data: [121,190,111,152,102,206,142,125,123,167,182,],
+            backgroundColor: [
+            'rgb(70,116,185,0.7)'
+            ],
+            borderColor: [
+            'rgb(70,116,185)'
+            ],
+            borderWidth: 2,
+            borderRadius: 5,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        responsive: true,
         scales: {
             y: {
                 beginAtZero: true

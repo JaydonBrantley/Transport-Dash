@@ -29,6 +29,12 @@ $(document).on('click','#btnLogout',function(){
       
 })
 
+//SAVE TO PDF
+$(document).on('click','#saveToPDF',function(){
+  var ckvPage = document.getElementById('#ckv-page');
+  html2pdf(ckvPage);
+})
+
 
 //CHANGE BUTTON COLOR
 function setColor(btn, color){

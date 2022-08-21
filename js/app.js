@@ -69,51 +69,51 @@ $(document).on('click','#swap-ckv',function(){
 })
 
 //SWITCH VIEWS BTN-CROSSVILLE
-$(document).on('click','#switchviews-crossville',function(){
+$(document).on('click','#swap-cross',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
   let blue = "rgb(71,117,185)";
   let gold = "rgb(167,169,54)";
 
-  if($('.containerblue-crossville').css('display')=='none') {
+  if($('.cross-gold').css('display')=='none') {
     setColor('#switchviews-crossville',gold);
-    $('.containergold-crossville').slideToggle('.containergold-crossville');
+    $('.cross-blue').slideToggle('.cross-blue');
   setTimeout(function(){
-    $('.containerblue-crossville').slideToggle('.containerblue-crossville');
+    $('.cross-gold').slideToggle('.cross-gold');
   }, 500);
   }
   
-  else if($('.containergold-crossville').css('display')=='none') {
+  else if($('.cross-blue').css('display')=='none') {
     setColor('#switchviews-crossville',blue);
-    $('.containerblue-crossville').slideToggle('.containerblue-crossville');
+    $('.cross-gold').slideToggle('.cross-gold');
   setTimeout(function(){
-    $('.containergold-crossville').slideToggle('.containergold-crossville');
+    $('.cross-blue').slideToggle('.cross-blue');
   }, 500);
   };
 })
 
 //SWITCH VIEWS BTN-MCMINNVILLE
-$(document).on('click','#switchviews-mcminnville',function(){
+$(document).on('click','#swap-minn',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
   let blue = "rgb(71,117,185)";
   let red = "rgb(238,29,35)";
 
-  if($('.containerred-mcminnville').css('display')=='none') {
+  if($('.minn-blue').css('display')=='none') {
     setColor('#switchviews-mcminnville',blue);
-    $('.containerblue-mcminnville').slideToggle('.containerblue-mcminnville');
+    $('.minn-red').slideToggle('.minn-red');
   setTimeout(function(){
-    $('.containerred-mcminnville').slideToggle('.containerred-mcminnville');
+    $('.minn-blue').slideToggle('.minn-blue');
   }, 500);
   }
   
-  else if($('.containerblue-mcminnville').css('display')=='none') {
+  else if($('.minn-red').css('display')=='none') {
     setColor('#switchviews-mcminnville',red);
-    $('.containerred-mcminnville').slideToggle('.containerred-mcminnville');
+    $('.minn-blue').slideToggle('.minn-blue');
   setTimeout(function(){
-    $('.containerblue-mcminnville').slideToggle('.containerblue-mcminnville');
+    $('.minn-red').slideToggle('.minn-red');
   }, 500);
   };
 })
@@ -124,9 +124,9 @@ function init(){
   dragula([document.querySelector('.container-green'),
            document.querySelector('.container-blue'),
            document.querySelector('.container-algood'),
-           document.querySelector('.containerblue-crossville'),
-           document.querySelector('.containergold-crossville'),
-           document.querySelector('.containerred-mcminnville'),
-           document.querySelector('.containerblue-mcminnville'),
+           document.querySelector('.cross-gold'),
+           document.querySelector('.cross-blue'),
+           document.querySelector('.minn-blue'),
+           document.querySelector('.minn-red'),
   ]);
 }

@@ -170,8 +170,8 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
          });
 
      //BLUE ROUTE
- const PassengeronBoardblueMC = document.getElementById('PassengeronBoard-blueMC');
- const PassengersonBoardblueMC = new Chart (PassengeronBoardblueMC, {
+ const AvgPassengerBlue = document.getElementById('minn-201-blue');
+ const AvgPassengersBlue = new Chart (AvgPassengerBlue, {
      type: 'line',
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
@@ -195,8 +195,41 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
      }
      });
 
- const AvgTripLengthblueMC = document.getElementById('AvgTripLength-blueMC');
- const AvgTripLengthsblueMC = new Chart (AvgTripLengthblueMC, {
+const PassengerRevenueBlue = document.getElementById('minn-202-blue');
+const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
+         type: 'pie',
+         data: {
+             labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
+             datasets: [{
+                 label: 'Blue Route',
+                 data: [121,190,111,152],
+                 backgroundColor: [
+                     'rgb(50,162,71,0.7)',
+                     'rgb(70,116,185,0.7)',
+                     'rgb(167,169,54,0.7)',
+                     'rgb(147,80,159,0.7)',
+                 ],
+                 borderColor: [
+                     'rgb(50,162,71)',
+                     'rgb(70,116,185)',
+                     'rgb(167,169,54)',
+                     'rgb(147,80,159)',
+                 ],
+                 borderWidth: 2
+             }]
+         },
+         options: {
+             responsive: true,
+             scales: {
+                 y: {
+                     beginAtZero: true
+                 }
+             }
+         }
+         });
+
+ const AvgTripBlue = document.getElementById('minn-203-blue');
+ const AvgTripsBlue = new Chart (AvgTripBlue, {
      type: 'line',
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
@@ -223,71 +256,8 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
      }
  });
 
- const PassengerRevenuePerHourblueMC = document.getElementById('PassengerRevenuePerHour-blueMC');
- const PassengersRevenuePerHourblueMC = new Chart (PassengerRevenuePerHourblueMC, {
-     type: 'pie',
-     data: {
-         labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
-         datasets: [{
-             label: 'Blue Route',
-             data: [121,190,111,152],
-             backgroundColor: [
-                 'rgb(50,162,71,0.7)',
-                 'rgb(70,116,185,0.7)',
-                 'rgb(167,169,54,0.7)',
-                 'rgb(147,80,159,0.7)',
-             ],
-             borderColor: [
-                 'rgb(50,162,71)',
-                 'rgb(70,116,185)',
-                 'rgb(167,169,54)',
-                 'rgb(147,80,159)',
-             ],
-             borderWidth: 2
-         }]
-     },
-     options: {
-         responsive: true,
-         scales: {
-             y: {
-                 beginAtZero: true
-             }
-         }
-     }
-     });
-
- const UnlinkedPassengerblueMC = document.getElementById('UnlinkedPassenger-blueMC');
- const UnlinkedPassengersblueMC = new Chart (UnlinkedPassengerblueMC, {
-     type: 'bar',
-     data: {
-         labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
-         datasets: [{
-             label: 'Blue Route',
-             data: [121,190,111,152,152,184,153,142,111,124,165,187],
-             backgroundColor: [
-             'rgb(37,79,162,0.7)'
-             ],
-             borderColor: [
-             'rgb(37,79,162)'
-             ],
-             borderWidth: 2,
-             borderRadius: 5,
-             borderSkipped: false,
-         }]
-     },
-     options: {
-         indexAxis: 'y',
-         responsive: true,
-         scales: {
-             y: {
-                 beginAtZero: true
-             }
-         }
-     }
-     });
-
- const StopsBoardedblueMC = document.getElementById('StopsBoarded-blueMC');
- const StopBoardedblueMC = new Chart (StopsBoardedblueMC, {
+ const StopBoardedBlue = document.getElementById('minn-204-blue');
+ const StopsBoardedBlue = new Chart (StopBoardedBlue, {
      type: 'bar',
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
@@ -315,8 +285,8 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
      }
      });
 
- const StopsAlightedblueMC = document.getElementById('StopsAlighted-blueMC');
- const StopAlightedblueMC = new Chart (StopsAlightedblueMC, {
+ const StopAlightedBlue = document.getElementById('minn-205-blue');
+ const StopsAlightedBlue = new Chart (StopAlightedBlue, {
      type: 'bar',
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
@@ -340,3 +310,33 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
          }
      }
      });
+
+const UnlinkedPassengerBlue = document.getElementById('minn-206-blue');
+const UnlinkedPassengersBlue = new Chart (UnlinkedPassengerBlue, {
+         type: 'bar',
+         data: {
+             labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
+             datasets: [{
+                 label: 'Blue Route',
+                 data: [121,190,111,152,152,184,153,142,111,124,165,187],
+                 backgroundColor: [
+                 'rgb(37,79,162,0.7)'
+                 ],
+                 borderColor: [
+                 'rgb(37,79,162)'
+                 ],
+                 borderWidth: 2,
+                 borderRadius: 5,
+                 borderSkipped: false,
+             }]
+         },
+         options: {
+             indexAxis: 'y',
+             responsive: true,
+             scales: {
+                 y: {
+                     beginAtZero: true
+                 }
+             }
+         }
+         });

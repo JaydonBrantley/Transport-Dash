@@ -34,12 +34,18 @@
     justify-content: flex-start;
 }
 
-.card{
-    width: max-content;
-    height: max-content;
+.container-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.swap-ckv{
+.filter{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+}
+
+.swap{
+    display: flex;
+    align-content: flex-end;
 }

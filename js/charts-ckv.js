@@ -258,7 +258,7 @@ const AvgTripsBlue = new Chart (AvgTripBlue, {
   });
 
 const StopBoardedBlue = document.getElementById('ckv-204-blue');
-const StopsBoardedBlue = new Chart (StopsBoardedBlue, {
+const StopsBoardedBlue = new Chart (StopBoardedBlue, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
@@ -287,7 +287,7 @@ const StopsBoardedBlue = new Chart (StopsBoardedBlue, {
   });
   
 const StopAlightedBlue = document.getElementById('ckv-205-blue');
-const StopsAlightedBlue = new Chart (StopsAlightedBlue, {
+const StopsAlightedBlue = new Chart (StopAlightedBlue, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],

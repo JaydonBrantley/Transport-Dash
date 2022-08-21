@@ -97,8 +97,22 @@
         <h2>Crossville</h2>
       </div>
 
+      <div class="container-buttons">
+        <div class="filter">
+          <button type="button" class="btn btn-outline-dark">3 Months</button>
+          <button type="button" class="btn btn-outline-dark">6 Months</button>
+          <button type="button" class="btn btn-outline-dark">1 year</button>
+        </div>
+        
+        <div class="swap">
+          <!--SWAP BTN-->
+          <button class="switch-btn btn swap-ckv" style="background-color:rgb(71,117,185)" id="swap-cross"><i class="fa fa-exchange" aria-hidden="true"></i></button>
+        </div>
+      </div>
+
       <!--GRAPHS-->
       <div class="content-graphs">
+        <!--BLUE ROUTE-->
         <div class="cross-blue graph-flexbox ml-4">
 
           <div class="card cross-101">
@@ -174,19 +188,87 @@
             
           </div>
         </div>
+        <!--GOLD ROUTE-->
+        <div class="cross-gold graph-flexbox ml-4" style="display:none">
+
+          <div class="card cross-101">
+            <div class="card-header">
+              <h3 class="card-title">Avg. Passenger</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="cross-201-gold" width="1100" height="200" style="background-color: white;"></canvas>
+            </div>
+          </div>
+  
+          <div class="card cross-102 ml-4">
+            <div class="card-header">
+              <h3 class="card-title">Passenger Revenue</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="cross-202-gold" width="100" height="100" style="background-color: white;"></canvas>
+            </div>
+          </div>
+  
+          <div class="card cross-103 ml-4">
+            <div class="card-header">
+              <h3 class="card-title">Avg. Trip Per Mile</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="cross-203-gold" width="450" height="200" style="background-color: white;"></canvas>
+            </div>
+          </div>
+  
+          <div class="card cross-104 ml-4">
+            <div class="card-header">
+              <h3 class="card-title">Stops Boarded</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="cross-204-gold" width="450" height="200" style="background-color: white;"></canvas>
+            </div>
+          </div>
+  
+          <div class="card cross-105 ml-4">
+            <div class="card-header">
+              <h3 class="card-title">Stops Alighted</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="cross-205-gold" width="450" height="200" style="background-color: white;"></canvas>
+            </div>
+          </div>
+  
+          <div class="card cross-106 ml-4">
+            <div class="card-header">
+              <h3 class="card-title">Unlinked Passenger</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="cross-206-gold" width="1480" height="200" style="background-color: white;"></canvas>
+            </div>
+          </div>
+
+        </div>
       </div>
-
-
-
-
-
-
-
     </div>
+  </div>
+  
 
-
-
-    </div>
     <script src="js/js_lib/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>

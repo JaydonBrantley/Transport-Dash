@@ -168,8 +168,8 @@ const UnlinkedPassengers = new Chart(UnlinkedPassenger, {
     });
 
     //GOLD ROUTE
-const PassengeronBoardgoldCR = document.getElementById('PassengeronBoard-goldCR');
-const PassengersonBoardgoldCR = new Chart (PassengeronBoardgoldCR, {
+const AvgPassengerGold = document.getElementById('cross-201-gold');
+const AvgPassengersGold = new Chart (AvgPassengerGold, {
     type: 'line',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -193,36 +193,8 @@ const PassengersonBoardgoldCR = new Chart (PassengeronBoardgoldCR, {
     }
     });
 
-const AvgTripLengthgoldCR = document.getElementById('AvgTripLength-goldCR');
-const AvgTripLengthsgoldCR = new Chart (AvgTripLengthgoldCR, {
-    type: 'line',
-    data: {
-        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
-        datasets: [{
-            label: 'Gold Route',
-            data: [19,10,20,14,7,12,6,18,13,1,20,3],
-            backgroundColor: [
-            'rgb(167,169,54,0.7)'
-            ],
-            borderColor: [
-            'rgb(167,169,54)'
-            ],
-            borderWidth: 2,
-            tension: 0.4,
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-const PassengerRevenuePerHourgoldCR = document.getElementById('PassengerRevenuePerHour-goldCR');
-const PassengersRevenuePerHourgoldCR = new Chart (PassengerRevenuePerHourgoldCR, {
+const PassengerRevenueGold = document.getElementById('cross-202-gold');
+const PassengersRevenueGold = new Chart (PassengerRevenueGold, {
     type: 'pie',
     data: {
         labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
@@ -254,38 +226,36 @@ const PassengersRevenuePerHourgoldCR = new Chart (PassengerRevenuePerHourgoldCR,
     }
     });
 
-const UnlinkedPassengergoldCR = document.getElementById('UnlinkedPassenger-goldCR');
-const UnlinkedPassengersgoldCR = new Chart (UnlinkedPassengergoldCR, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
-        datasets: [{
-            label: 'Gold Route',
-            data: [121,190,111,152,105,190,111,152,102,206,142],
-            backgroundColor: [
-            'rgb(167,169,54,0.7)'
-            ],
-            borderColor: [
-            'rgb(167,169,54)'
-            ],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        indexAxis: 'y',
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
+const AvgTripGold = document.getElementById('cross-203-gold');
+const AvgTripsGold = new Chart (AvgTripGold, {
+        type: 'line',
+        data: {
+            labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+            datasets: [{
+                label: 'Gold Route',
+                data: [19,10,20,14,7,12,6,18,13,1,20,3],
+                backgroundColor: [
+                'rgb(167,169,54,0.7)'
+                ],
+                borderColor: [
+                'rgb(167,169,54)'
+                ],
+                borderWidth: 2,
+                tension: 0.4,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
     });
 
-const StopsBoardedgoldCR = document.getElementById('StopsBoarded-goldCR');
-const StopBoardedgoldCR = new Chart (StopsBoardedgoldCR, {
+const StopBoardedGold = document.getElementById('cross-204-gold');
+const StopsBoardedGold = new Chart (StopBoardedGold, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -313,8 +283,8 @@ const StopBoardedgoldCR = new Chart (StopsBoardedgoldCR, {
     }
     });
 
-const StopsAlightedgoldCR = document.getElementById('StopsAlighted-goldCR');
-const StopAlightedgoldCR = new Chart (StopsAlightedgoldCR, {
+const StopAlightedGold = document.getElementById('cross-205-gold');
+const StopsAlightedGold = new Chart (StopAlightedGold, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
@@ -338,3 +308,33 @@ const StopAlightedgoldCR = new Chart (StopsAlightedgoldCR, {
         }
     }
     });
+
+const UnlinkedPassengerGold = document.getElementById('cross-206-gold');
+const UnlinkedPassengersGold = new Chart (UnlinkedPassengerGold, {
+        type: 'bar',
+        data: {
+            labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
+            datasets: [{
+                label: 'Gold Route',
+                data: [121,190,111,152,105,190,111,152,102,206,142],
+                backgroundColor: [
+                'rgb(167,169,54,0.7)'
+                ],
+                borderColor: [
+                'rgb(167,169,54)'
+                ],
+                borderWidth: 2,
+                borderRadius: 5,
+                borderSkipped: false,
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+        });

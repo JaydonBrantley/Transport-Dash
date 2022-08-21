@@ -77,7 +77,7 @@ $(document).on('click','#swap-cross',function(){
   let gold = "rgb(167,169,54)";
 
   if($('.cross-gold').css('display')=='none') {
-    setColor('#switchviews-crossville',gold);
+    setColor('#swap-cross',blue);
     $('.cross-blue').slideToggle('.cross-blue');
   setTimeout(function(){
     $('.cross-gold').slideToggle('.cross-gold');
@@ -85,7 +85,7 @@ $(document).on('click','#swap-cross',function(){
   }
   
   else if($('.cross-blue').css('display')=='none') {
-    setColor('#switchviews-crossville',blue);
+    setColor('#swap-cross',gold);
     $('.cross-gold').slideToggle('.cross-gold');
   setTimeout(function(){
     $('.cross-blue').slideToggle('.cross-blue');
@@ -102,7 +102,7 @@ $(document).on('click','#swap-minn',function(){
   let red = "rgb(238,29,35)";
 
   if($('.minn-blue').css('display')=='none') {
-    setColor('#switchviews-mcminnville',blue);
+    setColor('#swap-minn',red);
     $('.minn-red').slideToggle('.minn-red');
   setTimeout(function(){
     $('.minn-blue').slideToggle('.minn-blue');
@@ -110,7 +110,7 @@ $(document).on('click','#swap-minn',function(){
   }
   
   else if($('.minn-red').css('display')=='none') {
-    setColor('#switchviews-mcminnville',red);
+    setColor('#swap-minn',blue);
     $('.minn-blue').slideToggle('.minn-blue');
   setTimeout(function(){
     $('.minn-red').slideToggle('.minn-red');

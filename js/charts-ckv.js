@@ -1,12 +1,37 @@
 //GREEN ROUTES
+// Filter by Day
+const day = [
+    {x: Date.parse('2022-08-01 00:00: GMT-0500'), y: 50 },
+    {x: Date.parse('2022-08-02 00:00: GMT-0500'), y: 125 },
+    {x: Date.parse('2022-08-03 00:00: GMT-0500'), y: 75 },
+    {x: Date.parse('2022-08-04 00:00: GMT-0500'), y: 80 },
+    {x: Date.parse('2022-08-05 00:00: GMT-0500'), y: 130 },
+    {x: Date.parse('2022-08-06 00:00: GMT-0500'), y: 115 },
+    {x: Date.parse('2022-08-07 00:00: GMT-0500'), y: 60 },
+    {x: Date.parse('2022-08-08 00:00: GMT-0500'), y: 75 },
+    {x: Date.parse('2022-08-09 00:00: GMT-0500'), y: 45 },
+    {x: Date.parse('2022-08-10 00:00: GMT-0500'), y: 65 },
+    {x: Date.parse('2022-08-11 00:00: GMT-0500'), y: 70 },
+    {x: Date.parse('2022-08-12 00:00: GMT-0500'), y: 75 },
+];
+
+//Filter by Week
+const week = [
+    {x: Date.parse('2022-08-01 00:00: GMT-0500'), y: 50 },
+    {x: Date.parse('2022-08-07 00:00: GMT-0500'), y: 125 },
+    {x: Date.parse('2022-08-14 00:00: GMT-0500'), y: 75 },
+    {x: Date.parse('2022-08-21 00:00: GMT-0500'), y: 80 },
+    {x: Date.parse('2022-08-28 00:00: GMT-0500'), y: 45 },
+];
+
 var AvgPassenger = document.getElementById('ckv-101-green');
 var AvgPassengers = new Chart(AvgPassenger, {
     type: 'line',
     data: {
-        labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
+        //labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
         datasets: [{
             label: 'Green Route',
-            data: [206,249,143,127,242,145,112,200,290,180,233,270],
+            data: day,//[206,249,143,127,242,145,112,200,290,180,233,270],
             backgroundColor: 'rgb(50,162,71,0.7)',
             borderColor: 'rgb(50,162,71)',
             borderWidth: 2,
@@ -17,6 +42,12 @@ var AvgPassengers = new Chart(AvgPassenger, {
     options: {
         responsive: true,
         scales: {
+            x: {
+                type: 'time',
+                time: {
+                    unit: 'day'
+                }
+            },
             y: {
                 beginAtZero: true
             }
@@ -141,8 +172,8 @@ const StopAlighted = new Chart (StopsAlighted, {
     }
 });
 
-    const UnlinkedPassenger = document.getElementById('ckv-106-green');
-    const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
+const UnlinkedPassenger = document.getElementById('ckv-106-green');
+const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
     type: 'bar',
     data: {
         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
@@ -168,7 +199,21 @@ const StopAlighted = new Chart (StopsAlighted, {
             }
         }
     }
-    });
+});
+
+//FILTER GREEN CHARTS
+$(document).on('click','#btnDayCkv',function(){
+    AvgPassengers.config.options.scales.x.time.unit = 'day';
+    AvgPassengers.config.data.datasets[0].data = day;
+    AvgPassengers.update();
+});
+
+$(document).on('click','#btnWeekCkv',function(){
+    AvgPassengers.config.options.scales.x.time.unit = 'week';
+    AvgPassengers.config.data.datasets[0].data = week;
+    AvgPassengers.update();
+});
+
 
 //BLUE ROUTES
 const AvgPassengerBlue = document.getElementById('ckv-201-blue');

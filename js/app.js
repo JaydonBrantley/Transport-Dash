@@ -29,6 +29,7 @@ $(document).on('click','#btnLogout',function(){
       
 })
 
+
 //SAVE TO PDF
 $(document).on('click','#saveToPDF',function(){
   var ckvPage = document.getElementById('#ckv-page');

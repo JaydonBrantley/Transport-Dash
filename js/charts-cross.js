@@ -4,7 +4,6 @@ const AvgPassengers = new Chart(AvgPassenger, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Blue Route',
             data: [206,249,143,127,242,145,112,200,290,180,233,270],
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
@@ -14,6 +13,11 @@ const AvgPassengers = new Chart(AvgPassenger, {
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         responsive: true,
         scales: {
             y: {
@@ -25,28 +29,21 @@ const AvgPassengers = new Chart(AvgPassenger, {
 
 const PassengerRevenue = document.getElementById('cross-102-blue');
 const PassengersRevenue = new Chart(PassengerRevenue, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-            labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
             datasets: [{
-                label: 'Blue Route',
-                data: [10,20,30,40],
-                backgroundColor: [
-                    'rgb(50,162,71,0.7)',
-                    'rgb(70,116,185,0.7)',
-                    'rgb(167,169,54,0.7)',
-                    'rgb(147,80,159,0.7)',
-                ],
-                borderColor: [
-                    'rgb(50,162,71)',
-                    'rgb(70,116,185)',
-                    'rgb(167,169,54)',
-                    'rgb(147,80,159)',
-                ],
+                data: [10],
+                backgroundColor: ['rgb(70,116,185,0.7)'],
+                borderColor: ['rgb(70,116,185)',],
                 borderWidth: 2
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
             responsive: true,
             scales: {
                 y: {
@@ -62,7 +59,6 @@ const AvgTrips = new Chart(AvgTrip, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Blue Route',
             data: [19,10,20,14,7,12,6,18,13,1,20,3],
             backgroundColor: [
             'rgb(70,116,185,0.7)'
@@ -75,6 +71,11 @@ const AvgTrips = new Chart(AvgTrip, {
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         responsive: true,
         scales: {
             y: {
@@ -90,7 +91,6 @@ const StopsBoarded = new Chart(StopBoarded, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Blue Route',
             data: [121,190,111,152,162,190,111,152,102,206,142,125,123],
             backgroundColor: [
             'rgb(70,116,185,0.7)'
@@ -104,6 +104,11 @@ const StopsBoarded = new Chart(StopBoarded, {
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         responsive: true,
         scales: {
             y: {
@@ -119,7 +124,6 @@ const StopsAlighted = new Chart(StopAlighted, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Blue Route',
             data: [121,190,111,152,121,190,111,152,105,190,111,152,102,206,142],
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
@@ -127,6 +131,11 @@ const StopsAlighted = new Chart(StopAlighted, {
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         responsive: true,
         indexAxis: 'y',
         scales: {
@@ -143,7 +152,6 @@ const UnlinkedPassengers = new Chart(UnlinkedPassenger, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Blue Route',
             data: [121,190,111,152,102,206,142,125,123,167,182,],
             backgroundColor: [
             'rgb(70,116,185,0.7)'
@@ -157,6 +165,11 @@ const UnlinkedPassengers = new Chart(UnlinkedPassenger, {
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         indexAxis: 'y',
         responsive: true,
         scales: {
@@ -174,7 +187,6 @@ const AvgPassengersGold = new Chart (AvgPassengerGold, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Gold Route',
             data: [206,249,143,127,242,145,112,200,290,180,233,270],
             backgroundColor: ['rgb(167,169,54,0.7)'],
             borderColor: ['rgb(167,169,54)'],
@@ -184,7 +196,13 @@ const AvgPassengersGold = new Chart (AvgPassengerGold, {
         }]
     },
     options: {
-        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: false,
         scales: {
             y: {
                 beginAtZero: true
@@ -195,28 +213,22 @@ const AvgPassengersGold = new Chart (AvgPassengerGold, {
 
 const PassengerRevenueGold = document.getElementById('cross-202-gold');
 const PassengersRevenueGold = new Chart (PassengerRevenueGold, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
-        labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
         datasets: [{
-            label: 'Gold Route',
-            data: [10,20,30,40],
-            backgroundColor: [
-                'rgb(50,162,71,0.7)',
-                'rgb(70,116,185,0.7)',
-                'rgb(167,169,54,0.7)',
-                'rgb(147,80,159,0.7)',
-            ],
-            borderColor: [
-                'rgb(50,162,71)',
-                'rgb(70,116,185)',
-                'rgb(167,169,54)',
-                'rgb(147,80,159)',
-            ],
+            data: [10],
+            backgroundColor: ['rgb(167,169,54,0.7)',],
+            borderColor: ['rgb(167,169,54)'],
             borderWidth: 2
         }]
     },
     options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         responsive: true,
         scales: {
             y: {
@@ -232,7 +244,7 @@ const AvgTripsGold = new Chart (AvgTripGold, {
         data: {
             labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
             datasets: [{
-                label: 'Gold Route',
+
                 data: [19,10,20,14,7,12,6,18,13,1,20,3],
                 backgroundColor: [
                 'rgb(167,169,54,0.7)'
@@ -245,7 +257,13 @@ const AvgTripsGold = new Chart (AvgTripGold, {
             }]
         },
         options: {
-            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            responsive: false,
             scales: {
                 y: {
                     beginAtZero: true
@@ -260,7 +278,6 @@ const StopsBoardedGold = new Chart (StopBoardedGold, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Gold Route',
             data: [121,190,111,152,117,152,105,190,156,152,102,206,],
             backgroundColor: [
             'rgb(167,169,54,0.7)'
@@ -274,7 +291,13 @@ const StopsBoardedGold = new Chart (StopBoardedGold, {
         }]
     },
     options: {
-        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: false,
         scales: {
             y: {
                 beginAtZero: true
@@ -289,7 +312,6 @@ const StopsAlightedGold = new Chart (StopAlightedGold, {
     data: {
         labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
         datasets: [{
-            label: 'Gold Route',
             data: [121,190,171,152,112,152,105,190,161,152,102,206,],
             backgroundColor: ['rgb(167,169,54,0.7)'],
             borderColor: ['rgb(167,169,54)'],
@@ -299,8 +321,14 @@ const StopsAlightedGold = new Chart (StopAlightedGold, {
         }]
     },
     options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         indexAxis: 'y',
-        responsive: true,
+        responsive: false,
         scales: {
             y: {
                 beginAtZero: true
@@ -315,7 +343,6 @@ const UnlinkedPassengersGold = new Chart (UnlinkedPassengerGold, {
         data: {
             labels: ['HUB', 'KROGER', 'AUTUMN APTS', 'AZELEA APTS', 'RESCUE MISSION', 'HOUSING AUTHORITY', 'LIBRARY', 'TWIN OAKS APTS.', 'WALMART', 'PINEWOOD DRIVE', 'SATURDAYS TRIP'],
             datasets: [{
-                label: 'Gold Route',
                 data: [121,190,111,152,105,190,111,152,102,206,142],
                 backgroundColor: [
                 'rgb(167,169,54,0.7)'
@@ -329,8 +356,14 @@ const UnlinkedPassengersGold = new Chart (UnlinkedPassengerGold, {
             }]
         },
         options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
             indexAxis: 'y',
-            responsive: true,
+            responsive: false,
             scales: {
                 y: {
                     beginAtZero: true

@@ -5,7 +5,6 @@
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
          datasets: [{
-             label: 'Red Route',
              data: [206,249,143,127,242,145,112,200,290,180,233,270],
              backgroundColor: ['rgb(238,29,35,0.7)'],
              borderColor: ['rgb(238,29,35)'],
@@ -15,6 +14,11 @@
          }]
      },
      options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
          responsive: true,
          scales: {
              y: {
@@ -26,28 +30,21 @@
 
 const PassengerRevenue = document.getElementById('minn-102-red');
 const PassengersRevenue = new Chart (PassengerRevenue, {
-         type: 'pie',
+         type: 'doughnut',
          data: {
-             labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
              datasets: [{
-                 label: 'Red Route',
-                 data: [10,20,30,40],
-                 backgroundColor: [
-                     'rgb(50,162,71,0.7)',
-                     'rgb(70,116,185,0.7)',
-                     'rgb(167,169,54,0.7)',
-                     'rgb(147,80,159,0.7)',
-                 ],
-                 borderColor: [
-                     'rgb(50,162,71)',
-                     'rgb(70,116,185)',
-                     'rgb(167,169,54)',
-                     'rgb(147,80,159)',
-                 ],
+                 data: [10],
+                 backgroundColor: ['rgb(238,29,35,0.7)',],
+                 borderColor: ['rgb(238,29,35)',],
                  borderWidth: 2
              }]
          },
          options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
              responsive: true,
              scales: {
                  y: {
@@ -63,7 +60,6 @@ const AvgTrips = new Chart (AvgTrip, {
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
          datasets: [{
-             label: 'Red Route',
              data: [19,10,20,14,7,12,6,18,13,1,20,3],
              backgroundColor: [
              'rgb(238,29,35,0.7)'
@@ -76,6 +72,11 @@ const AvgTrips = new Chart (AvgTrip, {
          }]
      },
      options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
          responsive: true,
          scales: {
              y: {
@@ -91,7 +92,6 @@ const StopsBoarded = new Chart (StopBoarded, {
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
          datasets: [{
-             label: 'Red Route',
              data: [121,190,111,152,107,120,145,194,124,168],
              backgroundColor: [
              'rgb(238,29,35,0.7)'
@@ -105,6 +105,11 @@ const StopsBoarded = new Chart (StopBoarded, {
          }]
      },
      options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
          responsive: true,
          scales: {
              y: {
@@ -120,7 +125,6 @@ const StopsAlighted = new Chart (StopAlighted, {
      data: {
          labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
          datasets: [{
-             label: 'Red Route',
              data: [121,190,111,152,125,107,120,145,194,124,168,152,197],
              backgroundColor: ['rgb(238,29,35,0.7)'],
              borderColor: ['rgb(238,29,35)'],
@@ -130,6 +134,11 @@ const StopsAlighted = new Chart (StopAlighted, {
          }]
      },
      options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
          indexAxis: 'y',
          responsive: true,
          scales: {
@@ -146,7 +155,6 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
          data: {
              labels: ['HUB', 'WEST RIVERSIDE', 'SENIOR CITIZEN', 'BEERSHEBA TOWER', '3 START MALL', 'GOODWILL', 'SAVE A LOT', 'WALMART', 'CASCADE AVANUE', 'GILLEY POOL'],
              datasets: [{
-                 label: 'Red Route',
                  data: [121,190,111,152,107,120,145,194,124,168],
                  backgroundColor: [
                  'rgb(238,29,35,0.7)'
@@ -160,6 +168,11 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
              }]
          },
          options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
              responsive: true,
              scales: {
                  y: {
@@ -176,7 +189,6 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
          datasets: [{
-             label: 'Blue Route',
              data: [206,249,143,127,242,145,112,200,290,180,233,270],
              backgroundColor: ['rgb(37,79,162,0.7)'],
              borderColor: ['rgb(37,79,162)'],
@@ -186,7 +198,13 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
          }]
      },
      options: {
-         responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+         responsive: false,
          scales: {
              y: {
                  beginAtZero: true
@@ -197,28 +215,23 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
 
 const PassengerRevenueBlue = document.getElementById('minn-202-blue');
 const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
-         type: 'pie',
+         type: 'doughnut',
          data: {
              labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
              datasets: [{
-                 label: 'Blue Route',
-                 data: [121,190,111,152],
-                 backgroundColor: [
-                     'rgb(50,162,71,0.7)',
-                     'rgb(70,116,185,0.7)',
-                     'rgb(167,169,54,0.7)',
-                     'rgb(147,80,159,0.7)',
-                 ],
-                 borderColor: [
-                     'rgb(50,162,71)',
-                     'rgb(70,116,185)',
-                     'rgb(167,169,54)',
-                     'rgb(147,80,159)',
-                 ],
+                 data: [121],
+                 backgroundColor: ['rgb(37,79,162,0.7)',],
+                 borderColor: ['rgb(37,79,162)'],
                  borderWidth: 2
              }]
          },
          options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
              responsive: true,
              scales: {
                  y: {
@@ -234,7 +247,6 @@ const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
          datasets: [{
-             label: 'Blue Route',
              data: [19,10,20,14,7,12,6,18,13,1,20,3],
              backgroundColor: [
              'rgb(37,79,162,0.7)'
@@ -247,7 +259,13 @@ const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
          }]
      },
      options: {
-         responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+         responsive: false,
          scales: {
              y: {
                  beginAtZero: true
@@ -262,7 +280,6 @@ const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
          datasets: [{
-             label: 'Blue Route',
              data: [121,190,111,152,152,184,153,142,111,124,165,187],
              backgroundColor: [
              'rgb(37,79,162,0.7)'
@@ -276,7 +293,13 @@ const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
          }]
      },
      options: {
-         responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+         responsive: false,
          scales: {
              y: {
                  beginAtZero: true
@@ -291,7 +314,6 @@ const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
      data: {
          labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
          datasets: [{
-             label: 'Blue Route',
              data: [121,190,111,152,184,153,142,111,124,165,187,198],
              backgroundColor: ['rgb(37,79,162,0.7)'],
              borderColor: ['rgb(37,79,162)'],
@@ -301,8 +323,14 @@ const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
          }]
      },
      options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
          indexAxis: 'y',
-         responsive: true,
+         responsive: false,
          scales: {
              y: {
                  beginAtZero: true
@@ -317,7 +345,6 @@ const UnlinkedPassengersBlue = new Chart (UnlinkedPassengerBlue, {
          data: {
              labels: ['HUB', 'REBEL HILL', 'WESTEDN AVENUE', 'CASCADE AVENUE', 'WALMART', 'SAVE A LOT', '3 STAR MALL', 'BEERSHEBA TOWERS', 'DOLLAR STORE-BEERSHEBA HWY', 'WEST RIVIERSIDE'],
              datasets: [{
-                 label: 'Blue Route',
                  data: [121,190,111,152,152,184,153,142,111,124,165,187],
                  backgroundColor: [
                  'rgb(37,79,162,0.7)'
@@ -331,8 +358,14 @@ const UnlinkedPassengersBlue = new Chart (UnlinkedPassengerBlue, {
              }]
          },
          options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
              indexAxis: 'y',
-             responsive: true,
+             responsive: false,
              scales: {
                  y: {
                      beginAtZero: true

@@ -38,9 +38,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-info elevation-4" style="background-color: #121212;">
         <a href="index.html" class="brand-link">
-          <img src="#" class="brand-image img-circle elevation-3"
-               style="opacity: .8">
-          <span class="brand-text font-weight-light">UCHRA</span>
+          <img src="images/publictransportation.png" class="brand-image elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light" style="color: black;">UCHRA</span>
         </a>
         <div class="sidebar">
           <nav class="mt-2">
@@ -55,7 +54,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item active">
-                    <a href="Cookeville.html" class="nav-link">
+                    <a href="index.html" class="nav-link">
                         <i class="far fa-city"></i><p> Cookeville</p>
                     </a>
                   </li>
@@ -76,7 +75,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="TnTech.html" class="nav-link active bg-info">
-                        <i class="fal fa-university"></i><p> Tennesseee Tech</p>
+                      <i class="far fa-city"></i><p> Tennesseee Tech</p>
                     </a>
                   </li>
                 </ul>
@@ -92,11 +91,19 @@
       <h2>Tennessee Tech</h2>
     </div>
 
+    <div class="container-buttons ml-3 mb-3">
+      <div class="filter">
+        <!--TIME FILTER-->
+        <button type="button" id="btnDayCkv" class="btn btn-outline-dark">Day</button>
+        <button type="button" id="btnWeekCkv" class="btn btn-outline-dark">Week</button>
+        <button type="button" id="btnYearCkv" class="btn btn-outline-dark">Year</button>
+      </div>
+    </div>
+
     <!--GRAPHS-->
     <div class="content-graphs">
-      <div class="tech-gold graph-flexbox ml-4">
-
-        <div class="card alg-101">
+      <div class="tech-gold graph-flexbox">
+        <div class="card ml-4">
           <div class="card-header">
             <h3 class="card-title">Avg. Passenger</h3>
             <div class="card-tools">
@@ -104,11 +111,10 @@
             </div>
           </div>
           <div class="card-body">
-              <canvas class="canvas" id="tech-101-gold" width="1100" height="200" style="background-color: white;"></canvas>
+              <canvas class="canvas" id="tech-101-gold" width="1235" height="190" style="background-color: white;"></canvas>
           </div>
         </div>
-
-        <div class="card alg-102 ml-4">
+        <div class="card ml-4">
           <div class="card-header">
             <h3 class="card-title">Passenger Revenue</h3>
             <div class="card-tools">
@@ -116,11 +122,10 @@
             </div>
           </div>
           <div class="card-body">
-              <canvas class="canvas" id="tech-102-gold" width="100" height="100" style="background-color: white;"></canvas>
+              <canvas class="canvas" id="tech-102-gold" width="160" height="90" style="background-color: white;"></canvas>
           </div>
         </div>
-
-        <div class="card alg-103 ml-4">
+        <div class="card  ml-4">
           <div class="card-header">
             <h3 class="card-title">Avg. Trip Per Mile</h3>
             <div class="card-tools">
@@ -128,11 +133,10 @@
             </div>
           </div>
           <div class="card-body">
-              <canvas class="canvas" id="tech-103-gold" width="450" height="200" style="background-color: white;"></canvas>
+              <canvas class="canvas" id="tech-103-gold" width="450" height="190" style="background-color: white;"></canvas>
           </div>
         </div>
-
-        <div class="card alg-104 ml-4">
+        <div class="card  ml-4">
           <div class="card-header">
             <h3 class="card-title">Stops Boarded</h3>
             <div class="card-tools">
@@ -140,11 +144,10 @@
             </div>
           </div>
           <div class="card-body">
-              <canvas class="canvas" id="tech-104-gold" width="450" height="200" style="background-color: white;"></canvas>
+              <canvas class="canvas" id="tech-104-gold" width="450" height="190" style="background-color: white;"></canvas>
           </div>
         </div>
-
-        <div class="card alg-105 ml-4">
+        <div class="card  ml-4">
           <div class="card-header">
             <h3 class="card-title">Stops Alighted</h3>
             <div class="card-tools">
@@ -152,11 +155,10 @@
             </div>
           </div>
           <div class="card-body">
-              <canvas class="canvas" id="tech-105-gold" width="450" height="200" style="background-color: white;"></canvas>
+              <canvas class="canvas" id="tech-105-gold" width="450" height="190" style="background-color: white;"></canvas>
           </div>
         </div>
-
-        <div class="card alg-106 ml-4">
+        <div class="card  ml-4">
           <div class="card-header">
             <h3 class="card-title">Unlinked Passenger</h3>
             <div class="card-tools">
@@ -164,11 +166,10 @@
             </div>
           </div>
           <div class="card-body">
-              <canvas class="canvas" id="tech-106-gold" width="1480" height="200" style="background-color: white;"></canvas>
+              <canvas class="canvas" id="tech-106-gold" width="1480" height="190" style="background-color: white;"></canvas>
           </div>
-          
         </div>
-      </div>
+      </div><!--END GREEN ROUTE-->
 
 
     </div>

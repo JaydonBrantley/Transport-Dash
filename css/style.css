@@ -17,6 +17,11 @@ img{
     height: 100;
 }
 
+.sticky{
+    position: sticky;
+    top: 0;
+}
+
 .content-title{
     display: flex;
     justify-content: center;

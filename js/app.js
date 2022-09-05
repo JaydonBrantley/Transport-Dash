@@ -53,7 +53,7 @@ $(document).on('click','#swap-ckv',function(){
   let green = "rgb(50,162,71)";
 
   if($('.ckv-blue').css('display')=='none') {
-    setColor('#swap-ckv',green);
+    setColor('#swap-ckv',/*green*/);
     $('.ckv-green').slideToggle('.ckv-green');
   setTimeout(function(){
     $('.ckv-blue').slideToggle('.ckv-blue');
@@ -61,8 +61,32 @@ $(document).on('click','#swap-ckv',function(){
   }
   
   else if($('.ckv-green').css('display')=='none') {
-    setColor('#swap-ckv',blue);
+    setColor('#swap-ckv',/*blue*/);
     $('.ckv-blue').slideToggle('.ckv-blue');
+  setTimeout(function(){
+    $('.ckv-green').slideToggle('.ckv-green');
+  }, 500);
+  };
+})
+
+//SWITCH VIEWS BTN-COOKEVILLE
+$(document).on('click','#compare-ckv',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  let blue = "rgb(71,117,185)";
+  let green = "rgb(50,162,71)";
+
+  if($('.compare-ckv').css('display')=='none') {
+    $('.ckv-green').slideToggle('.ckv-green');
+  setTimeout(function(){
+    $('.compare-ckv').slideToggle('.compare-ckv');
+  }, 500);
+  }
+  
+  else if($('.ckv-green').css('display')=='none') {
+    setColor('#swap-ckv',/*blue*/);
+    $('.compare-ckv').slideToggle('.compare-ckv');
   setTimeout(function(){
     $('.ckv-green').slideToggle('.ckv-green');
   }, 500);
@@ -78,7 +102,7 @@ $(document).on('click','#swap-cross',function(){
   let gold = "rgb(167,169,54)";
 
   if($('.cross-gold').css('display')=='none') {
-    setColor('#swap-cross',blue);
+    setColor('#swap-cross',/*blue*/);
     $('.cross-blue').slideToggle('.cross-blue');
   setTimeout(function(){
     $('.cross-gold').slideToggle('.cross-gold');
@@ -86,7 +110,7 @@ $(document).on('click','#swap-cross',function(){
   }
   
   else if($('.cross-blue').css('display')=='none') {
-    setColor('#swap-cross',gold);
+    setColor('#swap-cross',/*gold*/);
     $('.cross-gold').slideToggle('.cross-gold');
   setTimeout(function(){
     $('.cross-blue').slideToggle('.cross-blue');
@@ -103,7 +127,7 @@ $(document).on('click','#swap-minn',function(){
   let red = "rgb(238,29,35)";
 
   if($('.minn-blue').css('display')=='none') {
-    setColor('#swap-minn',red);
+    setColor('#swap-minn',/*red*/);
     $('.minn-red').slideToggle('.minn-red');
   setTimeout(function(){
     $('.minn-blue').slideToggle('.minn-blue');
@@ -111,7 +135,7 @@ $(document).on('click','#swap-minn',function(){
   }
   
   else if($('.minn-red').css('display')=='none') {
-    setColor('#swap-minn',blue);
+    setColor('#swap-minn',/*blue*/);
     $('.minn-blue').slideToggle('.minn-blue');
   setTimeout(function(){
     $('.minn-red').slideToggle('.minn-red');

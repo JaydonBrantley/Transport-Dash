@@ -373,3 +373,215 @@ const UnlinkedPassengersBlue = new Chart (UnlinkedPassengerBlue, {
              }
          }
          });
+
+//COMPARE ROUTES
+  const AvgPassengerBlue3 = document.getElementById('minn-301-compare');
+const AvgPassengersBlue3 = new Chart (AvgPassengerBlue3, {
+type: 'line',
+data: {
+    labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+    datasets: [{
+        label: 'Red Route',
+        data: [206,249,143,127,242,145,112,200,290,180,233,270],
+        backgroundColor: ['rgb(238,29,35,0.7)'],
+        borderColor: ['rgb(238,29,35)'],
+        borderWidth: 2,
+        tension: 0.4,
+    },
+    {
+        label: 'Blue Route',
+        data: [106,149,43,27,142,45,12,100,190,80,133,170],
+        backgroundColor: ['rgb(37,79,162,0.7)'],
+        borderColor: ['rgb(37,79,162)'],
+        borderWidth: 2,
+        tension: 0.4,
+    }]
+},
+options: {
+    maintainAspectRatio: false,
+    plugins: {
+    },
+    responsive: false,
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    }
+}
+});
+
+const PassengerRevenueBlue3 = document.getElementById('minn-302-compare');
+const PassengersRevenueBlue3 = new Chart (PassengerRevenueBlue3, {
+    type: 'doughnut',
+    data: {
+        label: 'Red Route',
+        datasets: [{
+            data: [10],
+            backgroundColor: ['rgb(238,29,35,0.7)',],
+            borderColor: ['rgb(238,29,35)',],
+            borderWidth: 2
+        },
+        {
+            label: 'Blue Route',
+            data: [20],
+            backgroundColor: ['rgb(37,79,162,0.7)'],
+            borderColor: ['rgb(37,79,162)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+        },
+      responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+            }
+        }
+    }
+    });
+
+const AvgTripBlue3 = document.getElementById('minn-303-compare');
+const AvgTripsBlue3 = new Chart (AvgTripBlue3, {
+    type: 'line',
+    data: {
+        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+        datasets: [{
+            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+            backgroundColor: ['rgb(238,29,35,0.7)'],
+            borderColor: ['rgb(238,29,35)'],
+            borderWidth: 2,
+            tension: 0.4,
+        },
+        {
+            label: 'Green Route',
+            data: [9,5,2,10,5,2,3,8,7,1,20,6],
+            backgroundColor: ['rgb(37,79,162,0.7)'],
+            borderColor: ['rgb(37,79,162)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+        },
+        responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+  });
+
+const StopBoardedBlue3 = document.getElementById('minn-304-compare');
+const StopsBoardedBlue3 = new Chart (StopBoardedBlue3, {
+    type: 'bar',
+    data: {
+        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+        datasets: [{
+            data: [19,10,20,14,7,12,6,18,13,3,20,3],
+            backgroundColor: ['rgb(238,29,35,0.7)'],
+            borderColor: ['rgb(238,29,35)'],
+            borderWidth: 2,
+            borderRadius: 5,
+            borderSkipped: false,
+        },
+        {
+            label: 'Green Route',
+            data: [9,1,10,7,3,6,3,8,4,1,10,1],
+            backgroundColor: ['rgb(37,79,162,0.7)'],
+            borderColor: ['rgb(37,79,162)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+        },
+        responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+  });
+  
+const StopAlightedBlue3 = document.getElementById('minn-305-compare');
+const StopsAlightedBlue3 = new Chart (StopAlightedBlue3, {
+    type: 'bar',
+    data: {
+        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+        datasets: [{
+            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+            backgroundColor: ['rgb(238,29,35,0.7)'],
+            borderColor: ['rgb(238,29,35)'],
+            borderWidth: 2,
+            borderRadius: 5,
+            borderSkipped: false,
+        },
+        {
+            label: 'Green Route',
+            data: [9,5,10,7,4,6,3,8,7,4,10,1],
+            backgroundColor: ['rgb(37,79,162,0.7)'],
+            borderColor: ['rgb(37,79,162,0.7)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+        },
+        indexAxis: 'y',
+        responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+  });
+
+const UnlinkedPassengerBlue3 = document.getElementById('minn-306-compare');
+const UnlinkedPassengersBlue3 = new Chart (UnlinkedPassengerBlue3, {
+    type: 'bar',
+    data: {
+        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+        datasets: [{
+            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+            backgroundColor: ['rgb(238,29,35,0.7)'],
+            borderColor: ['rgb(238,29,35)'],
+            borderWidth: 2,
+            borderRadius: 5,
+            borderSkipped: false,
+        },
+        {
+            label: 'Green Route',
+            data: [9,5,10,7,3,6,3,8,3,4,10,3],
+            backgroundColor: ['rgb(37,79,162,0.7)'],
+            borderColor: ['rgb(37,79,162)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+  });

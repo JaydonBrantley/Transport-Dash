@@ -36,7 +36,6 @@ var AvgPassengers = new Chart(AvgPassenger, {
             borderColor: 'rgb(50,162,71)',
             borderWidth: 2,
             tension: 0.4,
-            fill: true,
         }]
     },
     options: {
@@ -254,7 +253,6 @@ data: {
         borderColor: ['rgb(70,116,185)'],
         borderWidth: 2,
         tension: 0.4,
-        fill: true,
     }]
 },
 options: {
@@ -450,7 +448,6 @@ data: {
         borderColor: ['rgb(70,116,185)'],
         borderWidth: 2,
         tension: 0.4,
-        fill: true,
     },
     {
         label: 'Green Route',
@@ -459,7 +456,6 @@ data: {
         borderColor: ['rgb(50,162,71)'],
         borderWidth: 2,
         tension: 0.4,
-        fill: true,
     }]
 },
 options: {
@@ -493,7 +489,6 @@ const PassengersRevenueBlue2 = new Chart (PassengerRevenueBlue2, {
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
             tension: 0.4,
-            fill: true,
         }]
     },
     options: {
@@ -567,7 +562,6 @@ const StopsBoardedBlue2 = new Chart (StopBoardedBlue2, {
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
             tension: 0.4,
-            fill: true,
         }]
     },
     options: {
@@ -603,7 +597,6 @@ const StopsAlightedBlue2 = new Chart (StopAlightedBlue2, {
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
             tension: 0.4,
-            fill: true,
         }]
     },
     options: {
@@ -644,7 +637,6 @@ const UnlinkedPassengersBlue2 = new Chart (UnlinkedPassengerBlue2, {
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
             tension: 0.4,
-            fill: true,
         }]
     },
     options: {

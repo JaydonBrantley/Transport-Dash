@@ -69,7 +69,7 @@ $(document).on('click','#swap-ckv',function(){
   };
 })
 
-//SWITCH VIEWS BTN-COOKEVILLE
+//COMPARE VIEWS BTN-COOKEVILLE
 $(document).on('click','#compare-ckv',function(){
   let delayFirst = 200;
   let delaySecond = 200;
@@ -118,6 +118,31 @@ $(document).on('click','#swap-cross',function(){
   };
 })
 
+//COMPARE VIEWS BTN-CROSSVILLE
+$(document).on('click','#compare-cross',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  let blue = "rgb(71,117,185)";
+  let gold = "rgb(167,169,54)";
+
+  if($('.compare-cross').css('display')=='none') {
+    setColor('#swap-cross',/*blue*/);
+    $('.cross-blue').slideToggle('.cross-blue');
+  setTimeout(function(){
+    $('.compare-cross').slideToggle('.compare-cross');
+  }, 500);
+  }
+  
+  else if($('.cross-blue').css('display')=='none') {
+    setColor('#swap-cross',/*gold*/);
+    $('.compare-cross').slideToggle('.compare-cross');
+  setTimeout(function(){
+    $('.cross-blue').slideToggle('.cross-blue');
+  }, 500);
+  };
+})
+
 //SWITCH VIEWS BTN-MCMINNVILLE
 $(document).on('click','#swap-minn',function(){
   let delayFirst = 200;
@@ -137,6 +162,31 @@ $(document).on('click','#swap-minn',function(){
   else if($('.minn-red').css('display')=='none') {
     setColor('#swap-minn',/*blue*/);
     $('.minn-blue').slideToggle('.minn-blue');
+  setTimeout(function(){
+    $('.minn-red').slideToggle('.minn-red');
+  }, 500);
+  };
+})
+
+//COMPARE VIEWS BTN-MCMINNVILLE
+$(document).on('click','#compare-minn',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  let blue = "rgb(71,117,185)";
+  let red = "rgb(238,29,35)";
+
+  if($('.compare-minn').css('display')=='none') {
+    setColor('#swap-minn',/*red*/);
+    $('.minn-red').slideToggle('.minn-red');
+  setTimeout(function(){
+    $('.compare-minn').slideToggle('.compare-minn');
+  }, 500);
+  }
+  
+  else if($('.minn-red').css('display')=='none') {
+    setColor('#swap-minn',/*blue*/);
+    $('.compare-minn').slideToggle('.compare-minn');
   setTimeout(function(){
     $('.minn-red').slideToggle('.minn-red');
   }, 500);

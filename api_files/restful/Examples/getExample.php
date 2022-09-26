@@ -2,9 +2,9 @@
 
 // Credentials
 $dbhost = '';
-$dbhost = '';
-$dbhost = '';
-$dbhost = '';
+$dbuser = '';
+$dbpass = '';
+$dbname = '';
 
 
 // 1. Create a database connection

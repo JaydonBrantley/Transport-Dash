@@ -26,4 +26,12 @@ mysqli_free_result($result_set);
 mysqli_close($connection);
 
 
+// Functions
+
+function getRoutes(){
+    global $connection;
+    $query = "SELECT * FROM tblRoutes";
+    $array
+}
+
 ?>

@@ -28,43 +28,49 @@ mysqli_close($connection);
 
 // Functions
 
+// GET Routes
 function getRoutes(){
     $query = "SELECT * FROM tblRoutes";
     $result_set = mysqli_query($connection, $query);
     echo json_encode($result_set);
 }
 
+// GET Employees
 function getEmployees(){
     $strQuery = "SELECT * FROM tblEmployees";
     $arrEmployees = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
+// GET Vans
 function getVans(){
     $strQuery = "SELECT * FROM tblVans";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
+// GET Stops
 function getStops(){
     $strQuery = "SELECT * FROM tblStops";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
+// GET Admins
 function getAdmins(){
     $strQuery = "SELECT * FROM tblAdmins";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
+// GET Customers
 function getCustomers(){
     $strQuery = "SELECT * FROM tblCustomers";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
-
+// VERIFY Admin Login
 function verifyAdmin($strEmpEmail, $strAdminPass){
     $strQueryEmail = "SELECT Emp_Email FROM tblEmployees WHERE tblEmployees.Emp_Email = ? AND Admin_Password = ?";
     $strQueryPassword = "SELECT Admin_Password FROM tblEmployees WHERE tblEmployees.Emp_Email = ? AND Admin_Password = ?";

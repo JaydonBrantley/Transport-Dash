@@ -8,45 +8,109 @@ $dbhost = '';
 
 
 // 1. Create a database connection
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+//$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 // 2. Perform database query
-$query = "SELECT * FROM subjects ";
-$result_set = mysqli_query($connection, $query);
+//$query = "SELECT * FROM subjects ";
+//$result_set = mysqli_query($connection, $query);
 
 // 3. Use returned data
-while($subject = mysqli_fetch_assoc($result_set)) {
-    echo $subject["menu_name"] . "<br />";
-};
+//while($subject = mysqli_fetch_assoc($result_set)) {
+//    echo $subject["menu_name"] . "<br />";
+//};
 
 // 4. Release returned data
-mysqli_free_result($result_set);
+//mysqli_free_result($result_set);
 
 // 5. Close database connection
-mysqli_close($connection);
+//mysqli_close($connection);
 
+
+
+$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 // Functions
 
 // GET Routes
-function getRoutes(){
-    $query = "SELECT * FROM tblRoutes";
-    $result_set = mysqli_query($connection, $query);
-    echo json_encode($result_set);
+function getRoutes($strRouteID){
+    global $connection;
+    $strQuery = "SELECT * FROM tblRoutes WHERE Route_ID = ?";
+
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
+
 }
 
 // GET Employees
 function getEmployees(){
     $strQuery = "SELECT * FROM tblEmployees";
-    $arrEmployees = mysqli_query($connection, $strQuery);
+    $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
 // GET Vans
 function getVans(){
-    $strQuery = "SELECT * FROM tblVans";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    global $connection;
+    $strQuery = "SELECT * FROM tblVans WHERE Route_ID = ?";
+
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Stops
@@ -111,8 +175,15 @@ function verifyCustomer($strCustID){
     }
 }
 
+// NEW Customer
 function newCustomer(){
     $strQuery = "INSERT INTO tblCustomers VALUES (?,?,?,?,?)";
+    $result_set = mysqli_query($connection, $strQuery);
+}
+
+// NEW Admin
+function newAdmin(){
+    $strQuery = "INSERT INTO tblAdmins VALUES (?,?,?,?,?)";
     $result_set = mysqli_query($connection, $strQuery);
 }
 

@@ -70,6 +70,21 @@ function getCustomers(){
     echo json_encode($result_set);
 }
 
+// GET Points
+function getPoints(){
+    $strQuery = "SELECT Reward_Progress FROM tblCustomers WHERE Cell_Phone_Num = ?";
+    $result_set = mysqli_query($connection, $strQuery);
+    echo json_encode($result_set);
+}
+
+// GET Discount
+function getDiscount(){
+    $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblCustomers.Discount_Status, tblDiscount.Discount_Code, tblDiscount_Percent.Half_off, tblDiscount_Percent.Quarter_off, tblDiscount_Percent.Tenth_off, tblDiscount_Percent.Fifth_off FROM tblCustomers, tblDiscount, tblDiscount_Percent WHERE tblCustomers.Cell_Phone_Num = ? LEFT JOIN tblDiscount ON tblCustomers.Discount_Status = tblDiscount.Discount_Status LEFT JOIN tblDiscount_Percent ON tblDiscount.Discount_Code = tblDiscount_Percent.Discount_Code";
+    $result_set = mysqli_query($connection, $strQuery);
+    echo json_encode($result_set);
+
+}
+
 // VERIFY Admin Login
 function verifyAdmin($strEmpEmail, $strAdminPass){
     $strQueryEmail = "SELECT Emp_Email FROM tblEmployees WHERE tblEmployees.Emp_Email = ? AND Admin_Password = ?";
@@ -80,6 +95,29 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
         
     }
 }
+
+// VERIFY Session
+function verifyAdminSession($strAdminSessionID){
+    $strQuery = "SELECT SessionID FROM tblCurrentSessions WHERE SessionID = ? AND StartTime >= NOW() - INTERVAL 12 HOUR";
+
+}
+
+// VERIFY Customer
+function verifyCustomer($strCustID){
+    $strQuery = "SELECT Cell_Phone_Num FROM tblCustomers WHERE Cell_Phone_Num = ?";
+    $result_set = mysqli_query($connection, $strQuery);
+    if($result_set == $strCustID){
+
+    }
+}
+
+function newCustomer(){
+    $strQuery = "INSERT INTO tblCustomers VALUES (?,?,?,?,?)";
+    $result_set = mysqli_query($connection, $strQuery);
+}
+
+
+
 
 
 ?>

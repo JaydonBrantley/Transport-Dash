@@ -34,7 +34,7 @@ $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 // GET Routes
 function getRoutes($strRouteID){
     global $connection;
-    $strQuery = "SELECT * FROM tblRoutes WHERE Route_ID = ?";
+    $strQuery = "SELECT Route_ID FROM tblRoutes";
 
     if($connection->connect_errno) {
         $blnError = "true";
@@ -71,7 +71,7 @@ function getRoutes($strRouteID){
 
 // GET Employees
 function getEmployees(){
-    $strQuery = "SELECT * FROM tblEmployees";
+    $strQuery = "SELECT Fname, Lname, Title, Emp_Email, Phone_Num, Emp_Status FROM tblEmployees";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
@@ -79,7 +79,7 @@ function getEmployees(){
 // GET Vans
 function getVans(){
     global $connection;
-    $strQuery = "SELECT * FROM tblVans WHERE Route_ID = ?";
+    $strQuery = "SELECT tblVans.Van_ID, tblVans.Accessibility, tblVans.Passenger_Limit, tblVans.Year, tblVans.Operational, tblVans.Description FROM tblVans WHERE tblVan_Route.Route_ID = ? LEFT JOIN tblVan_Route ON tblVans.Van_ID = tblVan_Route.Van_ID";
 
     if($connection->connect_errno) {
         $blnError = "true";
@@ -115,21 +115,28 @@ function getVans(){
 
 // GET Stops
 function getStops(){
-    $strQuery = "SELECT * FROM tblStops";
+    $strQuery = "SELECT Stop_ID, Pickup_Time, Dropoff_Time, Passenger_Boarded, Passenger_Alighted FROM tblStops WHERE Route_ID = ?";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
 // GET Admins
 function getAdmins(){
-    $strQuery = "SELECT * FROM tblAdmins";
+    $strQuery = "SELECT * FROM tblEmployees WHERE Title = 'Admin'";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }
 
 // GET Customers
 function getCustomers(){
-    $strQuery = "SELECT * FROM tblCustomers";
+    $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblCustomers.Discount_Status, tblCustomers.Special_req, tblCustomers.Age_Category, tblCustomers.Reward_Rides, tblCustomers.Total_Rides, tblCustomers.Reward_Progress FROM tblCustomers";
+    $result_set = mysqli_query($connection, $strQuery);
+    echo json_encode($result_set);
+}
+
+// GET Customer Services
+function getCustomerServices(){
+    $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblOther_Srvcs.Ride_UC, tblOther_Srvcs.Connect_UC, tblOther_Srvcs.Pickup_UC, tblOther_Srvcs.Shuttle_UC, tblOther_Srvcs.Go_UC, tblOther_Srvcs.Job_Access, tblOther_Srvcs.Ride_to_Recovery FROM tblCustomers LEFT JOIN tblCustomer_Services ON tblCustomers.Cell_Phone_Num = tblCustomer_Services.Cell_Phone_Num LEFT JOIN tblOther_Srvcs ON tblCustomer_Services.Srvc_ID = tblOther_Srvcs.Srvcs_ID";
     $result_set = mysqli_query($connection, $strQuery);
     echo json_encode($result_set);
 }

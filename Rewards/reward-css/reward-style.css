@@ -5,6 +5,7 @@
     font-weight: 300;
 }
 
+/*PHONE NUMBER PAGE*/
 .wrapper{
     display: flex;
     justify-content: center;
@@ -24,4 +25,12 @@
 .buttons{
     display: flex;
     justify-content: center;
+}
+
+/*USER PROFILE PAGE*/
+
+#id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

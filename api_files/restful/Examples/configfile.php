@@ -71,9 +71,39 @@ function getRoutes($strRouteID){
 
 // GET Employees
 function getEmployees(){
+    global $connection;
     $strQuery = "SELECT Fname, Lname, Title, Emp_Email, Phone_Num, Emp_Status FROM tblEmployees";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Vans
@@ -115,44 +145,224 @@ function getVans(){
 
 // GET Stops
 function getStops(){
+    global $connection;
     $strQuery = "SELECT Stop_ID, Pickup_Time, Dropoff_Time, Passenger_Boarded, Passenger_Alighted FROM tblStops WHERE Route_ID = ?";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Admins
 function getAdmins(){
+    global $connection;
     $strQuery = "SELECT * FROM tblEmployees WHERE Title = 'Admin'";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Customers
 function getCustomers(){
+    global $connection;
     $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblCustomers.Discount_Status, tblCustomers.Special_req, tblCustomers.Age_Category, tblCustomers.Reward_Rides, tblCustomers.Total_Rides, tblCustomers.Reward_Progress FROM tblCustomers";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Customer Services
 function getCustomerServices(){
+    global $connection;
     $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblOther_Srvcs.Ride_UC, tblOther_Srvcs.Connect_UC, tblOther_Srvcs.Pickup_UC, tblOther_Srvcs.Shuttle_UC, tblOther_Srvcs.Go_UC, tblOther_Srvcs.Job_Access, tblOther_Srvcs.Ride_to_Recovery FROM tblCustomers LEFT JOIN tblCustomer_Services ON tblCustomers.Cell_Phone_Num = tblCustomer_Services.Cell_Phone_Num LEFT JOIN tblOther_Srvcs ON tblCustomer_Services.Srvc_ID = tblOther_Srvcs.Srvcs_ID";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Points
 function getPoints(){
+    global $connection;
     $strQuery = "SELECT Reward_Progress FROM tblCustomers WHERE Cell_Phone_Num = ?";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 }
 
 // GET Discount
 function getDiscount(){
+    global $connection;
     $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblCustomers.Discount_Status, tblDiscount.Discount_Code, tblDiscount_Percent.Half_off, tblDiscount_Percent.Quarter_off, tblDiscount_Percent.Tenth_off, tblDiscount_Percent.Fifth_off FROM tblCustomers, tblDiscount, tblDiscount_Percent WHERE tblCustomers.Cell_Phone_Num = ? LEFT JOIN tblDiscount ON tblCustomers.Discount_Status = tblDiscount.Discount_Status LEFT JOIN tblDiscount_Percent ON tblDiscount.Discount_Code = tblDiscount_Percent.Discount_Code";
-    $result_set = mysqli_query($connection, $strQuery);
-    echo json_encode($result_set);
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+
+    $conAction->bind_param('s',$strRouteID);
+    $conAction->execute();
+    $conAction->bind_result($result_set);
+    $conAction->fetch();
+    if($result_set){
+        return '{"Outcome":"' .$result_set. '"}';
+    } else {
+        return '{"Outcome":"Data Not Found"}';
+    }
+
+    $conAction->close();
 
 }
 

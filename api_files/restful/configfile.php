@@ -54,17 +54,15 @@ function getRoutes($strRouteID){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrRoutes = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrRoutes[] = $row;
     }
-
+    echo json_encode($arrRoutes);
     $conAction->close();
 
 }
@@ -92,17 +90,15 @@ function getEmployees(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrEmployees = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrEmployees[] = $row;
     }
-
+    echo json_encode($arrEmployees);
     $conAction->close();
 }
 
@@ -129,17 +125,15 @@ function getVans(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrVans = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrVans[] = $row;
     }
-
+    echo json_encode($arrVans);
     $conAction->close();
 }
 
@@ -166,17 +160,15 @@ function getStops(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrStops = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrStops[] = $row;
     }
-
+    echo json_encode($arrStops);
     $conAction->close();
 }
 
@@ -203,17 +195,15 @@ function getAdmins(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrAdmins = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrAdmins[] = $row;
     }
-
+    echo json_encode($arrAdmins);
     $conAction->close();
 }
 
@@ -240,17 +230,15 @@ function getCustomers(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrCustomers = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrCustomers[] = $row;
     }
-
+    echo json_encode($arrCustomers);
     $conAction->close();
 }
 
@@ -277,17 +265,15 @@ function getCustomerServices(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrServices = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrServices[] = $row;
     }
-
+    echo json_encode($arrServices);
     $conAction->close();
 }
 
@@ -314,17 +300,15 @@ function getPoints(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrPoints = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrPoints[] = $row;
     }
-
+    echo json_encode($arrPoints);
     $conAction->close();
 }
 
@@ -351,17 +335,15 @@ function getDiscount(){
     }
 
     $conAction = $connection->prepare($strQuery);
-
-    $conAction->bind_param('s',$strRouteID);
-    $conAction->execute();
-    $conAction->bind_result($result_set);
-    $conAction->fetch();
-    if($result_set){
-        return '{"Outcome":"' .$result_set. '"}';
-    } else {
-        return '{"Outcome":"Data Not Found"}';
+    // Bind Parameters
+    $conAction->bind_param('s', $email);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrDiscount = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrDiscount[] = $row;
     }
-
+    echo json_encode($arrDiscount);
     $conAction->close();
 
 }

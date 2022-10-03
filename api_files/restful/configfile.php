@@ -350,13 +350,37 @@ function getDiscount(){
 
 // VERIFY Admin Login
 function verifyAdmin($strEmpEmail, $strAdminPass){
-    $strQueryEmail = "SELECT Emp_Email FROM tblEmployees WHERE tblEmployees.Emp_Email = ? AND Admin_Password = ?";
-    $strQueryPassword = "SELECT Admin_Password FROM tblEmployees WHERE tblEmployees.Emp_Email = ? AND Admin_Password = ?";
-    $result_set_Email = mysqli_query($connection, $strQueryEmail);
-    $result_set_Pass = mysqli_query($connection, $strQueryPass);
-    if ($result_set_Email == $strEmpEmail and $result_set_Pass == $strAdminPass){
-        
+    global $connection;
+    $strQuery = "SELECT Email FROM tblEmployees WHERE UPPER(Email) = UPPER(?) AND Password= ?";
+    // Check Connection
+    if ($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
     }
+    if ($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+        $statAdmin = $connection->prepare($strQuery);
+        // Bind Parameters
+        $statAdmin->bind_param('ss', $strEmpEmail, $strAdminPass);
+        $statAdmin->execute();      
+        $statAdmin->bind_result($strEmail);
+        $statAdmin->fetch();
+        $intRows = $statAdmin->num_rows;
+        if($strEmail){
+        return 'true';
+        } else {
+        return 'false';
+        }
+        $statAdmin->close();
 }
 
 // VERIFY Session
@@ -372,6 +396,193 @@ function verifyCustomer($strCustID){
     if($result_set == $strCustID){
 
     }
+}
+// INSERT Session
+function addSession($strEmpEmail,$strAdminPass){
+    global $connection;
+    $strVerified = verifyUsernamePassword($strEmpEmail,$strAdminPass);
+    if($strVerified == 'true'){
+        $strSessionID = guidv4();
+    $strQuery = "INSERT INTO tblSessions VALUES (?,?,SYSDATE(),SYSDATE())";
+    // Check Connection
+    if ($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statSession = $connection->prepare($strQuery);
+        // Bind Parameters
+        $statSession->bind_param('ss', $strSessionID,$strEmpEmail);
+        if($statSession->execute()){
+        return '{"SessionID":"'.$strSessionID.'"}';
+        } else {
+        return '{"Error":"Session Not Created"}';
+        }
+        $statSession->close();
+    }
+    return '{"Outcome":"Bad Username or Password"}';
+}
+
+
+// INSERT Route
+function addRoute($RouteID,$Location,$Stop_Time,$Start_Time,$County,$Emp_ID,$Route_Distance,$Stop_ID,$Van_ID){
+    global $connection;
+    $strQuery = "INSERT INTO tblRoutes VALUES (?,?,?,?,?,?,?,?,?)";
+    // Check Connection
+    if ($conRoutes->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $conRoutes->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($conRoutes->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $conRoutes->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statRoutes = $conRoutes->prepare($strQuery);
+        // Bind Parameters
+        $statRoutes->bind_param('sssssssss', $RouteID, $Location, $Stop_Time, $Start_Time, $County, $Emp_ID, $Route_Distance, $Stop_ID, $Van_ID);
+        if($statRoutes->execute()){
+        return '{"Outcome":"New Route Created"}';
+        } else {
+        return '{"Error":"Route Not Created"}';
+        }
+        $statRoutes->close();
+}
+
+
+// INSERT Van
+function addVan($van_ID,$Accessibility,$Passenger_Limit,$Year,$Operational,$Description){
+    global $connection;
+    $strQuery = "INSERT INTO tblVans VALUES (?,?,?,?,?,?,?,?,?)";
+    // Check Connection
+    if ($conVan->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $conVan->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($conVan->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $conVan->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statVan = $conVan->prepare($strQuery);
+        // Bind Parameters
+        $statVan->bind_param('ssssss', $van_ID,$Accessibility,$Passenger_Limit,$Year,$Operational,$Description);
+        if($statVan->execute()){
+        return '{"Outcome":"New Van Created"}';
+        } else {
+        return '{"Error":"Van Not Created"}';
+        }
+        $statVan->close();
+}
+
+// INSERT Stop
+function addStop($Stop_ID,$Route_ID,$Pickup_Time,$Dropoff_Time,$Miles_Per_Stop,$Passenger_Boarded,$Passenger_Alighted,$Rider_ID,$Stop_Boarded){
+    global $connection;
+    $strQuery = "INSERT INTO tblStops VALUES (?,?,?,?,?,?,?,?,?)";
+    // Check Connection
+    if ($conStops->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $conStops->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($conStops->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $conStops->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statStops = $conStops->prepare($strQuery);
+        // Bind Parameters
+        $statStops->bind_param('sssssssss', $Stop_ID,$Route_ID,$Pickup_Time,$Dropoff_Time,$Miles_Per_Stop,$Passenger_Boarded,$Passenger_Alighted,$Rider_ID,$Stop_Boarded);
+        if($statStops->execute()){
+        return '{"Outcome":"New Stop Created"}';
+        } else {
+        return '{"Error":"Stop Not Created"}';
+        }
+        $statStops->close();
+}
+// UPDATE Session
+function updateSession($SessionID){
+    global $connection;
+    if($sessionID){
+        $strQuery = "UPDATE tblSessions SET LastActivity = SYSDATE() WHERE SessionID = ?";
+        // Check Connection
+        if ($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->connect_error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+        if ($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+        }
+        $statSession = $connection->prepare($strQuery);
+        // Bind Parameters
+        $statSession->bind_param('s', $sessionID);
+        if($statSession->execute()){
+            return '{"Outcome":"Session Updated"}';
+        } else {
+            return '{"Error":"Session Not Updated"}';
+        }
+        $statSession->close();
+    }
+    return '{"Error":"No SessionID Provided"}';
+}
+// UPDATE Prepaid Rides
+function updatePrepaidRides($Prepaid_Rides,$Cell_Phone_Num){
+    global $connection;
+    $strQuery = "UPDATE tblCustomer SET Reward_Rides = Reward_Rides + ? WHERE Cell_Phone_Num = ?";
+    // Check Connection
+    if ($conRides->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $conRides->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($conRides->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $conRides->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statRides = $conRides->prepare($strQuery);
+        // Bind Parameters
+        $statRides->bind_param('ss', $Prepaid_Rides, $Cell_Phone_Num);
+        if($statRides->execute()){
+        return '{"Outcome":"Rides Updated"}';
+        } else {
+        return '{"Error":"Rides Not Updated"}';
+        }
+        $statRides->close();
 }
 
 // NEW Customer

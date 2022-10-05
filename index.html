@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Cookeville</title>
+    <title>All Routes</title>
 </head>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
@@ -50,7 +50,12 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item active">
-                  <a href="index.html" class="nav-link active bg-info">
+                  <a href="Index.html" class="nav-link active bg-info">
+                    <i class="fal fa-city"></i><p> All Routes</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Cookeville.html" class="nav-link">
                     <i class="far fa-city"></i><p> Cookeville</p>
                   </a>
                 </li>
@@ -83,7 +88,7 @@
     
     <div class="content-wrapper pt-3" id="ckv-page" style="background-color: rgb(244,246,249);"><!--MAIN BODY-->
       <div class="content-title">
-        <h2>Cookeville</h2>
+        <h2>All Routes</h2>
       </div>
       <div class="container-buttons ml-3 mb-3">
         <div class="filter"><!--TIME FILTER-->
@@ -93,14 +98,10 @@
           <button type="button" id="btnWeekCkv" class="btn btn-outline-dark">Month</button>
           <button type="button" id="btnYearCkv" class="btn btn-outline-dark">Year</button>
         </div>
-        <div class="swap mr-3"><!--SWAP BUTTON-->
-          <button type="button" id="compare-ckv" class="btn btn-outline-dark">Compare</button>
-          <button type="button" id="swap-ckv" class="btn btn-outline-dark">Routes</button>
-        </div>
       </div>
        
       <div class="content-graphs"><!--GRAPHS-->
-        <div class="ckv-green graph-flexbox col-sm-6 col-md-9 col-lg-12 col-xl-12">
+        <div class="ckv-green graph-flexbox col-sm-6 col-md-9 col-lg-12 col-xl-12"><!--START ALL ROUTE-->
             <div class="card ml-3">
               <div class="card-header">
                 <h3 class="card-title">Avg. Passenger</h3>
@@ -167,143 +168,7 @@
                 <canvas class="canvas" id="ckv-106-green" width="1480" height="190" style="background-color: white;"></canvas>
             </div>
           </div>
-        </div><!--END GREEN ROUTE-->
-        <div class="ckv-blue graph-flexbox col-sm-3 col-md-6 col-lg-9 col-xl-12" style="display: none;"><!--BLUE ROUTE-->
-          <div class="card ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Avg. Passenger</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-201-blue" width="1235" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Passenger Revenue</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-202-blue" width="160" height="90" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Avg. Trip Per Mile</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-203-blue" width="450" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Stops Boarded</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-204-blue" width="450" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Stops Alighted</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-205-blue" width="450" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Unlinked Passenger</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-206-blue" width="1480" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-        </div><!--END BLUE ROUTE-->
-        <div class="compare-ckv graph-flexbox col-sm-3 col-md-6 col-lg-9 col-xl-12" style="display: none;"><!--COMPARE ROUTE-->
-          <div class="card ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Avg. Passenger</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-301-compare" width="1235" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Passenger Revenue</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-302-compare" width="160" height="90" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Avg. Trip Per Mile</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-303-compare" width="450" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Stops Boarded</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-304-compare" width="450" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Stops Alighted</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-305-compare" width="450" width="450" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-          <div class="card  ml-4">
-            <div class="card-header">
-              <h3 class="card-title">Unlinked Passenger</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
-              </div>
-            </div>
-            <div class="card-body">
-                <canvas class="canvas" id="ckv-306-compare" width="1480" height="190" style="background-color: white;"></canvas>
-            </div>
-          </div>
-        </div><!--END COMPARE ROUTE-->
+        </div><!--END ALL ROUTE-->
       </div><!--END CONTENT GRAPH-->
     </div> <!--END MAIN BODY-->
   </div><!--END WEBPAGE-->

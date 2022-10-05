@@ -1,34 +1,3 @@
-//SWEET ALERTS
-$(document).on('click','#btnUserProfile',function(){
-    Swal.fire({
-        title: 'Profile',
-        html: `<div class="container align-left">
-                <p><b>User:</b> FirstName LastName</p>
-                <p><b>Phone:</b> 931-123-4567</p>
-                <p><b>Email:</b> firstnamelastname@example.com</p>
-                </div>`,
-    })
-})
-
-
-$(document).on('click','#btnLogout',function(){
-    Swal.fire({
-        title: 'Logout?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#bfbfbf',
-        confirmButtonText: 'Logout!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Logged Out!',
-          )
-        }
-      })
-      
-})
-
 //TOTAL RIDE CHART
 const TotalRide = document.getElementById('total-rides');
 const TotalRides = new Chart (TotalRide,{
@@ -36,20 +5,27 @@ const TotalRides = new Chart (TotalRide,{
     data: {
           //labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
           datasets: [{
-          data: [10],
-          backgroundColor: ['rgb(147,80,159,0.7)'],
-          borderColor: ['rgb(147,80,159)'],
+          data: [9, 1],
+          backgroundColor: ['rgb(255,215,0, 0.7)', 'rgb(102,102,102,0.2'],
+          borderColor: ['rgb(255,215,0)', 'rgb(102,102,102,0.2'],
           borderWidth: 2,
           tension: 0.4,
         }]
     },
     options: {
-        rotation: 1 * Math.PI,
-        circumference: 1 * Math.PI,
-        maintainAspectRatio: false,
+        circumference: 180,
+        rotation: 270,
+        cutout: '70%',
+        maintainAspectRatio: true,
         plugins: {
             legend: {
                 display: false
+            },
+            tooltip:{
+              filter:(tooltipItem) =>{
+                console.log(tooltipItem)
+                return tooltipItem.dataIndex === 0;
+              }
             }
         },
         responsive: true,

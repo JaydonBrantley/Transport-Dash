@@ -1,6 +1,6 @@
 <?php
     require('config.php'); 
     
-    echo getCustomers();
+    echo getEmployees();
 
 ?>

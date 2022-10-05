@@ -31,6 +31,17 @@ $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 // Functions
 
+// CREATE Globally Unique ID
+function guidv4(){
+    if (function_exists('com_create_guid') === true)
+        return trim(com_create_guid(), '{}');
+
+    $data = openssl_random_pseudo_bytes(16);
+    $data[6] = chr(ord($data[6]) & 0x0f | 0x40); // set version to 0100
+    $data[8] = chr(ord($data[8]) & 0x3f | 0x80); // set bits 6-7 to 10
+    return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+}
+
 // GET Routes
 function getRoutes($strRouteID){
     global $connection;
@@ -278,7 +289,7 @@ function getCustomerServices(){
 }
 
 // GET Points
-function getPoints(){
+function getPoints($Cell_Phone_Num){
     global $connection;
     $strQuery = "SELECT Reward_Progress FROM tblCustomers WHERE Cell_Phone_Num = ?";
     
@@ -301,7 +312,7 @@ function getPoints(){
 
     $conAction = $connection->prepare($strQuery);
     // Bind Parameters
-    $conAction->bind_param('s', $email);
+    $conAction->bind_param('s', $Cell_Phone_Num);
     $conAction->execute();      
     $result_set = $conAction->get_result();
     $arrPoints = array();
@@ -313,7 +324,7 @@ function getPoints(){
 }
 
 // GET Discount
-function getDiscount(){
+function getDiscount($Cell_Phone_Num){
     global $connection;
     $strQuery = "SELECT tblCustomers.Cell_Phone_Num, tblCustomers.Discount_Status, tblDiscount.Discount_Code, tblDiscount_Percent.Half_off, tblDiscount_Percent.Quarter_off, tblDiscount_Percent.Tenth_off, tblDiscount_Percent.Fifth_off FROM tblCustomers, tblDiscount, tblDiscount_Percent WHERE tblCustomers.Cell_Phone_Num = ? LEFT JOIN tblDiscount ON tblCustomers.Discount_Status = tblDiscount.Discount_Status LEFT JOIN tblDiscount_Percent ON tblDiscount.Discount_Code = tblDiscount_Percent.Discount_Code";
     
@@ -336,7 +347,7 @@ function getDiscount(){
 
     $conAction = $connection->prepare($strQuery);
     // Bind Parameters
-    $conAction->bind_param('s', $email);
+    $conAction->bind_param('s', $Cell_Phone_Num);
     $conAction->execute();      
     $result_set = $conAction->get_result();
     $arrDiscount = array();

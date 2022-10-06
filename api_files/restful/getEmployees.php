@@ -1,6 +1,9 @@
 <?php
     require('config.php'); 
     
-    echo getEmployees();
+    $strSessionID = $_GET['strSessionID'];
+    $strSessionID = strip_tags($strSessionID);
+
+    echo getEmployees($strSessionID);
 
 ?>

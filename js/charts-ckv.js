@@ -63,34 +63,7 @@ var AvgPassengers = new Chart(AvgPassenger, {
     }
 });
 
-const PassengerRevenue = document.getElementById('ckv-102-green');
-const PassengersRevenue = new Chart (PassengerRevenue, {
-    type: 'pie',
-    data: {
-        datasets: [{
-            data: [10],
-            backgroundColor: ['rgb(50,162,71,0.7)',],
-            borderColor: ['rgb(50,162,71)',],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        responsive: true, 
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-const AvgTrip = document.getElementById('ckv-103-green');
+const AvgTrip = document.getElementById('ckv-102-green');
 const AvgTrips = new Chart (AvgTrip, {
     type: 'line',
     data: {
@@ -119,7 +92,7 @@ const AvgTrips = new Chart (AvgTrip, {
     }
 });
 
-const StopBoarded = document.getElementById('ckv-104-green');
+const StopBoarded = document.getElementById('ckv-103-green');
 const StopsBoarded = new Chart (StopBoarded, {
     type: 'bar',
     data: {
@@ -149,44 +122,13 @@ const StopsBoarded = new Chart (StopBoarded, {
     }
 });
 
-const StopsAlighted = document.getElementById('ckv-105-green');
-const StopAlighted = new Chart (StopsAlighted, {
+const PopularStop = document.getElementById('ckv-104-green');
+const PopularStops = new Chart (PopularStop, {
     type: 'bar',
     data: {
         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
         datasets: [{
-            data: [121,190,111,152,121,190,111,152,121,190,111,152],
-            backgroundColor: ['rgb(50,162,71,0.7)'],
-            borderColor: ['rgb(50,162,71)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        indexAxis: 'y',
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-const UnlinkedPassenger = document.getElementById('ckv-106-green');
-const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
-        datasets: [{
-            data: [121,190,111,152,184,153,142,111,124,165,187,198],
+            data: [121,190,111,152,121,190,111,152,184,153,142,111],
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
@@ -201,7 +143,7 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
                 display: false
             }
         },
-            responsive: true,
+        responsive: true,
         scales: {
             y: {
                 beginAtZero: true
@@ -209,6 +151,7 @@ const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
         }
     }
 });
+
 
 //FILTER GREEN CHARTS
 $(document).on('click','#btnDayCkv',function(){
@@ -255,35 +198,7 @@ options: {
 }
 });
 
-const PassengerRevenueBlue = document.getElementById('ckv-202-blue');
-const PassengersRevenueBlue = new Chart (PassengerRevenueBlue, {
-    type: 'pie',
-    data: {
-        labels: ['7am-10am', '10am-1pm', '1pm-4pm', '4pm-7pm'],
-        datasets: [{
-            data: [10],
-            backgroundColor: ['rgb(70,116,185,0.7)',],
-            borderColor: ['rgb(70,116,185)',],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-      responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true,
-            }
-        }
-    }
-    });
-
-const AvgTripBlue = document.getElementById('ckv-203-blue');
+const AvgTripBlue = document.getElementById('ckv-202-blue');
 const AvgTripsBlue = new Chart (AvgTripBlue, {
     type: 'line',
     data: {
@@ -312,7 +227,7 @@ const AvgTripsBlue = new Chart (AvgTripBlue, {
     }
   });
 
-const StopBoardedBlue = document.getElementById('ckv-204-blue');
+const StopBoardedBlue = document.getElementById('ckv-203-blue');
 const StopsBoardedBlue = new Chart (StopBoardedBlue, {
     type: 'bar',
     data: {
@@ -341,48 +256,17 @@ const StopsBoardedBlue = new Chart (StopBoardedBlue, {
         }
     }
   });
-  
-const StopAlightedBlue = document.getElementById('ckv-205-blue');
-const StopsAlightedBlue = new Chart (StopAlightedBlue, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
-        datasets: [{
-            data: [19,10,20,14,7,12,6,18,13,1,20,3],
-            backgroundColor: ['rgb(70,116,185,0.7)'],
-            borderColor: ['rgb(70,116,185)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        indexAxis: 'y',
-        responsive: false,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-  });
 
-const UnlinkedPassengerBlue = document.getElementById('ckv-206-blue');
-const UnlinkedPassengersBlue = new Chart (UnlinkedPassengerBlue, {
+  const PopularStopBlue = document.getElementById('ckv-104-blue');
+const PopularStopsBlue = new Chart (PopularStopBlue, {
     type: 'bar',
     data: {
-        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+        labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
         datasets: [{
-            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+            data: [121,190,111,152,121,190,111,152,184,153,142,111],
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
-            borderWidth: 2,
+            borderWidth: 1,
             borderRadius: 5,
             borderSkipped: false,
         }]
@@ -394,14 +278,14 @@ const UnlinkedPassengersBlue = new Chart (UnlinkedPassengerBlue, {
                 display: false
             }
         },
-        responsive: false,
+        responsive: true,
         scales: {
             y: {
                 beginAtZero: true
             }
         }
     }
-  });
+});
 
   //COMPARE ROUTES
   const AvgPassengerBlue2 = document.getElementById('ckv-301-compare');
@@ -439,34 +323,7 @@ options: {
 }
 });
 
-const PassengerRevenueBlue2 = document.getElementById('ckv-302-compare');
-const PassengersRevenueBlue2 = new Chart (PassengerRevenueBlue2, {
-    type: 'pie',
-    data: {
-        labels: ['Blue Route', 'Green Route'],
-        datasets: [{
-            label: ['Blue Route'],
-            data: [10, 20],
-            backgroundColor: ['rgb(70,116,185,0.7)', 'rgb(50,162,71,0.7)'],
-            borderColor: ['rgb(70,116,185)','rgb(50,162,71)'],
-            borderWidth: 2
-        },
-]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-        },
-      responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true,
-            }
-        }
-    }
-    });
-
-const AvgTripBlue2 = document.getElementById('ckv-303-compare');
+const AvgTripBlue2 = document.getElementById('ckv-302-compare');
 const AvgTripsBlue2 = new Chart (AvgTripBlue2, {
     type: 'line',
     data: {
@@ -501,7 +358,7 @@ const AvgTripsBlue2 = new Chart (AvgTripBlue2, {
     }
   });
 
-const StopBoardedBlue2 = document.getElementById('ckv-304-compare');
+const StopBoardedBlue2 = document.getElementById('ckv-303-compare');
 const StopsBoardedBlue2 = new Chart (StopBoardedBlue2, {
     type: 'bar',
     data: {
@@ -537,75 +394,32 @@ const StopsBoardedBlue2 = new Chart (StopBoardedBlue2, {
     }
   });
   
-const StopAlightedBlue2 = document.getElementById('ckv-305-compare');
-const StopsAlightedBlue2 = new Chart (StopAlightedBlue2, {
+const PopularStopBlue2 = document.getElementById('ckv-104-compare');
+const PopularStopsBlue2 = new Chart (PopularStopBlue2, {
     type: 'bar',
     data: {
-        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
+        labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
         datasets: [{
-            label: 'Blue Route',
-            data: [19,10,20,14,7,12,6,18,13,1,20,3],
-            backgroundColor: ['rgb(70,116,185,0.7)'],
-            borderColor: ['rgb(70,116,185)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        },
-        {
-            label: 'Green Route',
-            data: [9,5,10,7,4,6,3,8,7,4,10,1],
+            data: [121,190,111,152,121,190,111,152,184,153,142,111],
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
-            borderWidth: 2,
-            tension: 0.4,
+            borderWidth: 1,
+            borderRadius: 5,
+            borderSkipped: false,
         }]
     },
     options: {
         maintainAspectRatio: false,
         plugins: {
+            legend: {
+                display: false
+            }
         },
-        indexAxis: 'y',
-        responsive: false,
+        responsive: true,
         scales: {
             y: {
                 beginAtZero: true
             }
         }
     }
-  });
-
-const UnlinkedPassengerBlue2 = document.getElementById('ckv-306-compare');
-const UnlinkedPassengersBlue2 = new Chart (UnlinkedPassengerBlue2, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
-        datasets: [{
-            label: 'Blue Route',
-            data: [19,10,20,14,7,12,6,18,13,1,20,3],
-            backgroundColor: ['rgb(70,116,185,0.7)'],
-            borderColor: ['rgb(70,116,185)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        },
-        {
-            label: 'Green Route',
-            data: [9,5,10,7,3,6,3,8,3,4,10,3],
-            backgroundColor: ['rgb(50,162,71,0.7)'],
-            borderColor: ['rgb(50,162,71)'],
-            borderWidth: 2,
-            tension: 0.4,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-        },
-        responsive: false,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-  });
+});

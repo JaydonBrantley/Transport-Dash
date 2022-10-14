@@ -30,34 +30,7 @@ const AvgPassengers = new Chart (AvgPassenger, {
     }
     });
 
-const PassengerRevenue = document.getElementById('alg-102-purple');
-const PassengersRevenue = new Chart (PassengerRevenue, {
-        type: 'pie',
-        data: {
-            datasets: [{
-                data: [10],
-                backgroundColor: ['rgb(147,80,159,0.7)',],
-                borderColor: ['rgb(147,80,159)',],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-        });
-
-const AvgTrip = document.getElementById('alg-103-purple');
+const AvgTrip = document.getElementById('alg-102-purple');
 const AvgTrips = new Chart (AvgTrip, {
     type: 'line',
     data: {
@@ -86,7 +59,7 @@ const AvgTrips = new Chart (AvgTrip, {
     }
 });
 
-const StopBoarded = document.getElementById('alg-104-purple');
+const StopBoarded = document.getElementById('alg-103-purple');
 const StopsBoarded = new Chart (StopBoarded, {
     type: 'bar',
     data: {
@@ -116,63 +89,32 @@ const StopsBoarded = new Chart (StopBoarded, {
     }
     });
 
-const StopAlighted = document.getElementById('alg-105-purple');
-const StopsAlighted = new Chart (StopAlighted, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
-        datasets: [{
-            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
-            backgroundColor: ['rgb(147,80,159,0.7)'],
-            borderColor: ['rgb(147,80,159)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
+    const PopularStop = document.getElementById('alg-104-purple');
+    const PopularStops = new Chart (PopularStop, {
+        type: 'bar',
+        data: {
+            labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],
+            datasets: [{
+                data: [121,190,111,152,121,190,111,152,184,153,142,111],
+                backgroundColor: ['rgb(147,80,159,0.7)'],
+                borderColor: ['rgb(147,80,159)'],
+                borderWidth: 1,
+                borderRadius: 5,
+                borderSkipped: false,
+            }]
         },
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
-    });
-
-const UnlinkedPassenger = document.getElementById('alg-106-purple');
-const UnlinkedPassengers = new Chart (UnlinkedPassenger, {
-    type: 'bar',
-    data: {
-        labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
-        datasets: [{
-            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
-            backgroundColor: ['rgb(147,80,159,0.7)'],
-            borderColor: ['rgb(147,80,159)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        indexAxis: 'y',
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
     });

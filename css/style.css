@@ -45,3 +45,40 @@ img{
     justify-content: space-between;
 }
 
+/*CKV*/
+.ckv-green, .ckv-blue, .compare-ckv{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/*ALG*/
+
+.alg-purple{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*CROSS*/
+.cross-blue, .cross-gold, .compare-cross{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*MINN*/
+.minn-red, .minn-blue, .compare-minn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*TNTEC*/
+.tech-gold{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*REWARDS*/
+.rewards{
+    display: flex;
+    justify-content: space-evenly;
+}

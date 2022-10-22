@@ -1,3 +1,145 @@
+/* //DATA FUNCTIONS
+
+    //AVG PASSANGER FUNCTIONS
+
+            //BLUE ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+                
+            //GOLD ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+    
+            //COMPARE ROUTES
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
+
+    //AVG TRIP FUNCTIONS
+            
+                //BLUE ROUTE
+                    function getStops(){
+                        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                            let arrData = [];
+                            $.each(data,function(stops){
+                                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                            })
+                            return arrData;
+                        })
+                    }
+                    
+                //GOLD ROUTE
+                    function getStops(){
+                        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                            let arrData = [];
+                            $.each(data,function(stops){
+                                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                            })
+                            return arrData;
+                        })
+                    }
+        
+                //COMPARE ROUTES
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+
+    //STOPS BOARDED FUNCTIONS
+
+        //BLUE ROUTE
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
+            
+        //GOLD ROUTE
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
+
+        //COMPARE ROUTES
+        function getStops(){
+            $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                let arrData = [];
+                $.each(data,function(stops){
+                    arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                })
+                return arrData;
+            })
+        }
+
+    //POPULAR STOPS FUNCTIONS
+
+                //BLUE ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+                
+            //GOLD ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+    
+            //COMPARE ROUTES
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }*/
+
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 

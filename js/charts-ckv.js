@@ -1,17 +1,144 @@
+/* //DATA FUNCTIONS
 
-//AVG PASSANGER FUNCTIONS
-function getCompletedTasksBySessionID(){
-    $.getJSON('https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139', function(data){
-        if(data.Outcome == 'Error'){
-            alert('Found Error');
-        } else {
-            console.log(json["weather"][0].main);
+    //AVG PASSANGER FUNCTIONS
+
+                //GREEN ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+                
+            //BLUE ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+    
+            //COMPARE ROUTES
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
+
+    //AVG TRIP FUNCTIONS
+            
+                    //GREEN ROUTE
+                    function getStops(){
+                        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                            let arrData = [];
+                            $.each(data,function(stops){
+                                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                            })
+                            return arrData;
+                        })
+                    }
+                    
+                //BLUE ROUTE
+                    function getStops(){
+                        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                            let arrData = [];
+                            $.each(data,function(stops){
+                                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                            })
+                            return arrData;
+                        })
+                    }
+        
+                //COMPARE ROUTES
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+
+    //STOPS BOARDED FUNCTIONS
+
+        //GREEN ROUTE
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
+            
+        //BLUE ROUTE
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
+
+        //COMPARE ROUTES
+        function getStops(){
+            $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                let arrData = [];
+                $.each(data,function(stops){
+                    arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                })
+                return arrData;
+            })
         }
-    })
-}
-$(document).on('load',function(){
-    return getCompletedTasksBySessionID();
- })
+
+    //POPULAR STOPS FUNCTIONS
+
+                //GREEN ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+                
+            //BLUE ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+    
+            //COMPARE ROUTES
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            } */
 
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
@@ -49,7 +176,7 @@ var AvgPassengers = new Chart(AvgPassenger, {
     data: {
         //labels: ['HUB','WALMART','LOGANS','JACKSON PLAZA','SENIOR CENTER','PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL','LIBRARY','COURT HOUSE','KROGER'],
         datasets: [{
-            data: day,//[206,249,143,127,242,145,112,200,290,180,233,270],
+            data: [206,249,143,127,242,145,112,200,290,180,233,270],
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,

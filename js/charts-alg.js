@@ -1,3 +1,53 @@
+/* //DATA FUNCTIONS
+
+    //AVG PASSANGER FUNCTIONS
+
+    function getStops(){
+        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+            let arrData = [];
+            $.each(data,function(stops){
+                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+            })
+            return arrData;
+        })
+    }
+
+//AVG TRIP FUNCTIONS
+
+        function getStops(){
+            $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                let arrData = [];
+                $.each(data,function(stops){
+                    arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                })
+                return arrData;
+            })
+        }
+
+//STOPS BOARDED FUNCTIONS
+
+function getStops(){
+    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+        let arrData = [];
+        $.each(data,function(stops){
+            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+        })
+        return arrData;
+    })
+}
+
+//POPULAR STOPS FUNCTIONS
+
+    function getStops(){
+        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+            let arrData = [];
+            $.each(data,function(stops){
+                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+            })
+            return arrData;
+        })
+    }*/
+
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 

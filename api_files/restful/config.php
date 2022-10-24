@@ -151,7 +151,7 @@ function getVans(){
 function getStops(){
     global $connection;
     global $conAction;
-    $strQuery = "SELECT Stop_ID, Pickup_Time, Dropoff_Time, Passenger_Boarded, Passenger_Alighted FROM stop";
+    $strQuery = "SELECT Stop_ID, Route_ID, Pickup_Time, Drop_Off_Time, Miles_Per_Stop FROM stop";
     
     if($connection->connect_errno) {
         $blnError = "true";

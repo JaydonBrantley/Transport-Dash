@@ -1,10 +1,10 @@
 <?php
 
 // Credentials
-$dbhost = '';
-$dbhost = '';
-$dbhost = '';
-$dbhost = '';
+$dbhost = 'localhost';
+$dbuser = 'aiwojrmy_sqlteam';
+$dbpass = '8u$ R1d3rs';
+$dbname = 'aiwojrmy_dashboardtest';
 
 
 // 1. Create a database connection
@@ -147,9 +147,44 @@ function getVans(){
     echo json_encode($arrVans);
     $conAction->close();
 }
-
 // GET Stops
 function getStops(){
+    global $connection;
+    global $conAction;
+    $strQuery = "SELECT Stop_ID, Pickup_Time, Dropoff_Time, Passenger_Boarded, Passenger_Alighted FROM stop";
+    
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+    // Bind Parameters
+    $conAction->bind_param('s', $strRouteID);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrStops = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrStops[] = $row;
+    }
+    echo json_encode($arrStops);
+    $conAction->close();
+}
+
+// GET Stops
+/*function getStops($strRouteID){
     global $connection;
     $strQuery = "SELECT Stop_ID, Pickup_Time, Dropoff_Time, Passenger_Boarded, Passenger_Alighted FROM tblStops WHERE Route_ID = ?";
     
@@ -172,7 +207,7 @@ function getStops(){
 
     $conAction = $connection->prepare($strQuery);
     // Bind Parameters
-    $conAction->bind_param('s', $email);
+    $conAction->bind_param('s', $strRouteID);
     $conAction->execute();      
     $result_set = $conAction->get_result();
     $arrStops = array();
@@ -182,6 +217,7 @@ function getStops(){
     echo json_encode($arrStops);
     $conAction->close();
 }
+*/
 
 // GET Admins
 function getAdmins(){

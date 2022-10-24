@@ -294,4 +294,32 @@ function verifyUsernamePassword($strUsername,$strPassword){
         }
         $statCustodial->close();
 }
+
+
+function getCompletedTasksBySessionID(strSessionID){
+    $.getJSON('URL', function(data){
+        if(data.Outcome == 'Error'){
+            alert('Found Error');
+        } else {
+            console.log(json["weather"][0].main);
+        }
+    })
+}
+
+
+
+$(document).on('click','#navSchedules',function(){
+    schedulesFile = 'SchedulesContainer.html';
+    $('#divMain').fadeToggle();
+    setTimeout(function(){
+        $('#divMain').empty();
+        $('#divMain').load(schedulesFile);
+        fillSchedules();
+        $('#divMain').fadeToggle();
+    },375);
+ })
 ?>
+
+
+
+

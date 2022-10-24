@@ -1,9 +1,10 @@
 <?php
     require('config.php'); 
     
-    $strSessionID = $_GET['strSessionID'];
-    $strSessionID = strip_tags($strSessionID);
+    //$strSessionID = $_GET['strRouteID'];
+    //$strSessionID = strip_tags($strRouteID);
 
-    echo getStops($strSessionID);
+    //echo getStops($strRouteID);
+    echo getStops();
 
 ?>

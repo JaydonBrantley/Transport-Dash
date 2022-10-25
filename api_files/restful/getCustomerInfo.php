@@ -1,6 +1,9 @@
 <?php
     require('config.php'); 
     
-    echo getCustomers();
+    $strSessionID = $_GET['strSessionID'];
+    $strSessionID = strip_tags($strSessionID);
+
+    echo getCustomers($strSessionID);
 
 ?>

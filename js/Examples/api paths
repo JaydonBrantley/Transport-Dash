@@ -1,0 +1,4 @@
+// Verify Login
+'https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php?strUsername=' + strUsername + '&strPassword=' + strPassword
+
+

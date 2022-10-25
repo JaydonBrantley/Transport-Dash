@@ -1,6 +1,9 @@
 <?php
     require('config.php'); 
     
-    echo getAdmins();
+    $strSessionID = $_GET['strSessionID'];
+    $strSessionID = strip_tags($strSessionID);
+
+    echo getAdmins($strSessionID);
 
 ?>

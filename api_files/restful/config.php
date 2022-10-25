@@ -398,6 +398,7 @@ function getDiscount($Cell_Phone_Num){
 // VERIFY Admin Login
 function verifyAdmin($strEmpEmail, $strAdminPass){
     global $connection;
+    $strPassHash = password_hash($strAdminPass, PASSWORD_BCRYPT);
     $strQuery = "SELECT Email FROM tblEmployees WHERE UPPER(Email) = UPPER(?) AND Password= ?";
     // Check Connection
     if ($connection->connect_errno) {
@@ -417,7 +418,7 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
     }
         $statAdmin = $connection->prepare($strQuery);
         // Bind Parameters
-        $statAdmin->bind_param('ss', $strEmpEmail, $strAdminPass);
+        $statAdmin->bind_param('ss', $strEmpEmail, $strPassHash);
         $statAdmin->execute();      
         $statAdmin->bind_result($strEmail);
         $statAdmin->fetch();
@@ -466,15 +467,15 @@ function addSession($strEmpEmail,$strAdminPass){
         $arrError = array('error' => $strErrorMessage);
         echo json_encode($arrError);
     }
-        $statSession = $connection->prepare($strQuery);
+        $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $statSession->bind_param('ss', $strSessionID,$strEmpEmail);
-        if($statSession->execute()){
+        $conAction->bind_param('ss', $strSessionID,$strEmpEmail);
+        if($conAction->execute()){
         return '{"SessionID":"'.$strSessionID.'"}';
         } else {
         return '{"Error":"Session Not Created"}';
         }
-        $statSession->close();
+        $conAction->close();
     }
     return '{"Outcome":"Bad Username or Password"}';
 }
@@ -590,15 +591,15 @@ function updateSession($SessionID){
             $arrError = array('error' => $strErrorMessage);
             echo json_encode($arrError);
         }
-        $statSession = $connection->prepare($strQuery);
+        $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $statSession->bind_param('s', $sessionID);
-        if($statSession->execute()){
+        $conAction->bind_param('s', $sessionID);
+        if($conAction->execute()){
             return '{"Outcome":"Session Updated"}';
         } else {
             return '{"Error":"Session Not Updated"}';
         }
-        $statSession->close();
+        $conAction->close();
     }
     return '{"Error":"No SessionID Provided"}';
 }
@@ -642,6 +643,38 @@ function newCustomer(){
 function newAdmin(){
     $strQuery = "INSERT INTO tblAdmins VALUES (?,?,?,?,?)";
     $result_set = mysqli_query($connection, $strQuery);
+}
+
+function deleteSession($SessionID){
+    global $connection;
+    if($sessionID){
+        $strQuery = "DELETE FROM session WHERE Session_ID = ?";
+        // Check Connection
+        if ($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->connect_error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+        if ($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+        }
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('s', $sessionID);
+        if($conAction->execute()){
+            return '{"Outcome":"Session Deleted"}';
+        } else {
+            return '{"Error":"Session Not Deleted"}';
+        }
+        $conAction->close();
+    }
+    return '{"Error":"No SessionID Provided"}';
 }
 
 

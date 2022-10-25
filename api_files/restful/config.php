@@ -399,7 +399,7 @@ function getDiscount($Cell_Phone_Num){
 function verifyAdmin($strEmpEmail, $strAdminPass){
     global $connection;
     $strPassHash = password_hash($strAdminPass, PASSWORD_BCRYPT);
-    $strQuery = "SELECT Email FROM tblEmployees WHERE UPPER(Email) = UPPER(?) AND Password= ?";
+    $strQuery = "SELECT Admin_Password FROM tblEmployees WHERE UPPER(Email) = UPPER(?)";
     // Check Connection
     if ($connection->connect_errno) {
         $blnError = "true";
@@ -409,26 +409,27 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
         exit();
     }
     if ($connection->ping()) {
-    } else {
+    }
+    else {
         $blnError = "true";
         $strErrorMessage = $connection->error;
         $arrError = array('error' => $strErrorMessage);
         echo json_encode($arrError);
         exit();
     }
-        $statAdmin = $connection->prepare($strQuery);
-        // Bind Parameters
-        $statAdmin->bind_param('ss', $strEmpEmail, $strPassHash);
-        $statAdmin->execute();      
-        $statAdmin->bind_result($strEmail);
-        $statAdmin->fetch();
-        $intRows = $statAdmin->num_rows;
-        if($strEmail){
+    $conAction = $connection->prepare($strQuery);
+    // Bind Parameters
+    $conAction->bind_param('s', $strEmpEmail);
+    $conAction->execute();
+    $conAction->bind_result($strEmail);
+    $conAction->fetch();
+    if(password_verify($strAdminPass, $strPassHash)){
         return 'true';
-        } else {
+    }
+    else {
         return 'false';
-        }
-        $statAdmin->close();
+    }
+    $conAction->close();
 }
 
 // VERIFY Session
@@ -448,7 +449,7 @@ function verifyCustomer($strCustID){
 // INSERT Session
 function addSession($strEmpEmail,$strAdminPass){
     global $connection;
-    $strVerified = verifyUsernamePassword($strEmpEmail,$strAdminPass);
+    $strVerified = verifyAdmin($strEmpEmail,$strAdminPass);
     if($strVerified == 'true'){
         $strSessionID = guidv4();
     $strQuery = "INSERT INTO tblSessions VALUES (?,?,SYSDATE(),SYSDATE())";

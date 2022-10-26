@@ -1,6 +1,8 @@
 <?php
-
-// Credentials
+ header('Access-Control-Allow-Origin: *');
+ header('Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS');
+ header('Access-Control-Allow-Headers: Origin,X-Requested-With,Content-Type,Accept');
+ // Credentials
 $dbhost = 'localhost';
 $dbuser = 'aiwojrmy_sqlteam';
 $dbpass = '8u$ R1d3rs';
@@ -148,6 +150,7 @@ function getVans(){
     $conAction->close();
 }
 // GET Stops
+/*
 function getStops(){
     global $connection;
     global $conAction;
@@ -183,10 +186,12 @@ function getStops(){
     $conAction->close();
 }
 
+*/
+
 // GET Stops
-/*function getStops($strRouteID){
+function getStops($strRouteID){
     global $connection;
-    $strQuery = "SELECT Stop_ID, Pickup_Time, Dropoff_Time, Passenger_Boarded, Passenger_Alighted FROM tblStops WHERE Route_ID = ?";
+    $strQuery = "SELECT Stop_ID, Route_ID, Pickup_Time, Drop_Off_Time, Miles_Per_Stop FROM stop WHERE Route_ID = ?";
     
     if($connection->connect_errno) {
         $blnError = "true";
@@ -217,7 +222,7 @@ function getStops(){
     echo json_encode($arrStops);
     $conAction->close();
 }
-*/
+
 
 // GET Admins
 function getAdmins(){
@@ -398,7 +403,7 @@ function getDiscount($Cell_Phone_Num){
 // VERIFY Admin Login
 function verifyAdmin($strEmpEmail, $strAdminPass){
     global $connection;
-    $strPassHash = password_hash($strAdminPass, PASSWORD_BCRYPT);
+    //$strPassHash = password_hash($strAdminPass, PASSWORD_BCRYPT);
     $strQuery = "SELECT Admin_Password FROM tblEmployees WHERE UPPER(Email) = UPPER(?)";
     // Check Connection
     if ($connection->connect_errno) {
@@ -421,7 +426,7 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
     // Bind Parameters
     $conAction->bind_param('s', $strEmpEmail);
     $conAction->execute();
-    $conAction->bind_result($strEmail);
+    $strPassHash = $conAction->bind_result($strEmail);
     $conAction->fetch();
     if(password_verify($strAdminPass, $strPassHash)){
         return 'true';
@@ -433,9 +438,39 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
 }
 
 // VERIFY Session
-function verifyAdminSession($strAdminSessionID){
-    $strQuery = "SELECT SessionID FROM tblCurrentSessions WHERE SessionID = ? AND StartTime >= NOW() - INTERVAL 12 HOUR";
-
+function verifySession($strSessionID){
+    global $connection;
+    $strQuery = "SELECT Session_ID FROM session WHERE Session_ID = ? AND StartTime >= NOW() - INTERVAL 12 HOUR";
+    // Check Connection
+    if ($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($connection->ping()) {
+    }
+    else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    $conAction = $connection->prepare($strQuery);
+    // Bind Parameters
+    $conAction->bind_param('s', $strSessionID);
+    //$conAction->execute();
+    //$conAction->bind_result($strSessionID);
+    //$conAction->fetch();
+    if($conAction->execute()){
+        return 'true';
+    }
+    else {
+        return 'false';
+    }
+    $conAction->close();
 }
 
 // VERIFY Customer
@@ -452,22 +487,23 @@ function addSession($strEmpEmail,$strAdminPass){
     $strVerified = verifyAdmin($strEmpEmail,$strAdminPass);
     if($strVerified == 'true'){
         $strSessionID = guidv4();
-    $strQuery = "INSERT INTO tblSessions VALUES (?,?,SYSDATE(),SYSDATE())";
-    // Check Connection
-    if ($connection->connect_errno) {
-        $blnError = "true";
-        $strErrorMessage = $connection->connect_error;
-        $arrError = array('error' => $strErrorMessage);
-        echo json_encode($arrError);
-        exit();
-    }
-    if ($connection->ping()) {
-    } else {
-        $blnError = "true";
-        $strErrorMessage = $connection->error;
-        $arrError = array('error' => $strErrorMessage);
-        echo json_encode($arrError);
-    }
+        $strQuery = "INSERT INTO tblSessions VALUES (?,?,SYSDATE(),SYSDATE())";
+        // Check Connection
+        if ($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->connect_error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+        if ($connection->ping()) {
+        }
+        else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+        }
         $conAction = $connection->prepare($strQuery);
         // Bind Parameters
         $conAction->bind_param('ss', $strSessionID,$strEmpEmail);
@@ -641,9 +677,33 @@ function newCustomer(){
 }
 
 // NEW Admin
-function newAdmin(){
-    $strQuery = "INSERT INTO tblAdmins VALUES (?,?,?,?,?)";
-    $result_set = mysqli_query($connection, $strQuery);
+function newAdmin($strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassword){
+    global $connection;
+    $strQuery = "INSERT INTO employee (Emp_Email, Emp_ID, Fname, Lname, Phone_Num, Title, Emp_Status, Admin_Password) VALUES (?,?,?,?,?,?,?,?)";
+    // Check Connection
+    if ($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('ssssssss', $strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassword);
+        if($conAction->execute()){
+        return '{"Outcome":"New Admin Created"}';
+        } else {
+        return '{"Error":"Admin Could Not Be Created"}';
+        }
+        $conAction->close();
 }
 
 function deleteSession($SessionID){

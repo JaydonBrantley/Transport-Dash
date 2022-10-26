@@ -2,3 +2,5 @@
 'https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php?strUsername=' + strUsername + '&strPassword=' + strPassword
 
 
+// New Admin Test
+https://aiw.ojr.mybluehost.me/api/newAdmin.php?strEmail=jabrantley42@tntech.edu&strEmpID=001&strFName=Jaydon&strLName=Brantley&strPhone=9313149152&strTitle=TechBro&strStatus=Tired&strPassword=1234

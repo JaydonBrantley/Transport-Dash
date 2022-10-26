@@ -1,6 +1,8 @@
 <?php
-
-// Credentials
+ header('Access-Control-Allow-Origin: *');
+ header('Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS');
+ header('Access-Control-Allow-Headers: Origin,X-Requested-With,Content-Type,Accept');
+ // Credentials
 $dbhost = 'localhost';
 $dbuser = 'aiwojrmy_sqlteam';
 $dbpass = '8u$ R1d3rs';

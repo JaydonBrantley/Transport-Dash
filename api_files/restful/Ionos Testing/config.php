@@ -1,10 +1,12 @@
 <?php
-
-// Credentials
-$dbhost = 'db5010610762.hosting-data.io';
-$dbuser = 'dbu5455180';
-$dbpass = 'testing';
-$dbname = 'dbs8979443';
+ header('Access-Control-Allow-Origin: *');
+ header('Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS');
+ header('Access-Control-Allow-Headers: Origin,X-Requested-With,Content-Type,Accept');
+ // Credentials
+ $dbhost = 'db5010610762.hosting-data.io';
+ $dbuser = 'dbu5455180';
+ $dbpass = 'QHi5jMPj7sRnPp9';
+ $dbname = 'dbs8979443';
 
 
 // 1. Create a database connection
@@ -693,9 +695,11 @@ function newAdmin($strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTit
         $arrError = array('error' => $strErrorMessage);
         echo json_encode($arrError);
     }
+        // Hash Password
+        $strPassHash = password_hash($strPassword, PASSWORD_BCRYPT);
         $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $conAction->bind_param('ssssssss', $strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassword);
+        $conAction->bind_param('ssssssss', $strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassHash);
         if($conAction->execute()){
         return '{"Outcome":"New Admin Created"}';
         } else {

@@ -1,10 +1,10 @@
 <?php
 
 // Credentials
-$dbhost = 'localhost';
-$dbuser = 'aiwojrmy_sqlteam';
-$dbpass = '8u$ R1d3rs';
-$dbname = 'aiwojrmy_dashboardtest';
+$dbhost = 'db5010610762.hosting-data.io';
+$dbuser = 'dbu5455180';
+$dbpass = 'testing';
+$dbname = 'dbs8979443';
 
 
 // 1. Create a database connection

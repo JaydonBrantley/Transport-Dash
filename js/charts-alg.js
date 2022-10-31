@@ -1,16 +1,18 @@
-/* //DATA FUNCTIONS
+ //DATA FUNCTIONS
 
     //AVG PASSANGER FUNCTIONS
 
     function getStops(){
-        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+        $.getJSON('https://aiw.ojr.mybluehost.me/api/getStops.php', function(data){
             let arrData = [];
             $.each(data,function(stops){
-                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                arrData.push({x:stops.Stop_ID,y:stops.Route_ID});
             })
             return arrData;
         })
     }
+
+    /*
 
 //AVG TRIP FUNCTIONS
 
@@ -57,7 +59,7 @@ const AvgPassengers = new Chart (AvgPassenger, {
     data: {
         labels: ['HUB','JUSTICE CENTER','PREMIER MEDICAL','NORTHSIDE IGA','FIRST HORIZON BANK - 10TH STREET','WALMART (ALGOOD)','ROLLING MEADOWS APTS','ALGOOD HOUSING','ALGOOD MANOR','SENIOR CENTER','GARDEN GROVER APTS.','GREENWOOD PLACE APTS.','QUINLAND RIDGE APTS.','SENIOR CENTER','ROLLING MEADOWS APTS.','WYNONA','YMCA','SOCIAL SECURITY OFFICE','CHEC - NEAL STREET','EMPLOYMENT SECURITY OFFICE',],
         datasets: [{
-            data: [206,249,143,127,242,145,112,200,290,180,233,270,127,242,145,112],
+            data: getStops,
             backgroundColor: ['rgb(147,80,159,0.7)'],
             borderColor: ['rgb(147,80,159)'],
             borderWidth: 2,

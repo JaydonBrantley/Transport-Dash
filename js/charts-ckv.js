@@ -1,18 +1,20 @@
-/* //DATA FUNCTIONS
+ //DATA FUNCTIONS
 
     //AVG PASSANGER FUNCTIONS
 
                 //GREEN ROUTE
                 function getStops(){
-                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    $.getJSON('https://aiw.ojr.mybluehost.me/api/getStops.php?strStop_ID='+ strStop_ID + '&strRoute_ID=' + strRoute_ID +'', function(data){
                         let arrData = [];
                         $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                            arrData.push({x:stops.Stop_ID,y:stops.Route_ID});
                         })
                         return arrData;
                     })
+                    console.log(getStops)
                 }
-                
+
+            /*
             //BLUE ROUTE
                 function getStops(){
                     $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
@@ -145,6 +147,9 @@ Chart.register(ChartDataLabels);
 
 
 //GREEN ROUTES
+
+/*
+
 // Filter by Day
 const day = [
     {x: Date.parse('2022-08-01 00:00: GMT-0500'), y: 50 },
@@ -170,13 +175,15 @@ const week = [
     {x: Date.parse('2022-08-28 00:00: GMT-0500'), y: 45 },
 ];
 
+*/
+
 var AvgPassenger = document.getElementById('ckv-101-green');
 var AvgPassengers = new Chart(AvgPassenger, {
     type: 'line',
     data: {
         //labels: ['HUB','WALMART','LOGANS','JACKSON PLAZA','SENIOR CENTER','PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL','LIBRARY','COURT HOUSE','KROGER'],
         datasets: [{
-            data: [206,249,143,127,242,145,112,200,290,180,233,270],
+            data: getStops,
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
@@ -294,6 +301,7 @@ const PopularStops = new Chart (PopularStop, {
     }
 });
 
+/*
 
 //FILTER GREEN CHARTS
 $(document).on('click','#btnDayCkv',function(){
@@ -308,6 +316,7 @@ $(document).on('click','#btnWeekCkv',function(){
     AvgPassengers.update();
 });
 
+*/
 
 //BLUE ROUTES
 const AvgPassengerBlue = document.getElementById('ckv-201-blue');

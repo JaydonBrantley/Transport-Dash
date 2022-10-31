@@ -428,19 +428,20 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
     $conAction->execute();
     $result_set = $conAction->get_result();
     $arrAdmin = array();
-    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
-        $arrAdmin[] = $row;
+    while($row = $result_set->fetch_assoc()) {
+        if (password_verify($strAdminPass, $row['Admin_Password'])){
+            //return 'true';
+            echo json_encode($row);
+        }
+        else {
+            return 'false';
+            //return $strPassHash;
+        }
     }
-    $strPassHash = $arrAdmin[Admin_Password];
+    //$strPassHash = $arrAdmin[Admin_Password];
     //$conAction->bind_result($strEmail);
     //$conAction->fetch();
-    if(password_verify($strAdminPass, $strPassHash)){
-        return 'true';
-    }
-    else {
-        //return 'false';
-        return $strPassHash;
-    }
+    echo json_encode($row);
     $conAction->close();
 }
 

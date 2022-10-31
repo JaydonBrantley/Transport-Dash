@@ -4,3 +4,6 @@
 
 // New Admin Test
 https://aiw.ojr.mybluehost.me/api/newAdmin.php?strEmail=jabrantley42@tntech.edu&strEmpID=001&strFName=Jaydon&strLName=Brantley&strPhone=9313149152&strTitle=TechBro&strStatus=Tired&strPassword=1234
+
+
+INSERT INTO employee (Emp_Email, Emp_ID, Fname, Lname, Phone_Num, Title, Emp_Status, Admin_Password) VALUES (jabrantley42@tntech.edu,001,Jaydon,Brantley,9313149152,TechBro,Tired,1234)

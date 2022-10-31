@@ -428,12 +428,14 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
     $conAction->execute();
     $result_set = $conAction->get_result();
     $arrAdmin = array();
+
     while($row = $result_set->fetch_assoc()) {
         if (password_verify($strAdminPass, $row['Admin_Password'])){
-            //return 'true';
-            echo json_encode($row);
+            return 'true';
+            //echo json_encode($row);
         }
         else {
+            echo json_encode($row['Admin_Password']);
             return 'false';
             //return $strPassHash;
         }

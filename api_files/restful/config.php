@@ -189,38 +189,43 @@ function getStops(){
 */
 
 // GET Stops
-function getStops($strRouteID){
+function getStops($strSessionID, $strRouteID, $strNumDays){
     global $connection;
-    $strQuery = "SELECT Stop_ID, Route_ID, Pickup_Time, Drop_Off_Time, Miles_Per_Stop FROM stop WHERE Route_ID = ?";
-    
-    if($connection->connect_errno) {
-        $blnError = "true";
-        $strErrorMessage = $connection->error;
-        $arrError = array('error' => $strErrorMessage);
-        echo json_encode($arrError);
-        exit();
-    }
+    $strQuery = "SELECT Stop_ID, Route_ID, Pickup_Time, Drop_Off_Time, Miles_Per_Stop FROM stop WHERE Route_ID = ? AND Pickup_Time > NOW()- INTERVAL ? DAY";
+    if(verifySession($strSessionID)) {
 
-    if($connection->ping()) {
-    } else {
-        $blnError = "true";
-        $strErrorMessage = $connection->error;
-        $arrError = array('error' => $strErrorMessage);
-        echo json_encode($arrError);
-        exit();
-    }
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
 
-    $conAction = $connection->prepare($strQuery);
-    // Bind Parameters
-    $conAction->bind_param('s', $strRouteID);
-    $conAction->execute();      
-    $result_set = $conAction->get_result();
-    $arrStops = array();
-    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
-            $arrStops[] = $row;
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrStops = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrStops[] = $row;
+        }
+        echo json_encode($arrStops);
+        $conAction->close();
     }
-    echo json_encode($arrStops);
-    $conAction->close();
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
 }
 
 
@@ -444,7 +449,7 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
 // VERIFY Session
 function verifySession($strSessionID){
     global $connection;
-    $strQuery = "SELECT Session_ID FROM session WHERE Session_ID = ? AND StartTime >= NOW() - INTERVAL 12 HOUR";
+    $strQuery = "SELECT Session_ID FROM session WHERE Session_ID = ? AND SessionStart >= NOW() - INTERVAL 12 HOUR";
     // Check Connection
     if ($connection->connect_errno) {
         $blnError = "true";

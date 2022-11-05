@@ -3,7 +3,7 @@
  header('Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS');
  header('Access-Control-Allow-Headers: Origin,X-Requested-With,Content-Type,Accept');
  // Credentials
-$dbhost = 'localhost';
+ $dbhost = 'localhost';
 $dbuser = 'aiwojrmy_sqlteam';
 $dbpass = '8u$ R1d3rs';
 $dbname = 'aiwojrmy_dashboardtest';
@@ -227,7 +227,8 @@ function getStops($strRouteID){
 // GET Admins
 function getAdmins(){
     global $connection;
-    $strQuery = "SELECT * FROM tblEmployees WHERE Title = 'Admin'";
+    //$strQuery = "SELECT * FROM tblEmployees WHERE Title = 'Admin'";
+    $strQuery = "SELECT * FROM employee";
     
     if($connection->connect_errno) {
         $blnError = "true";
@@ -248,7 +249,7 @@ function getAdmins(){
 
     $conAction = $connection->prepare($strQuery);
     // Bind Parameters
-    $conAction->bind_param('s', $email);
+    //$conAction->bind_param('s', $email);
     $conAction->execute();      
     $result_set = $conAction->get_result();
     $arrAdmins = array();
@@ -403,8 +404,7 @@ function getDiscount($Cell_Phone_Num){
 // VERIFY Admin Login
 function verifyAdmin($strEmpEmail, $strAdminPass){
     global $connection;
-    //$strPassHash = password_hash($strAdminPass, PASSWORD_BCRYPT);
-    $strQuery = "SELECT Admin_Password FROM tblEmployees WHERE UPPER(Email) = UPPER(?)";
+    $strQuery = "SELECT Admin_Password FROM employee WHERE UPPER(Emp_Email) = UPPER(?)";
     // Check Connection
     if ($connection->connect_errno) {
         $blnError = "true";
@@ -426,14 +426,24 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
     // Bind Parameters
     $conAction->bind_param('s', $strEmpEmail);
     $conAction->execute();
-    $strPassHash = $conAction->bind_result($strEmail);
-    $conAction->fetch();
-    if(password_verify($strAdminPass, $strPassHash)){
-        return 'true';
+    $result_set = $conAction->get_result();
+    $arrAdmin = array();
+
+    while($row = $result_set->fetch_assoc()) {
+        if (password_verify($strAdminPass, $row['Admin_Password'])){
+            return 'true';
+            //echo json_encode($row);
+        }
+        else {
+            echo json_encode($row['Admin_Password']);
+            return 'false';
+            //return $strPassHash;
+        }
     }
-    else {
-        return 'false';
-    }
+    //$strPassHash = $arrAdmin[Admin_Password];
+    //$conAction->bind_result($strEmail);
+    //$conAction->fetch();
+    echo json_encode($row);
     $conAction->close();
 }
 
@@ -679,7 +689,7 @@ function newCustomer(){
 // NEW Admin
 function newAdmin($strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassword){
     global $connection;
-    $strQuery = "INSERT INTO employee (Emp_Email, Emp_ID, Fname, Lname, Phone_Num, Title, Emp_Status, Admin_Password) VALUES (?,?,?,?,?,?,?,?)";
+    $strQuery = "INSERT INTO employee (Emp_Email, Emp_ID, Fname, Lname, Phone_Num, Title, Emp_Status, Admin_Password) VALUES (UPPER(?),?,?,?,?,?,?,?)";
     // Check Connection
     if ($connection->connect_errno) {
         $blnError = "true";
@@ -695,9 +705,11 @@ function newAdmin($strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTit
         $arrError = array('error' => $strErrorMessage);
         echo json_encode($arrError);
     }
+        // Hash Password
+        $strPassHash = password_hash($strPassword, PASSWORD_BCRYPT);
         $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $conAction->bind_param('ssssssss', $strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassword);
+        $conAction->bind_param('ssssssss', $strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTitle, $strStatus, $strPassHash);
         if($conAction->execute()){
         return '{"Outcome":"New Admin Created"}';
         } else {

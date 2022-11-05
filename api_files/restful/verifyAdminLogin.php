@@ -5,7 +5,8 @@
         $strPassword = $_POST['Password'];
         $strUsername = strip_tags($strUsername);
         $strPassword = strip_tags($strPassword);
-        echo addSession($strUsername, $strPassword);
+        //echo addSession($strUsername, $strPassword);
+        echo verifyAdmin($strUsername, $strPassword);
     }
     if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         $put_vars;

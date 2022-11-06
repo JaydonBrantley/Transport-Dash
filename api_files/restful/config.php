@@ -80,6 +80,128 @@ function getRoutes($strRouteID){
 
 }
 
+
+// GET Passengers Per Stop
+function getPassengersPerStop($strSessionID, $strRouteID, $strNumDays){
+    global $connection;
+    $strQuery = "SELECT stop, SUM(Total_Passengers) FROM historic_data WHERE County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
+    if(verifySession($strSessionID)) {
+
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrStops = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrStops[] = $row;
+        }
+        echo json_encode($arrStops);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
+// GET Popular Stops
+function getPopularStops($strSessionID, $strRouteID, $strNumDays){
+    global $connection;
+    $strQuery = "SELECT stop FROM historic_data WHERE Total_Passengers >= (SELECT AVG(Total_Passengers) FROM historic_data) AND County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
+    if(verifySession($strSessionID)) {
+
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrStops = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrStops[] = $row;
+        }
+        echo json_encode($arrStops);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
+// GET Unpopular Stops
+function getPopularStops($strSessionID, $strRouteID, $strNumDays){
+    global $connection;
+    $strQuery = "SELECT stop FROM historic_data WHERE Total_Passengers < (SELECT AVG(Total_Passengers) FROM historic_data) AND County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
+    if(verifySession($strSessionID)) {
+
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrStops = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrStops[] = $row;
+        }
+        echo json_encode($arrStops);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
+
 // GET Employees
 function getEmployees(){
     global $connection;

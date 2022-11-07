@@ -1,4 +1,5 @@
 //SWEET ALERTS
+/*
 $(document).on('click','#btnUserProfile',function(){
     Swal.fire({
         title: 'Profile',
@@ -9,7 +10,43 @@ $(document).on('click','#btnUserProfile',function(){
                 </div>`,
     })
 })
+*/
 
+$(document).on('click','#btnAdminLogin',function(){
+    /*$('#navBarLogin').fadeToggle();
+    setTimeout(function(){
+      $('#navBarFull').fadeToggle();
+    },375); */
+    let strUsername = $('#txtLoginEmail').val();
+    let strPassword = $('#txtLoginPassword').val();
+    var form = new FormData();
+    form.append("Email", strUsername);
+    form.append("Password", strPassword);
+
+    var settings = {
+      "url": "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
+      "method": "POST",
+      "timeout": 0,
+      "processData": false,
+      "mimeType": "multipart/form-data",
+      "contentType": false,
+      "data": form
+    };
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+
+    if(response == '{"Outcome":"Bad Username or Password"}'){
+      console.log('Bad Username or Password');
+      alert("Invalid Username or Password");
+    } else {
+        sessionStorage.setItem("SessionID",data.Outcome);
+        console.log(response);
+        alert("You're logged in")
+        location.replace('https://https://aiw.ojr.mybluehost.me/index.html');
+    }
+})
 
 $(document).on('click','#btnLogout',function(){
     Swal.fire({

@@ -162,7 +162,7 @@ function getPopularStops($strSessionID, $strRouteID, $strNumDays){
 }
 
 // GET Unpopular Stops
-function getPopularStops($strSessionID, $strRouteID, $strNumDays){
+function getUnpopularStops($strSessionID, $strRouteID, $strNumDays){
     global $connection;
     $strQuery = "SELECT stop FROM historic_data WHERE Total_Passengers < (SELECT AVG(Total_Passengers) FROM historic_data) AND County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
     if(verifySession($strSessionID)) {

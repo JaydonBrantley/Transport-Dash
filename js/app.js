@@ -13,15 +13,27 @@ $(document).on('click','#btnUserProfile',function(){
 */
 
 $(document).on('click','#btnAdminLogin',function(){
-    /*$('#navBarLogin').fadeToggle();
-    setTimeout(function(){
-      $('#navBarFull').fadeToggle();
-    },375); */
-    let strUsername = $('#txtLoginEmail').val();
-    let strPassword = $('#txtLoginPassword').val();
+/*    var formData = {
+      Email: $("#txtLoginEmail").val(),
+      Password: $("#txtLoginPassword").val(),
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
+      data: formData,
+      dataType: "json",
+      encode: false,
+      success: function(response){
+        console.log(response);
+        console.log(formData);
+      }
+    }).done(function (data) {
+    });
+*/
     var form = new FormData();
-    form.append("Email", strUsername);
-    form.append("Password", strPassword);
+    form.append("Email", $("#txtLoginEmail").val());
+    form.append("Password", $("#txtLoginPassword").val());
 
     var settings = {
       "url": "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
@@ -36,16 +48,6 @@ $(document).on('click','#btnAdminLogin',function(){
     $.ajax(settings).done(function (response) {
       console.log(response);
     });
-
-    if(response == '{"Outcome":"Bad Username or Password"}'){
-      console.log('Bad Username or Password');
-      alert("Invalid Username or Password");
-    } else {
-        sessionStorage.setItem("SessionID",data.Outcome);
-        console.log(response);
-        alert("You're logged in")
-        location.replace('https://https://aiw.ojr.mybluehost.me/index.html');
-    }
 })
 
 $(document).on('click','#btnLogout',function(){

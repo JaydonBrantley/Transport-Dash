@@ -648,6 +648,36 @@ function addSession($strEmpEmail,$strAdminPass){
     return '{"Outcome":"Bad Username or Password"}';
 }
 
+// INSERT Customer
+function addCustomer($strCellNum,$strDiscountStatus,$strSpecReq,$strAgeCat){
+    global $connection;
+    $strQuery = "INSERT INTO tblRoutes VALUES (?,?,?,?,0,0,0)";
+    // Check Connection
+    if ($conRoutes->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $conRoutes->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($conRoutes->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $conRoutes->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statRoutes = $conRoutes->prepare($strQuery);
+        // Bind Parameters
+        $statRoutes->bind_param('ssss', $strCellNum, $strDiscountStatus, $strSpecReq, $strAgeCat);
+        if($statRoutes->execute()){
+        return '{"Outcome":"New User Created"}';
+        } else {
+        return '{"Error":"User Not Created"}';
+        }
+        $statRoutes->close();
+}
+
 
 // INSERT Route
 function addRoute($RouteID,$Location,$Stop_Time,$Start_Time,$County,$Emp_ID,$Route_Distance,$Stop_ID,$Van_ID){
@@ -774,6 +804,7 @@ function updateSession($SessionID){
     json_encode($SessionID);
     return '{"Error":"No SessionID Provided"}';
 }
+
 // UPDATE Prepaid Rides
 function updatePrepaidRides($Prepaid_Rides,$Cell_Phone_Num){
     global $connection;
@@ -802,12 +833,6 @@ function updatePrepaidRides($Prepaid_Rides,$Cell_Phone_Num){
         return '{"Error":"Rides Not Updated"}';
         }
         $statRides->close();
-}
-
-// NEW Customer
-function newCustomer(){
-    $strQuery = "INSERT INTO tblCustomers VALUES (?,?,?,?,?)";
-    $result_set = mysqli_query($connection, $strQuery);
 }
 
 // NEW Admin

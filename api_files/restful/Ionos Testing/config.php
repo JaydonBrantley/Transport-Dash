@@ -253,8 +253,8 @@ function getAdmins(){
     $conAction->execute();      
     $result_set = $conAction->get_result();
     $arrAdmins = array();
-    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
-            $arrAdmins[] = $row;
+    while($row = $result_set->fetch_assoc()) {
+            $arrAdmins = $row;
     }
     echo json_encode($arrAdmins);
     $conAction->close();
@@ -432,18 +432,12 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
     while($row = $result_set->fetch_assoc()) {
         if (password_verify($strAdminPass, $row['Admin_Password'])){
             return 'true';
-            //echo json_encode($row);
         }
         else {
             echo json_encode($row['Admin_Password']);
             return 'false';
-            //return $strPassHash;
         }
     }
-    //$strPassHash = $arrAdmin[Admin_Password];
-    //$conAction->bind_result($strEmail);
-    //$conAction->fetch();
-    echo json_encode($row);
     $conAction->close();
 }
 
@@ -497,7 +491,7 @@ function addSession($strEmpEmail,$strAdminPass){
     $strVerified = verifyAdmin($strEmpEmail,$strAdminPass);
     if($strVerified == 'true'){
         $strSessionID = guidv4();
-        $strQuery = "INSERT INTO tblSessions VALUES (?,?,SYSDATE(),SYSDATE())";
+        $strQuery = "INSERT INTO session VALUES (?,?,SYSDATE(),SYSDATE())";
         // Check Connection
         if ($connection->connect_errno) {
             $blnError = "true";
@@ -622,7 +616,7 @@ function addStop($Stop_ID,$Route_ID,$Pickup_Time,$Dropoff_Time,$Miles_Per_Stop,$
 function updateSession($SessionID){
     global $connection;
     if($sessionID){
-        $strQuery = "UPDATE tblSessions SET LastActivity = SYSDATE() WHERE SessionID = ?";
+        $strQuery = "UPDATE session SET SessionLastActivity = SYSDATE() WHERE SessionID = ?";
         // Check Connection
         if ($connection->connect_errno) {
             $blnError = "true";

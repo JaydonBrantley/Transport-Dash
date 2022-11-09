@@ -6,6 +6,9 @@
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
+    font-size: large;
+    font-weight: 500;
+    color: white;
 }
 
 /*PHONE NUMBER PAGE*/
@@ -19,13 +22,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .card{
     display: flex;
     align-items: center;
+    justify-content: center;
     height: fit-content;
     border: none !important;
+    height: 90%;
+    background-color: rgb(59,70,83);
 }
 
 .logo{
@@ -33,28 +40,34 @@ body{
     justify-content: center;
 }
 
+.message{
+    text-align: center;
+}
+
 img{
     object-fit: contain;
-    height: 100px;
-    width: 200px;
+    height: 200px;
+    width: 300px;
 }
 
 .input-set{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100px;
     width: 100%;
+    
 }
 
 .tel-input{
     width: 100%;
     height: 50px;
+    color: white;
 }
 
 .action-btn{
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 100px;
     width: 100%;
 }
 
@@ -76,54 +89,3 @@ img{
 }
 
 /*Guage Chart*/
-
-.gauge {
-    width: 100%;
-    max-width: 250px;
-    font-family: "Roboto", sans-serif;
-    font-size: 32px;
-    color: #004033;
-    background-color: white;
-}
-
-.gauge__body {
-    width: 100%;
-    height: 0;
-    padding-bottom: 50%;
-    background: #b4c0be;
-    position: relative;
-    border-top-left-radius: 100% 200%;
-    border-top-right-radius: 100% 200%;
-    overflow: hidden;
-}
-
-.gauge__fill {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: inherit;
-    height: 100%;
-    background: rgb(189,136,32);
-    transform-origin: center top;
-    transform: rotate(0.25turn);
-    transition: transform 0.2s ease-out;
-}
-
-.gauge__cover {
-    width: 75%;
-    height: 150%;
-    background: #ffffff;
-    border-radius: 50%;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-
-/* Text */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 25%;
-    box-sizing: border-box;
-}
-  

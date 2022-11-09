@@ -12,28 +12,9 @@
         })
     }*/
 
-
-    const gaugeElement = document.querySelector(".gauge");
-
-    function setGaugeValue(gauge, value) {
-      if (value < 0 || value > 1) {
-        return;
-      }
-    
-      gauge.querySelector(".gauge__fill").style.transform = `rotate(${
-        value / 2
-      }turn)`;
-      gauge.querySelector(".gauge__cover").textContent = `${Math.round(
-        value * 100
-      )}%`;
-    }
-    
-    setGaugeValue(gaugeElement, 0.5);
-
-/*
   //TOTAL RIDE CHART
-  const TotalRide = document.getElementById('total-rides');
-  const TotalRides = new Chart (TotalRide,{
+  const totalRide = document.getElementById('total-rides');
+  const totalRides = new Chart (totalRide,{
       type: 'doughnut',
       data: {
             //labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
@@ -82,4 +63,3 @@
           }
       }
       });
-    */

@@ -1,20 +1,81 @@
  //DATA FUNCTIONS
 
     //AVG PASSANGER FUNCTIONS
+            //Chart.js functions
 
-                //GREEN ROUTE
-                function getStops(){
-                    $.getJSON('https://aiw.ojr.mybluehost.me/api/getStops.php?strStop_ID='+ strStop_ID + '&strRoute_ID=' + strRoute_ID +'', function(data){
+            async function apiData(){
+                const url = 'https://dummyjson.com/products';
+
+                const response = await fetch(url)
+                const datapoint = await response.json()
+                return datapoint;
+
+                const title = datapoint.products.map((name) => name.title)
+                strTitle = title;
+
+                const stock = datapoint.products.map((amount) => amount.stock)
+                strStock = stock;
+            }
+
+            let strTitle = [];
+            let strStock = [];
+
+            async function drawChart() {
+                await apiData()
+                    var AvgPassenger = document.getElementById('ckv-101-green');
+                    var AvgPassengers = new Chart(AvgPassenger, {
+                        type: 'line',
+                        data: {
+                            labels: strTitle,
+                            datasets: [{
+                                data: strStock,
+                                backgroundColor: ['rgb(50,162,71,0.7)'],
+                                borderColor: ['rgb(50,162,71)'],
+                                borderWidth: 2,
+                                tension: 0.4,
+                            }]
+                        },
+                        options: {
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            },
+                            maintainAspectRatio: false,
+                            responsive: true,
+                            scales: {
+                    /*
+                                x: {
+                                    type: 'time',
+                                    time: {
+                                        unit: 'day'
+                                    }
+                                },*/
+
+                                y: {
+                                    beginAtZero: false
+                                }
+                            },
+                        }
+                    });
+
+            }
+
+            drawChart();
+
+
+            //GREEN ROUTE
+                function getstops(){
+                    $.getJSON('https://aiw.ojr.mybluehost.me/api/getStops.php?SesstionID=' + strSessionID + '&RouteID='+ strRoute_ID +'&NumDays='+ srtNumDays +'',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
                         let arrData = [];
-                        $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_ID,y:stops.Route_ID});
+                        $.each(data,function(testAPI){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
                         })
                         return arrData;
                     })
-                    console.log(getStops)
                 }
 
-            /*
+/*
             //BLUE ROUTE
                 function getStops(){
                     $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
@@ -39,29 +100,7 @@
 
     //AVG TRIP FUNCTIONS
             
-                    //GREEN ROUTE
-                    function getStops(){
-                        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                            let arrData = [];
-                            $.each(data,function(stops){
-                                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                            })
-                            return arrData;
-                        })
-                    }
-                    
-                //BLUE ROUTE
-                    function getStops(){
-                        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                            let arrData = [];
-                            $.each(data,function(stops){
-                                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                            })
-                            return arrData;
-                        })
-                    }
-        
-                //COMPARE ROUTES
+            //GREEN ROUTE
                 function getStops(){
                     $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
                         let arrData = [];
@@ -71,6 +110,28 @@
                         return arrData;
                     })
                 }
+                
+            //BLUE ROUTE
+                function getStops(){
+                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                        let arrData = [];
+                        $.each(data,function(stops){
+                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                        })
+                        return arrData;
+                    })
+                }
+    
+            //COMPARE ROUTES
+            function getStops(){
+                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
+                    let arrData = [];
+                    $.each(data,function(stops){
+                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
+                    })
+                    return arrData;
+                })
+            }
 
     //STOPS BOARDED FUNCTIONS
 
@@ -140,8 +201,9 @@
                     })
                     return arrData;
                 })
-            } */
+            } 
 
+*/
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 
@@ -176,41 +238,6 @@ const week = [
 ];
 
 */
-
-var AvgPassenger = document.getElementById('ckv-101-green');
-var AvgPassengers = new Chart(AvgPassenger, {
-    type: 'line',
-    data: {
-        //labels: ['HUB','WALMART','LOGANS','JACKSON PLAZA','SENIOR CENTER','PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL','LIBRARY','COURT HOUSE','KROGER'],
-        datasets: [{
-            data: getStops,
-            backgroundColor: ['rgb(50,162,71,0.7)'],
-            borderColor: ['rgb(50,162,71)'],
-            borderWidth: 2,
-            tension: 0.4,
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        maintainAspectRatio: false,
-        responsive: true,
-        scales: {
-            x: {
-                type: 'time',
-                time: {
-                    unit: 'day'
-                }
-            },
-            y: {
-                beginAtZero: true
-            }
-        },
-    }
-});
 
 const AvgTrip = document.getElementById('ckv-102-green');
 const AvgTrips = new Chart (AvgTrip, {

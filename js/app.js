@@ -50,6 +50,32 @@ $(document).on('click','#btnAdminLogin',function(){
     });
 })
 
+$(document).on('click','#btnAdminSignup',function(){
+      var form = new FormData();
+      form.append("Email", $("#txtSignupEmail").val());
+      form.append("EmpID", $("#txtSignupEmpID").val());
+      form.append("FName", $("#txtSignupFName").val());
+      form.append("LName", $("#txtSignupLName").val());
+      form.append("Phone", $("#txtSignupPhone").val());
+      form.append("Title", $("#txtSignupTitle").val());
+      form.append("Status", $("#txtSignupStatus").val());
+      form.append("Password", $("#txtSignupPassword").val());
+  
+      var settings = {
+        "url": "https://aiw.ojr.mybluehost.me/api/newAdmin.php",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+      };
+  
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+  })
+
 $(document).on('click','#btnLogout',function(){
     Swal.fire({
         title: 'Logout?',

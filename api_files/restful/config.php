@@ -772,14 +772,14 @@ function addStop($Stop_ID,$Route_ID,$Pickup_Time,$Dropoff_Time,$Miles_Per_Stop,$
 // UPDATE Session
 function updateSession($SessionID){
     global $connection;
-    if($sessionID){
-        $strQuery = "UPDATE session SET SessionLastActivity = SYSDATE() WHERE SessionID = ?";
+    if($SessionID){
+        $strQuery = "UPDATE session SET SessionLastActivity = SYSDATE() WHERE Session_ID = ?";
         // Check Connection
         if ($connection->connect_errno) {
             $blnError = "true";
             $strErrorMessage = $connection->connect_error;
             $arrError = array('error' => $strErrorMessage);
-            echo json_encode($arrError);
+            return json_encode($arrError);
             exit();
         }
         if ($connection->ping()) {
@@ -787,21 +787,20 @@ function updateSession($SessionID){
             $blnError = "true";
             $strErrorMessage = $connection->error;
             $arrError = array('error' => $strErrorMessage);
-            echo json_encode($arrError);
+            return json_encode($arrError);
         }
+        
         $conAction = $connection->prepare($strQuery);
+        
         // Bind Parameters
-        $conAction->bind_param('s', $sessionID);
+        $conAction->bind_param('s', $SessionID);
         if($conAction->execute()){
-            json_encode($SessionID);
             return '{"Outcome":"Session Updated"}';
         } else {
-            json_encode($SessionID);
             return '{"Error":"Session Not Updated"}';
         }
         $conAction->close();
     }
-    json_encode($SessionID);
     return '{"Error":"No SessionID Provided"}';
 }
 
@@ -869,7 +868,7 @@ function newAdmin($strEmail, $strEmpID, $strFName, $strLName, $strPhone, $strTit
 
 function deleteSession($SessionID){
     global $connection;
-    if($sessionID){
+    if($SessionID){
         $strQuery = "DELETE FROM session WHERE Session_ID = ?";
         // Check Connection
         if ($connection->connect_errno) {
@@ -888,7 +887,7 @@ function deleteSession($SessionID){
         }
         $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $conAction->bind_param('s', $sessionID);
+        $conAction->bind_param('s', $SessionID);
         if($conAction->execute()){
             return '{"Outcome":"Session Deleted"}';
         } else {

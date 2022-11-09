@@ -5,7 +5,6 @@
         $strPassword = $_POST['Password'];
         $strUsername = strip_tags($strUsername);
         $strPassword = strip_tags($strPassword);
-        //echo addSession($strUsername, $strPassword);
         echo addSession($strUsername, $strPassword);
     }
     if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
@@ -13,7 +12,6 @@
         parse_str(file_get_contents("php://input"),$put_vars);
         $sessionID = $put_vars['SessionID'];
         $sessionID = strip_tags($sessionID);
-      	echo print($SessionID);
         echo updateSession($sessionID);
     }
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {

@@ -12,6 +12,55 @@ $(document).on('click','#btnUserProfile',function(){
 })
 */
 
+$(document).on('click','#btnAdminSignup',function(){
+  var form = new FormData();
+  form.append("Email", $("#txtSignupEmail").val());
+  form.append("EmpID", $("#txtSignupEmpID").val());
+  form.append("FName", $("#txtSignupFName").val());
+  form.append("LName", $("#txtSignupLName").val());
+  form.append("Phone", $("#txtSignupPhone").val());
+  form.append("Title", $("#txtSignupTitle").val());
+  form.append("Status", "Active");
+  form.append("Password", $("#txtSignupPassword").val());
+
+  var settings = {
+    "url": "https://aiw.ojr.mybluehost.me/api/newAdmin.php",
+    "method": "POST",
+    "timeout": 0,
+    "processData": false,
+    "mimeType": "multipart/form-data",
+    "contentType": false,
+    "data": form
+  };
+
+  $.ajax(settings).done(function (response) {
+    if(response == 'Error'){
+      console.log('Found Error');
+      alert("There was an error with the login.");
+    } else {
+      console.log('You are verified');
+      console.log(response);
+      //sessionStorage.setItem("sessionID", arrSessionID.sessionID);
+      //window.location.href="https://aiw.ojr.mybluehost.me/index.html";
+    }
+  });
+})
+
+function updateSession(){
+  $.ajax({
+    type: "PUT",
+    contentType:"application/json; charset=utf-8",
+    url: "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
+    data: { SessionID: sessionStorage.getItem('sessionID') },
+    success:function(result){
+        console.log(result);
+    },
+    error: function(resultError){
+        console.log(resultError);
+    }
+  })
+}
+
 $(document).on('click','#btnAdminLogin',function(){
     var form = new FormData();
     form.append("Email", $("#txtLoginEmail").val());
@@ -33,10 +82,9 @@ $(document).on('click','#btnAdminLogin',function(){
         alert("There was an error with the login.");
       } else {
         console.log('You are verified');
-        let arrSessionID = [];
-        arrSessionID = JSON.parse(response);
-        sessionStorage.setItem("sessionID", arrSessionID);
-        window.location.href="../index.html";
+        console.log(response);
+        //sessionStorage.setItem("sessionID", arrSessionID.sessionID);
+        window.location="https://aiw.ojr.mybluehost.me/index.html";
       }
     });
 })
@@ -51,6 +99,18 @@ $(document).on('click','#btnLogout',function(){
         confirmButtonText: 'Logout!'
       }).then((result) => {
         if (result.isConfirmed) {
+          $.ajax({
+            type: "DELETE",
+            contentType:"application/json; charset=utf-8",
+            url: "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
+            data: { SessionID: sessionStorage.getItem('sessionID') },
+            success:function(result){
+                console.log(result);
+            },
+            error: function(resultError){
+                console.log(resultError);
+            }
+          })
           Swal.fire(
             'Logged Out!',
           )

@@ -10,9 +10,10 @@
     if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         $put_vars;
         parse_str(file_get_contents("php://input"),$put_vars);
-        $sessionID = $put_vars['SessionID'];
-        $sessionID = strip_tags($sessionID);
-        echo updateSession($sessionID);
+        $SessionID = $put_vars['SessionID'];
+        $SessionID = strip_tags($SessionID);
+      	//echo print($SessionID);
+        echo updateSession($SessionID);
     }
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
         $delete_vars;

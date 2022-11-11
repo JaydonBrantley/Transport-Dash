@@ -13,24 +13,6 @@ $(document).on('click','#btnUserProfile',function(){
 */
 
 $(document).on('click','#btnAdminLogin',function(){
-/*    var formData = {
-      Email: $("#txtLoginEmail").val(),
-      Password: $("#txtLoginPassword").val(),
-    };
-
-    $.ajax({
-      type: "POST",
-      url: "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
-      data: formData,
-      dataType: "json",
-      encode: false,
-      success: function(response){
-        console.log(response);
-        console.log(formData);
-      }
-    }).done(function (data) {
-    });
-*/
     var form = new FormData();
     form.append("Email", $("#txtLoginEmail").val());
     form.append("Password", $("#txtLoginPassword").val());
@@ -46,35 +28,18 @@ $(document).on('click','#btnAdminLogin',function(){
     };
 
     $.ajax(settings).done(function (response) {
-      console.log(response);
+      if(response == 'Error'){
+        console.log('Found Error');
+        alert("There was an error with the login.");
+      } else {
+        console.log('You are verified');
+        let arrSessionID = [];
+        arrSessionID = JSON.parse(response);
+        sessionStorage.setItem("sessionID", arrSessionID);
+        window.location.href="../index.html";
+      }
     });
 })
-
-$(document).on('click','#btnAdminSignup',function(){
-      var form = new FormData();
-      form.append("Email", $("#txtSignupEmail").val());
-      form.append("EmpID", $("#txtSignupEmpID").val());
-      form.append("FName", $("#txtSignupFName").val());
-      form.append("LName", $("#txtSignupLName").val());
-      form.append("Phone", $("#txtSignupPhone").val());
-      form.append("Title", $("#txtSignupTitle").val());
-      form.append("Status", $("#txtSignupStatus").val());
-      form.append("Password", $("#txtSignupPassword").val());
-  
-      var settings = {
-        "url": "https://aiw.ojr.mybluehost.me/api/newAdmin.php",
-        "method": "POST",
-        "timeout": 0,
-        "processData": false,
-        "mimeType": "multipart/form-data",
-        "contentType": false,
-        "data": form
-      };
-  
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-      });
-  })
 
 $(document).on('click','#btnLogout',function(){
     Swal.fire({

@@ -1,0 +1,22 @@
+UCHRA PROJECT TO DO LIST:
+	Test get functions
+	get with jaydon to verify the API URL (SAT OR SUN)
+	
+DASHBOARD:
+	add aria lables
+	fix grapgical glitches
+
+REWARDS SYSTEM:
+	add aria lables
+	fix grapgical glitches
+	finish reward graph and interface
+
+UI CHANGES - REWARD SYSTEM
+    16:9 aspect ratio
+    add vertical padding
+    change background - nav blue, letters white, include card as navy blue
+    spread everything out
+    add how many free rides they have
+    add a logout button
+	
+COMPLETED (COMMENTS ON GITHUB)

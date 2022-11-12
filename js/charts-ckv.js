@@ -1,215 +1,92 @@
- //DATA FUNCTIONS
-
-    //AVG PASSANGER FUNCTIONS
-            //Chart.js functions
-
-            async function apiData(){
-                const url = 'https://dummyjson.com/products';
-
-                const response = await fetch(url)
-                const datapoint = await response.json()
-                return datapoint;
-
-                const title = datapoint.products.map((name) => name.title)
-                strTitle = title;
-
-                const stock = datapoint.products.map((amount) => amount.stock)
-                strStock = stock;
-            }
-
-            let strTitle = [];
-            let strStock = [];
-
-            async function drawChart() {
-                await apiData()
-                    var AvgPassenger = document.getElementById('ckv-101-green');
-                    var AvgPassengers = new Chart(AvgPassenger, {
-                        type: 'line',
-                        data: {
-                            labels: strTitle,
-                            datasets: [{
-                                data: strStock,
-                                backgroundColor: ['rgb(50,162,71,0.7)'],
-                                borderColor: ['rgb(50,162,71)'],
-                                borderWidth: 2,
-                                tension: 0.4,
-                            }]
-                        },
-                        options: {
-                            plugins: {
-                                legend: {
-                                    display: false
-                                }
-                            },
-                            maintainAspectRatio: false,
-                            responsive: true,
-                            scales: {
-                    /*
-                                x: {
-                                    type: 'time',
-                                    time: {
-                                        unit: 'day'
-                                    }
-                                },*/
-
-                                y: {
-                                    beginAtZero: false
-                                }
-                            },
-                        }
-                    });
-
-            }
-
-            drawChart();
-
-
-            //GREEN ROUTE
-                function getstops(){
-                    $.getJSON('https://aiw.ojr.mybluehost.me/api/getStops.php?SesstionID=' + strSessionID + '&RouteID='+ strRoute_ID +'&NumDays='+ srtNumDays +'',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                        let arrData = [];
-                        $.each(data,function(testAPI){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                        })
-                        return arrData;
-                    })
-                }
-
-/*
-            //BLUE ROUTE
-                function getStops(){
-                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                        let arrData = [];
-                        $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                        })
-                        return arrData;
-                    })
-                }
-    
-            //COMPARE ROUTES
-            function getStops(){
-                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                    let arrData = [];
-                    $.each(data,function(stops){
-                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                    })
-                    return arrData;
-                })
-            }
-
-    //AVG TRIP FUNCTIONS
-            
-            //GREEN ROUTE
-                function getStops(){
-                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                        let arrData = [];
-                        $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                        })
-                        return arrData;
-                    })
-                }
-                
-            //BLUE ROUTE
-                function getStops(){
-                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                        let arrData = [];
-                        $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                        })
-                        return arrData;
-                    })
-                }
-    
-            //COMPARE ROUTES
-            function getStops(){
-                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                    let arrData = [];
-                    $.each(data,function(stops){
-                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                    })
-                    return arrData;
-                })
-            }
-
-    //STOPS BOARDED FUNCTIONS
-
-        //GREEN ROUTE
-            function getStops(){
-                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                    let arrData = [];
-                    $.each(data,function(stops){
-                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                    })
-                    return arrData;
-                })
-            }
-            
-        //BLUE ROUTE
-            function getStops(){
-                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                    let arrData = [];
-                    $.each(data,function(stops){
-                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                    })
-                    return arrData;
-                })
-            }
-
-        //COMPARE ROUTES
-        function getStops(){
-            $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                let arrData = [];
-                $.each(data,function(stops){
-                    arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                })
-                return arrData;
-            })
-        }
-
-    //POPULAR STOPS FUNCTIONS
-
-                //GREEN ROUTE
-                function getStops(){
-                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                        let arrData = [];
-                        $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                        })
-                        return arrData;
-                    })
-                }
-                
-            //BLUE ROUTE
-                function getStops(){
-                    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                        let arrData = [];
-                        $.each(data,function(stops){
-                            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                        })
-                        return arrData;
-                    })
-                }
-    
-            //COMPARE ROUTES
-            function getStops(){
-                $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                    let arrData = [];
-                    $.each(data,function(stops){
-                        arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                    })
-                    return arrData;
-                })
-            } 
-
-*/
-// Register the plugin to all charts:
+ // REGISTERS ALL THE PLUGINS TO EACH CHART
 Chart.register(ChartDataLabels);
 
+//FETCHES ALL DATAPOINTS
+function updateChart(){
+    async function fetchData(){
+        const url = 'https://dummyjson.com/products'; //INSERT OUT API
+        const response = await fetch(url)
+        const datapoint = await response.json()
+        return datapoint;
+    };
+    //EXTRACTS ALL DATAPOINTS WITHIN THE API
+    fetchData().then(datapoints => {
+        //EXTRACTS SPECIFIC POINTS BASE ON THE FILE STRUCTURE
+            //GREEN ROUTES, BLUE ROUTES, AND BOTH ROUTES
+                const title = datapoints.products.map(
+                    function(index){
+                        return index.title;
+                    })
+                const price = datapoints.products.map(
+                    function(index){
+                        return index.price;
+                    })
+                const rating = datapoints.products.map(
+                    function(index){
+                        return index.rating;
+                    })
+                const stock = datapoints.products.map(
+                    function(index){
+                        return index.stock;
+                    })
+                const discountPercentage = datapoints.products.map(
+                    function(index){
+                        return index.discountPercentage;
+                    })
+                //GREEN ROUTE
+                    //AVG. PASSENGER
+                        avgPassengers.data.labels = title;
+                        avgPassengers.data.datasets[0].data = price;
+                    //AVG. TRIP PER MILE (RATING)
+                        avgTrips.data.labels = title;
+                        avgTrips.data.datasets[0].data = rating;
+                    //AVG. STOPS BOARDED
+                        stopsBoarded.data.labels = title;
+                        stopsBoarded.data.datasets[0].data = stock;
+                    //AVG. POPULAR STOPS
+                        popularStops.data.labels = title;
+                        popularStops.data.datasets[0].data = discountPercentage;    
+
+                    //UPDATES CHARTS
+                        avgPassengers.update(); avgTrips.update(); stopsBoarded.update(); popularStops.update();
+
+                //BLUE ROUTE
+                    //AVG. PASSENGER
+                        avgPassengersBlue.data.labels = title;
+                        avgPassengersBlue.data.datasets[0].data = price;
+                    //AVG. TRIP PER MILE (RATING)
+                        avgTripsBlue.data.labels = title;
+                        avgTripsBlue.data.datasets[0].data = rating;
+                    //AVG. STOPS BOARDED
+                        stopsBoardedBlue.data.labels = title;
+                        stopsBoardedBlue.data.datasets[0].data = stock;
+                    //AVG. POPULAR STOPS
+                        popularStopsBlue.data.labels = title;
+                        popularStopsBlue.data.datasets[0].data = discountPercentage;    
+                
+                    //UPDATES CHARTS
+                        avgPassengersBlue.update(); avgTripsBlue.update(); stopsBoardedBlue.update(); popularStopsBlue.update();
+
+                //BOTH ROUTES ROUTE
+                    //AVG. PASSENGER
+                        avgPassengersBoth.data.labels = title;
+                        avgPassengersBoth.data.datasets[0].data = price;
+                    //AVG. TRIP PER MILE (RATING)
+                        avgTripsBoth.data.labels = title;
+                        avgTripsBoth.data.datasets[0].data = rating;
+                    //AVG. STOPS BOARDED
+                        stopsBoardedBoth.data.labels = title;
+                        stopsBoardedBoth.data.datasets[0].data = stock;
+                    //AVG. POPULAR STOPS
+                        popularStopsBoth.data.labels = title;
+                        popularStopsBoth.data.datasets[0].data = discountPercentage;    
+
+                    //UPDATES CHARTS
+                        avgPassengersBoth.update(); avgTripsBoth.update(); stopsBoardedBoth.update(); popularStopsBoth.update();
+    });
+}
 
 //GREEN ROUTES
-
 /*
 
 // Filter by Day
@@ -239,13 +116,42 @@ const week = [
 
 */
 
-const AvgTrip = document.getElementById('ckv-102-green');
-const AvgTrips = new Chart (AvgTrip, {
+const avgPassenger = document.getElementById('ckv-101-green');
+const avgPassengers = new Chart(avgPassenger, {
     type: 'line',
     data: {
-        labels: ['HUB','WALMART','LOGANS','JACKSON PLAZA','SENIOR CENTER','PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL','LIBRARY','COURT HOUSE','KROGER'],
+        labels: [],
         datasets: [{
-            data: [19,10,20,14,7,12,6,18,13,1,20,3],
+            data: [],
+            backgroundColor: ['rgb(50,162,71,0.7)'],
+            borderColor: ['rgb(50,162,71)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        maintainAspectRatio: false,
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+    }
+});
+
+const avgTrip = document.getElementById('ckv-102-green');
+const avgTrips = new Chart (avgTrip, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
@@ -268,13 +174,13 @@ const AvgTrips = new Chart (AvgTrip, {
     }
 });
 
-const StopBoarded = document.getElementById('ckv-103-green');
-const StopsBoarded = new Chart (StopBoarded, {
+const stopBoarded = document.getElementById('ckv-103-green');
+const stopsBoarded = new Chart (stopBoarded, {
     type: 'bar',
     data: {
-        labels: ['HUB','WALMART','LOGANS','JACKSON PLAZA','SENIOR CENTER','PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL','LIBRARY','COURT HOUSE','KROGER'],
+        labels: [],
         datasets: [{
-            data: [121,190,111,152,121,190,111,152,184,153,142,111],
+            data: [],
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
@@ -298,13 +204,13 @@ const StopsBoarded = new Chart (StopBoarded, {
     }
 });
 
-const PopularStop = document.getElementById('ckv-104-green');
-const PopularStops = new Chart (PopularStop, {
+const popularStop = document.getElementById('ckv-104-green');
+const popularStops = new Chart (popularStop, {
     type: 'bar',
     data: {
-        labels: ['HUB','WALMART','LOGANS','JACKSON PLAZA','SENIOR CENTER','PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL','LIBRARY','COURT HOUSE','KROGER'],
+        labels: [],
         datasets: [{
-            data: [121,190,111,152,121,190,111,152,184,153,142,111],
+            data: [],
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
@@ -346,8 +252,8 @@ $(document).on('click','#btnWeekCkv',function(){
 */
 
 //BLUE ROUTES
-const AvgPassengerBlue = document.getElementById('ckv-201-blue');
-const AvgPassengersBlue = new Chart (AvgPassengerBlue, {
+const avgPassengerBlue = document.getElementById('ckv-201-blue');
+const avgPassengersBlue = new Chart (avgPassengerBlue, {
 type: 'line',
 data: {
     labels: ['HUB','KROGER','COURT HOUSE','LIBRARY','TTU - STUDENT CENTER','7TH & WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA','NEWMAN/WILLOW VALLEY CRT','MISSION','WALMART'],
@@ -376,8 +282,8 @@ options: {
 }
 });
 
-const AvgTripBlue = document.getElementById('ckv-202-blue');
-const AvgTripsBlue = new Chart (AvgTripBlue, {
+const avgTripBlue = document.getElementById('ckv-202-blue');
+const avgTripsBlue = new Chart (avgTripBlue, {
     type: 'line',
     data: {
         labels: ['HUB','KROGER','COURT HOUSE','LIBRARY','TTU - STUDENT CENTER','7TH & WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA','NEWMAN/WILLOW VALLEY CRT','MISSION','WALMART'],
@@ -405,8 +311,8 @@ const AvgTripsBlue = new Chart (AvgTripBlue, {
     }
   });
 
-const StopBoardedBlue = document.getElementById('ckv-203-blue');
-const StopsBoardedBlue = new Chart (StopBoardedBlue, {
+const stopBoardedBlue = document.getElementById('ckv-203-blue');
+const stopsBoardedBlue = new Chart (stopBoardedBlue, {
     type: 'bar',
     data: {
         labels: ['HUB','KROGER','COURT HOUSE','LIBRARY','TTU - STUDENT CENTER','7TH & WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA','NEWMAN/WILLOW VALLEY CRT','MISSION','WALMART'],
@@ -435,8 +341,8 @@ const StopsBoardedBlue = new Chart (StopBoardedBlue, {
     }
   });
 
-  const PopularStopBlue = document.getElementById('ckv-104-blue');
-const PopularStopsBlue = new Chart (PopularStopBlue, {
+  const popularStopBlue = document.getElementById('ckv-104-blue');
+const popularStopsBlue = new Chart (popularStopBlue, {
     type: 'bar',
     data: {
         labels: ['HUB','KROGER','COURT HOUSE','LIBRARY','TTU - STUDENT CENTER','7TH & WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA','NEWMAN/WILLOW VALLEY CRT','MISSION','WALMART'],
@@ -466,8 +372,8 @@ const PopularStopsBlue = new Chart (PopularStopBlue, {
 });
 
   //COMPARE ROUTES
-  const AvgPassengerBlue2 = document.getElementById('ckv-301-compare');
-const AvgPassengersBlue2 = new Chart (AvgPassengerBlue2, {
+  const avgPassengerBoth = document.getElementById('ckv-301-compare');
+const avgPassengersBoth = new Chart (avgPassengerBoth, {
 type: 'line',
 data: {
     labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
@@ -501,8 +407,8 @@ options: {
 }
 });
 
-const AvgTripBlue2 = document.getElementById('ckv-302-compare');
-const AvgTripsBlue2 = new Chart (AvgTripBlue2, {
+const avgTripBoth = document.getElementById('ckv-302-compare');
+const avgTripsBoth = new Chart (avgTripBoth, {
     type: 'line',
     data: {
         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
@@ -536,8 +442,8 @@ const AvgTripsBlue2 = new Chart (AvgTripBlue2, {
     }
   });
 
-const StopBoardedBlue2 = document.getElementById('ckv-303-compare');
-const StopsBoardedBlue2 = new Chart (StopBoardedBlue2, {
+const stopBoardedBoth = document.getElementById('ckv-303-compare');
+const stopsBoardedBoth = new Chart (stopBoardedBoth, {
     type: 'bar',
     data: {
         labels: ['HUB', 'KROGER', 'COURT HOUSE', 'LIBRARY', 'TTU - STUDENT CENTER', '7TH 7 WILLOW','PINE','OAK TREE TOWERS','JACKSON PLAZA', 'NEWMAN/WILLOW VALLEY CRT.', 'MISSION', 'WALMART'],
@@ -573,8 +479,8 @@ const StopsBoardedBlue2 = new Chart (StopBoardedBlue2, {
     }
   });
   
-const PopularStopBlue2 = document.getElementById('ckv-104-compare');
-const PopularStopsBlue2 = new Chart (PopularStopBlue2, {
+const popularStopBoth = document.getElementById('ckv-104-compare');
+const popularStopsBoth = new Chart (popularStopBoth, {
     type: 'bar',
     data: {
         labels: ['HUB', 'WALMART', 'LOGANS', 'JACKSON PLAZA', 'SENIOR CENTER', 'PINE','7TH & WILLOW','TTU - STUDENT CENTER','HOSPITAL', 'LIBRARY', 'COURT HOUSE', 'KROGER'],

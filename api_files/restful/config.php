@@ -84,7 +84,7 @@ function getRoutes($strRouteID){
 // GET Passengers Per Stop
 function getPassengersPerStop($strSessionID, $strRouteID, $strNumDays){
     global $connection;
-    $strQuery = "SELECT stop, SUM(Total_Passengers) FROM historic_data WHERE County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
+    $strQuery = "SELECT Stop_ID, SUM(Total_Passengers) FROM historic_data WHERE Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY GROUP BY Stop_ID;";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {
@@ -121,10 +121,11 @@ function getPassengersPerStop($strSessionID, $strRouteID, $strNumDays){
     }
 }
 
-// GET Popular Stops
+
+// GET Unpopular Stops
 function getPopularStops($strSessionID, $strRouteID, $strNumDays){
     global $connection;
-    $strQuery = "SELECT stop FROM historic_data WHERE Total_Passengers >= (SELECT AVG(Total_Passengers) FROM historic_data) AND County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
+    $strQuery = "SELECT Stop_ID, Total_Passengers FROM historic_data WHERE Total_Passengers > (SELECT AVG(Total_Passengers) FROM historic_data) AND Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY GROUP BY Stop_ID;";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {
@@ -164,7 +165,7 @@ function getPopularStops($strSessionID, $strRouteID, $strNumDays){
 // GET Unpopular Stops
 function getUnpopularStops($strSessionID, $strRouteID, $strNumDays){
     global $connection;
-    $strQuery = "SELECT stop FROM historic_data WHERE Total_Passengers < (SELECT AVG(Total_Passengers) FROM historic_data) AND County_Route = ? AND Date >= NOW() - INTERVAL > ? DAY GROUP BY stop;";
+    $strQuery = "SELECT Stop_ID, Total_Passengers FROM historic_data WHERE Total_Passengers < (SELECT AVG(Total_Passengers) FROM historic_data) AND Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY GROUP BY Stop_ID;";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {

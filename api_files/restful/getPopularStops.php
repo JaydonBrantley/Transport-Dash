@@ -6,7 +6,7 @@
     $strRouteID = strip_tags($strRouteID);
     $strNumDays = $_GET['NumDays'];
     $strNumDays = strip_tags($strNumDays);
-
+    
     echo getPopularStops($strSessionID, $strRouteID, $strNumDays);
 
 ?>

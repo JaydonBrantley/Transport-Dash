@@ -40,8 +40,8 @@ $(document).on('click','#btnAdminSignup',function(){
     } else {
       console.log('You are verified');
       console.log(response);
-      //sessionStorage.setItem("sessionID", arrSessionID.sessionID);
-      //window.location.href="https://aiw.ojr.mybluehost.me/index.html";
+      sessionStorage.setItem("sessionID", response["Session_ID"]);
+      window.location="https://aiw.ojr.mybluehost.me/index.html";
     }
   });
 })

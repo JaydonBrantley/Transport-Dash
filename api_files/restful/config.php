@@ -80,11 +80,50 @@ function getRoutes($strRouteID){
 
 }
 
+// GET Passengers Per Stop
+function getMilesPerStop($strSessionID, $strRouteID, $strNumDays){
+    global $connection;
+    $strQuery = "SELECT Stop_ID, Miles_Per_Stop FROM stop WHERE Route_ID = ? AND Stop_ID != null GROUP BY Stop_ID;";
+    if(verifySession($strSessionID)) {
+
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrStops = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrStops[] = $row;
+        }
+        echo json_encode($arrStops);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
 
 // GET Passengers Per Stop
 function getPassengersPerStop($strSessionID, $strRouteID, $strNumDays){
     global $connection;
-    $strQuery = "SELECT Stop_ID, SUM(Total_Passengers) FROM historic_data WHERE Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY GROUP BY Stop_ID;";
+    $strQuery = "SELECT Stop_ID, SUM(Total_Passengers) AS Total_Passengers FROM historic_data WHERE Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY AND Stop_ID IS NOT NULL GROUP BY Stop_ID;";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {
@@ -125,7 +164,7 @@ function getPassengersPerStop($strSessionID, $strRouteID, $strNumDays){
 // GET Unpopular Stops
 function getPopularStops($strSessionID, $strRouteID, $strNumDays){
     global $connection;
-    $strQuery = "SELECT Stop_ID, Total_Passengers FROM historic_data WHERE Total_Passengers > (SELECT AVG(Total_Passengers) FROM historic_data) AND Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY GROUP BY Stop_ID;";
+    $strQuery = "SELECT Stop_ID, Total_Passengers FROM historic_data WHERE Total_Passengers > (SELECT AVG(Total_Passengers) FROM historic_data) AND Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY AND Stop_ID IS NOT NULL GROUP BY Stop_ID;";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {

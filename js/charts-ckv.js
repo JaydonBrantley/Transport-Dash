@@ -2,89 +2,33 @@
 Chart.register(ChartDataLabels);
 
 //FETCHES ALL DATAPOINTS
+
+
 function updateChart(){
     async function fetchData(){
-        const url = 'https://dummyjson.com/products'; //INSERT OUT API
-        const response = await fetch(url)
+        const url = 'https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID=6648c787-0a27-44d9-877a-ac302d4e5b7c&RouteID=1001&NumDays=365'; //INSERT OUT API
+        const response = await fetch(url);
         const datapoint = await response.json()
         return datapoint;
     };
-    //EXTRACTS ALL DATAPOINTS WITHIN THE API
-    fetchData().then(datapoints => {
-        //EXTRACTS SPECIFIC POINTS BASE ON THE FILE STRUCTURE
-            //GREEN ROUTES, BLUE ROUTES, AND BOTH ROUTES
-                const title = datapoints.products.map(
-                    function(index){
-                        return index.title;
-                    })
-                const price = datapoints.products.map(
-                    function(index){
-                        return index.price;
-                    })
-                const rating = datapoints.products.map(
-                    function(index){
-                        return index.rating;
-                    })
-                const stock = datapoints.products.map(
-                    function(index){
-                        return index.stock;
-                    })
-                const discountPercentage = datapoints.products.map(
-                    function(index){
-                        return index.discountPercentage;
-                    })
-                //GREEN ROUTE
-                    //AVG. PASSENGER
-                        avgPassengers.data.labels = title;
-                        avgPassengers.data.datasets[0].data = price;
-                    //AVG. TRIP PER MILE (RATING)
-                        avgTrips.data.labels = title;
-                        avgTrips.data.datasets[0].data = rating;
-                    //AVG. STOPS BOARDED
-                        stopsBoarded.data.labels = title;
-                        stopsBoarded.data.datasets[0].data = stock;
-                    //AVG. POPULAR STOPS
-                        popularStops.data.labels = title;
-                        popularStops.data.datasets[0].data = discountPercentage;    
+    
+    fetchData().then(datapoint => {
+        const Stop_ID = datapoint.map(
+            function(index){
+                return index.Stop_ID;
+            })
+            const Total_Passengers = datapoint.map(
+            function(index){
+                return index.Total_Passengers;
+            })
 
-                    //UPDATES CHARTS
-                        avgPassengers.update(); avgTrips.update(); stopsBoarded.update(); popularStops.update();
-
-                //BLUE ROUTE
-                    //AVG. PASSENGER
-                        avgPassengersBlue.data.labels = title;
-                        avgPassengersBlue.data.datasets[0].data = price;
-                    //AVG. TRIP PER MILE (RATING)
-                        avgTripsBlue.data.labels = title;
-                        avgTripsBlue.data.datasets[0].data = rating;
-                    //AVG. STOPS BOARDED
-                        stopsBoardedBlue.data.labels = title;
-                        stopsBoardedBlue.data.datasets[0].data = stock;
-                    //AVG. POPULAR STOPS
-                        popularStopsBlue.data.labels = title;
-                        popularStopsBlue.data.datasets[0].data = discountPercentage;    
-                
-                    //UPDATES CHARTS
-                        avgPassengersBlue.update(); avgTripsBlue.update(); stopsBoardedBlue.update(); popularStopsBlue.update();
-
-                //BOTH ROUTES ROUTE
-                    //AVG. PASSENGER
-                        avgPassengersBoth.data.labels = title;
-                        avgPassengersBoth.data.datasets[0].data = price;
-                    //AVG. TRIP PER MILE (RATING)
-                        avgTripsBoth.data.labels = title;
-                        avgTripsBoth.data.datasets[0].data = rating;
-                    //AVG. STOPS BOARDED
-                        stopsBoardedBoth.data.labels = title;
-                        stopsBoardedBoth.data.datasets[0].data = stock;
-                    //AVG. POPULAR STOPS
-                        popularStopsBoth.data.labels = title;
-                        popularStopsBoth.data.datasets[0].data = discountPercentage;    
-
-                    //UPDATES CHARTS
-                        avgPassengersBoth.update(); avgTripsBoth.update(); stopsBoardedBoth.update(); popularStopsBoth.update();
-    });
+            console.log(Total_Passengers)
+            avgPassengers.data.labels = Stop_ID;
+            avgPassengers.data.datasets[0].data = Total_Passengers;
+            avgPassengers.update();
+    })
 }
+
 
 //GREEN ROUTES
 /*

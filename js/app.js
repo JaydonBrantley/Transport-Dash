@@ -82,8 +82,10 @@ $(document).on('click','#btnAdminLogin',function(){
         alert("There was an error with the login.");
       } else {
         console.log('You are verified');
-        console.log(response);
-        //sessionStorage.setItem("sessionID", arrSessionID.sessionID);
+        let objSessionID = JSON.parse(response);
+        console.log("Object: " + objSessionID.SessionID);
+        sessionStorage.setItem("sessionID", objSessionID.SessionID);
+        console.log(sessionStorage.getItem("sessionID"));
         window.location="https://aiw.ojr.mybluehost.me/index.html";
       }
     });

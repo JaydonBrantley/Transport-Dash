@@ -611,7 +611,7 @@ function verifyAdmin($strEmpEmail, $strAdminPass){
 // VERIFY Session
 function verifySession($strSessionID){
     global $connection;
-    $strQuery = "SELECT Session_ID FROM session WHERE Session_ID = ? AND SessionStart >= NOW() - INTERVAL 12 HOUR";
+    $strQuery = "SELECT Session_ID FROM session WHERE Session_ID = ? AND SessionStart >= NOW() - INTERVAL 8 HOUR";
     // Check Connection
     if ($connection->connect_errno) {
         $blnError = "true";
@@ -632,14 +632,17 @@ function verifySession($strSessionID){
     $conAction = $connection->prepare($strQuery);
     // Bind Parameters
     $conAction->bind_param('s', $strSessionID);
-    //$conAction->execute();
-    //$conAction->bind_result($strSessionID);
-    //$conAction->fetch();
-    if($conAction->execute()){
-        return 'true';
-    }
-    else {
-        return 'false';
+    $conAction->execute();
+    $result_set = $conAction->get_result();
+    $arrSession = array();
+
+    while($row = $result_set->fetch_assoc()) {
+        if ($strSessionID == $row['Session_ID']){
+            return 'true';
+        }
+        else {
+            return 'false';
+        }
     }
     $conAction->close();
 }
@@ -847,7 +850,7 @@ function updateSession($SessionID){
 // UPDATE Prepaid Rides
 function updatePrepaidRides($Prepaid_Rides,$Cell_Phone_Num){
     global $connection;
-    $strQuery = "UPDATE tblCustomer SET Reward_Rides = Reward_Rides + ? WHERE Cell_Phone_Num = ?";
+    $strQuery = "UPDATE cust_account SET Reward_Rides = Reward_Rides + ? WHERE Cell_Phone_Num = ?";
     // Check Connection
     if ($conRides->connect_errno) {
         $blnError = "true";
@@ -866,6 +869,36 @@ function updatePrepaidRides($Prepaid_Rides,$Cell_Phone_Num){
         $statRides = $conRides->prepare($strQuery);
         // Bind Parameters
         $statRides->bind_param('ss', $Prepaid_Rides, $Cell_Phone_Num);
+        if($statRides->execute()){
+        return '{"Outcome":"Rides Updated"}';
+        } else {
+        return '{"Error":"Rides Not Updated"}';
+        }
+        $statRides->close();
+}
+
+// UPDATE Prepaid Rides
+function updateRewardRides($Cell_Phone_Num){
+    global $connection;
+    $strQuery = "UPDATE cust_account SET Reward_Progress = Reward_Progress + 1 WHERE Cell_Phone_Num = ?";
+    // Check Connection
+    if ($conRides->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $conRides->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    if ($conRides->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $conRides->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+    }
+        $statRides = $conRides->prepare($strQuery);
+        // Bind Parameters
+        $statRides->bind_param('s', $Cell_Phone_Num);
         if($statRides->execute()){
         return '{"Outcome":"Rides Updated"}';
         } else {

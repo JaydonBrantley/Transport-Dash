@@ -1,63 +1,124 @@
-/* //DATA FUNCTIONS
-
-    //AVG PASSANGER FUNCTIONS
-
-    function getStops(){
-        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-            let arrData = [];
-            $.each(data,function(stops){
-                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-            })
-            return arrData;
-        })
-    }
-
-//AVG TRIP FUNCTIONS
-
-        function getStops(){
-            $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-                let arrData = [];
-                $.each(data,function(stops){
-                    arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-                })
-                return arrData;
-            })
-        }
-
-//STOPS BOARDED FUNCTIONS
-
-function getStops(){
-    $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-        let arrData = [];
-        $.each(data,function(stops){
-            arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-        })
-        return arrData;
-    })
-}
-
-//POPULAR STOPS FUNCTIONS
-
-    function getStops(){
-        $.getJSON('api_files/restful/getstops.php',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-            let arrData = [];
-            $.each(data,function(stops){
-                arrData.push({x:stops.Stop_Name,y:stops.Passenger_Boarded});
-            })
-            return arrData;
-        })
-    }*/
-
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 
-const AvgPassenger = document.getElementById('tech-101-gold');
-const AvgPassengers = new Chart (AvgPassenger, {
+//NEW FUNCTION
+function fillavgPassangers(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+    
+        avgPassengers.data.labels = Stop_ID;
+        avgPassengers.data.datasets[0].data = Total_Passengers;
+        avgPassengers.update();
+} 
+
+function fillpopularStop(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+
+        popularStops.data.labels = Stop_ID;
+        popularStops.data.datasets[0].data = Total_Passengers;
+        popularStops.update();
+} 
+
+function fillunpopularStop(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+
+        unpopularStops.data.labels = Stop_ID;
+        unpopularStops.data.datasets[0].data = Total_Passengers;
+        unpopularStops.update();
+} 
+
+function fillavgTrip(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Miles_Per_Stop = datapoint.map(
+        function(index){
+            return index.Miles_Per_Stop;
+        })
+
+        console.log(Miles_Per_Stop)
+        avgTrips.data.labels = Stop_ID;
+        avgTrips.data.datasets[0].data = Miles_Per_Stop;
+        avgTrips.update();
+} 
+
+//FETCHES ALL DATAPOINTS
+function updateChart(intdays){
+    if(intdays ==null){
+        intdays = 365;
+    }
+    //AVERAGE PASSENGERS
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+        fillavgPassangers(result);
+    })
+
+    //POPULAR STOPS
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+        fillpopularStop(result);
+    })
+
+    //UNPOPULAR STOPS
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+        fillunpopularStop(result);
+    })
+    
+    //AVERAGE TRIP PER MILE
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+        fillavgTrip(result);
+    })
+    
+}
+
+//GREEN ROUTES
+
+//FILTER DAY
+$(document).on('click','#btnDayTech', function(){
+    updateChart(1);
+})
+
+//FILTER WEEK
+$(document).on('click','#btnWeekTech', function(){
+    updateChart(7);
+})
+
+//FILTER MONTH
+$(document).on('click','#btnMonthTech', function(){
+    updateChart(31);
+})
+
+//FILTER YEAR
+$(document).on('click','#btnYearTech', function(){
+    updateChart(365);
+})
+
+const avgPassenger = document.getElementById('tech-101-gold');
+const avgPassengers = new Chart (avgPassenger, {
     type: 'line',
     data: {
-        labels: ['FOUNDATION HALL','QUAD AT 7TH ST','PEACHTREE AVE & WILLIAM L JONES DR','UNIVERSITY DR & PEACHTREE AVE','WEST RED LOT','WEST PURPLE LOT','W 10TH ST & STADIUM DR'],
+        labels: [],
         datasets: [{
-            data: [206,249,143,127,242,145,112,200,290,180,233,270,127,242,145,112],
+            data: [],
             backgroundColor: ['rgb(255,215,0,0.7)'],
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 2,
@@ -80,13 +141,13 @@ const AvgPassengers = new Chart (AvgPassenger, {
     }
     });
 
-const AvgTrip = document.getElementById('tech-102-gold');
-const AvgTrips = new Chart (AvgTrip, {
+const popularStop = document.getElementById('tech-102-gold');
+const popularStops = new Chart (popularStop, {
     type: 'line',
     data: {
-        labels: ['FOUNDATION HALL','QUAD AT 7TH ST','PEACHTREE AVE & WILLIAM L JONES DR','UNIVERSITY DR & PEACHTREE AVE','WEST RED LOT','WEST PURPLE LOT','W 10TH ST & STADIUM DR'],
+        labels: [],
         datasets: [{
-            data: [19,10,20,14,7,12,6,18,13,1,20,3,14,7,12,3],
+            data: [],
             backgroundColor: ['rgb(255,215,0,0.7)'],
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 2,
@@ -109,13 +170,13 @@ const AvgTrips = new Chart (AvgTrip, {
     }
 });
 
-const StopBoarded = document.getElementById('tech-103-gold');
-const StopsBoarded = new Chart (StopBoarded, {
+const unpopularStop = document.getElementById('tech-103-gold');
+const unpopularStops = new Chart (unpopularStop, {
     type: 'bar',
     data: {
-        labels: ['FOUNDATION HALL','QUAD AT 7TH ST','PEACHTREE AVE & WILLIAM L JONES DR','UNIVERSITY DR & PEACHTREE AVE','WEST RED LOT','WEST PURPLE LOT','W 10TH ST & STADIUM DR'],
+        labels: [],
         datasets: [{
-            data: [121,190,111,152,195,102,206,142,125,123,167,182,138,129,182,182],
+            data: [],
             backgroundColor: ['rgb(255,215,0,0.7)'],
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 2,
@@ -139,13 +200,13 @@ const StopsBoarded = new Chart (StopBoarded, {
     }
     });
 
-const PopularStop = document.getElementById('tech-104-gold');
-const PopularStops = new Chart (PopularStop, {
+const avgTrip = document.getElementById('tech-104-gold');
+const avgTrips = new Chart (avgTrip, {
     type: 'bar',
     data: {
-        labels: ['FOUNDATION HALL','QUAD AT 7TH ST','PEACHTREE AVE & WILLIAM L JONES DR','UNIVERSITY DR & PEACHTREE AVE','WEST RED LOT','WEST PURPLE LOT','W 10TH ST & STADIUM DR'],
+        labels: [],
         datasets: [{
-            data: [121,190,111,152,121,190,111,152,184,153,142,111],
+            data: [],
             backgroundColor: ['rgb(255,215,0,0.7)'],
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 1,

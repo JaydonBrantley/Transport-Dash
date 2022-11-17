@@ -16,50 +16,5 @@ UI CHANGES - REWARD SYSTEM
     add how many free rides they have
 	
 COMPLETED (COMMENTS ON GITHUB)
-	updated styles
-		change background colors, changed UCGRA logo,  added a logout button, added a redeem button, 
-
-
-URL: https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID=6648c787-0a27-44d9-877a-ac302d4e5b7c&RouteID=1001&NumDays=365
-
-6648c787-0a27-44d9-877a-ac302d4e5b7c
-
-
-
-function getStops(){
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID'+ strSessionID +'&RouteID='+ strStopID +'&NumDays='+ strNumDays +'',{strSessionID:sessionStorage.getItem('sessionID')}, function(data){
-        let arrData = [];
-        $.each(data,function(stops){
-            arrData.push({x:stops.stop_ID,y:stops.Passenger_Boarded});
-        })
-        return arrData;
-    })
-}
-
-
-
-
-function updateChart(){
-    async function fetchData(){
-        const url = 'https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID=6648c787-0a27-44d9-877a-ac302d4e5b7c&RouteID=1001&NumDays=365'; //INSERT OUT API
-        const response = await fetch(url);
-        const datapoint = await response.json()
-        return datapoint;
-    };
-    
-    fetchData().then(datapoint => {
-        const Stop_ID = datapoint.map(
-            function(index){
-                return index.Stop_ID;
-            })
-            const Total_Passengers = datapoint.map(
-            function(index){
-                return index.Total_Passengers;
-            })
-
-            console.log(Total_Passengers)
-            avgPassengers.data.labels = Stop_ID;
-            avgPassengers.data.datasets[0].data = Total_Passengers;
-            avgPassengers.update();
-    })
-}
+	updated functions
+		added functions to display data on each chart, added fucntions to the filter btn's, and tested functions

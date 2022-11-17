@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>McMinnville</title>
 </head>
-<body class="sidebar-mini layout-fixed">
+<body class="sidebar-mini layout-fixed" onload="updateChart()">
     <div class="wrapper">
       <nav class="main-header navbar navbar-expand navbar-white navbar-light"><!-- Top Navbar -->
         <ul class="navbar-nav">
@@ -43,27 +43,27 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item active">
                     <a href="index.html" class="nav-link">
-                      <i class="far fa-city ml-4"></i><p> Cookeville</p>
+                      <i class="far fa-city"></i><p> Cookeville</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="Algood.html" class="nav-link">
-                      <i class="far fa-city ml-4"></i><p> Algood</p>
+                      <i class="far fa-city"></i><p> Algood</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="Crossville.html" class="nav-link">
-                      <i class="far fa-city ml-4"></i><p> Crossville</p>
+                      <i class="far fa-city"></i><p> Crossville</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="McMinnville.html" class="nav-link active bg-info">
-                      <i class="far fa-city ml-4"></i><p> McMinnville</p>
+                      <i class="far fa-city"></i><p> McMinnville</p>
                     </a>
                   </li>
                   <li class="nav-item user-panel">
                     <a href="TnTech.html" class="nav-link">
-                      <i class="far fa-university ml-4"></i><p> TnTech</p>
+                      <i class="far fa-university"></i><p> TnTech</p>
                     </a>
                   </li>
                 </ul>
@@ -84,10 +84,10 @@
         </div>
         <div class="container-buttons ml-3 mb-3">
           <div class="filter"><!--TIME FILTER-->
-            <button type="button" id="btnDayminn" class="btn btn-outline-dark">Day</button>
-            <button type="button" id="btnWeekminn" class="btn btn-outline-dark">Week</button>
-            <button type="button" id="btnWeekminn" class="btn btn-outline-dark">Month</button>
-            <button type="button" id="btnYearminn" class="btn btn-outline-dark">Year</button>
+            <button type="button" id="btnDayMinn" class="btn btn-outline-dark">Day</button>
+            <button type="button" id="btnWeekMinn" class="btn btn-outline-dark">Week</button>
+            <button type="button" id="btnMonthMinn" class="btn btn-outline-dark">Month</button>
+            <button type="button" id="btnYearMinn" class="btn btn-outline-dark">Year</button>
           </div>
           <div class="swap mr-3"><!--SWAP BUTTON-->
             <button type="button" id="compare-minn" class="btn btn-outline-dark">Compare</button>
@@ -110,7 +110,7 @@
               </div>
             <div class="card col-5">
               <div class="card-header">
-                <h3 class="card-title">Avg. Trip Per Mile</h3>
+                <h3 class="card-title">Popular Stops</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -121,7 +121,7 @@
             </div>
             <div class="card col-5">
               <div class="card-header">
-                <h3 class="card-title">Stops Boarded</h3>
+                <h3 class="card-title">Unpopular Stops</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -132,7 +132,7 @@
             </div>
             <div class="card col-12">
               <div class="card-header">
-                <h3 class="card-title">Popular Stops</h3>
+                <h3 class="card-title">Avg. Trip Per Mile</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -156,7 +156,7 @@
             </div>
             <div class="card col-5">
               <div class="card-header">
-                <h3 class="card-title">Avg. Trip Per Mile</h3>
+                <h3 class="card-title">Popular Stops</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -167,7 +167,7 @@
             </div>
             <div class="card col-5">
               <div class="card-header">
-                <h3 class="card-title">Stops Boarded</h3>
+                <h3 class="card-title">Unpopular Stops</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -178,13 +178,13 @@
             </div>
             <div class="card col-12">
               <div class="card-header">
-                <h3 class="card-title">Popular Stops</h3>
+                <h3 class="card-title">Avg. Trip Per Mile</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
               </div>
               <div class="card-body">
-                  <canvas class="canvas" id="minn-104-blue" width="1235" height="190" style="background-color: white;"></canvas>
+                  <canvas class="canvas" id="minn-204-blue" width="1235" height="190" style="background-color: white;"></canvas>
               </div>
             </div>
           </div><!--END blue ROUTE-->
@@ -202,7 +202,7 @@
             </div>
             <div class="card col-5">
               <div class="card-header">
-                <h3 class="card-title">Avg. Trip Per Mile</h3>
+                <h3 class="card-title">Popular Stops</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -213,7 +213,7 @@
             </div>
             <div class="card col-5">
               <div class="card-header">
-                <h3 class="card-title">Stops Boarded</h3>
+                <h3 class="card-title">Unpopular Stops</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
@@ -224,13 +224,13 @@
             </div>
             <div class="card col-12">
               <div class="card-header">
-                <h3 class="card-title">Popular Stops</h3>
+                <h3 class="card-title">Avg. Trip Per Mile</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i></button>
                 </div>
               </div>
               <div class="card-body">
-                  <canvas class="canvas" id="minn-104-compare" width="1235" height="190" style="background-color: white;"></canvas>
+                  <canvas class="canvas" id="minn-304-compare" width="1235" height="190" style="background-color: white;"></canvas>
               </div>
             </div>
           </div><!--END COMPARE ROUTE-->

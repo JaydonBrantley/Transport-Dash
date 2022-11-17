@@ -161,7 +161,7 @@ function getPassengersPerStop($strSessionID, $strRouteID, $strNumDays){
 }
 
 
-// GET Unpopular Stops
+// GET Popular Stops
 function getPopularStops($strSessionID, $strRouteID, $strNumDays){
     global $connection;
     $strQuery = "SELECT Stop_ID, Total_Passengers FROM historic_data WHERE Total_Passengers > (SELECT AVG(Total_Passengers) FROM historic_data) AND Route_ID = ? AND Date >= NOW() - INTERVAL ? DAY AND Stop_ID IS NOT NULL GROUP BY Stop_ID;";

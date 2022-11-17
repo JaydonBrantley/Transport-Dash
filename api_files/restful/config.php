@@ -649,12 +649,43 @@ function verifySession($strSessionID){
 
 // VERIFY Customer
 function verifyCustomer($strCustID){
-    $strQuery = "SELECT Cell_Phone_Num FROM tblCustomers WHERE Cell_Phone_Num = ?";
-    $result_set = mysqli_query($connection, $strQuery);
-    if($result_set == $strCustID){
-
+    global $connection;
+    $strQuery = "SELECT Cell_Phone_number FROM cust_account WHERE Cell_Phone_Number = ?";
+    // Check Connection
+    if ($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->connect_error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
     }
+    if ($connection->ping()) {
+    }
+    else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+    $conAction = $connection->prepare($strQuery);
+    // Bind Parameters
+    $conAction->bind_param('s', $strCustID);
+    $conAction->execute();
+    $result_set = $conAction->get_result();
+    $arrSession = array();
+
+    while($row = $result_set->fetch_assoc()) {
+        if ($strCustID == $row['Cell_Phone_Number']){
+            return 'true';
+        }
+        else {
+            return 'false';
+        }
+    }
+    $conAction->close();
 }
+
 // INSERT Session
 function addSession($strEmpEmail,$strAdminPass){
     global $connection;

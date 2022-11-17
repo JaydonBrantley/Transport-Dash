@@ -12,6 +12,66 @@
         })
     }*/
 
+    $(document).on('click','#btnCustomerLogin',function(){
+      var form = new FormData();
+      form.append("CellNum", $("#txtPhoneLogin").val());
+    
+      var settings = {
+        "url": "https://aiw.ojr.mybluehost.me/api/verifyCustomer.php",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+      };
+    
+      $.ajax(settings).done(function (response) {
+        if(response == 'Error'){
+          console.log('Found Error');
+          alert("There was an error with your login.");
+        } else {
+          console.log('Login validated.');
+          console.log(response);
+          sessionStorage.setItem("customerPhone", response["Cell_Phone_Number"]);
+          window.location="https://aiw.ojr.mybluehost.me/rewards/rewards-profile.html";
+        }
+      });
+    })
+
+    $(document).on('click','#btnCustomerSignup',function(){
+      var form = new FormData();
+      form.append("CellNum", $("#txtPhoneSignup").val());
+      form.append("Veteran", $("#txtVeteranSignup").val());
+      form.append("Spanish", $("#txtSpanishSignup").val());
+      form.append("AfricanAmerican", $("#txtAfricanAmericanSignup").val());
+      form.append("Disability", $("#txtDisabilitySignup").val());
+      form.append("AgeGroup", $("#txtAgeGroupSignup").val());
+      form.append("SpecialRequest", $("#txtSpecialRequestSignup").val());
+    
+      var settings = {
+        "url": "https://aiw.ojr.mybluehost.me/api/newCustomer.php",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+      };
+    
+      $.ajax(settings).done(function (response) {
+        if(response == 'Error'){
+          console.log('Found Error');
+          alert("There was an error with the registration.");
+        } else {
+          console.log('You have made an account. Log in with your info now.');
+          console.log(response);
+          window.location="https://aiw.ojr.mybluehost.me/rewards/rewards-login.html";
+        }
+      });
+    })
+
+
   //TOTAL RIDE CHART
   const totalRide = document.getElementById('total-rides');
   const totalRides = new Chart (totalRide,{

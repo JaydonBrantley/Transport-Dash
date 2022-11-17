@@ -81,9 +81,9 @@ function getRoutes($strRouteID){
 }
 
 // GET Passengers Per Stop
-function getMilesPerStop($strSessionID, $strRouteID, $strNumDays){
+function getMilesPerStop($strSessionID, $strRouteID){
     global $connection;
-    $strQuery = "SELECT Stop_ID, Miles_Per_Stop FROM stop WHERE Route_ID = ? AND Stop_ID != null GROUP BY Stop_ID;";
+    $strQuery = "SELECT Stop_ID, Miles_Per_Stop FROM stop WHERE Route_ID = ? AND Stop_ID != null GROUP BY Stop_ID";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {
@@ -105,7 +105,7 @@ function getMilesPerStop($strSessionID, $strRouteID, $strNumDays){
 
         $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->bind_param('s', $strRouteID);
         $conAction->execute();      
         $result_set = $conAction->get_result();
         $arrStops = array();
@@ -351,9 +351,9 @@ function getStops(){
 */
 
 // GET Stops
-function getStops($strSessionID, $strRouteID, $strNumDays){
+function getStops($strSessionID, $strRouteID){
     global $connection;
-    $strQuery = "SELECT Stop_ID, Route_ID, Pickup_Time, Drop_Off_Time, Miles_Per_Stop FROM stop WHERE Route_ID = ? AND Pickup_Time > NOW()- INTERVAL ? DAY";
+    $strQuery = "SELECT Stop_ID, Route_ID, Pickup_Time, Miles_Per_Stop FROM stop WHERE Route_ID = ?";
     if(verifySession($strSessionID)) {
 
         if($connection->connect_errno) {
@@ -375,7 +375,7 @@ function getStops($strSessionID, $strRouteID, $strNumDays){
 
         $conAction = $connection->prepare($strQuery);
         // Bind Parameters
-        $conAction->bind_param('ss', $strRouteID, $strNumDays);
+        $conAction->bind_param('s', $strRouteID);
         $conAction->execute();      
         $result_set = $conAction->get_result();
         $arrStops = array();

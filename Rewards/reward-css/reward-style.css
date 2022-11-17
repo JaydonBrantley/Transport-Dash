@@ -62,7 +62,19 @@ img{
 .tel-input{
     width: 100%;
     height: 50px;
-    color: white;
+    color: rgb(20, 20, 20);
+}
+
+.text-input{
+    width: 100%;
+    height: 50px;
+    color: rgb(20, 20, 20);
+}
+
+.form-option{
+    width: 100%;
+    height: 50px;
+    color: rgb(99, 99, 99);
 }
 
 .action-btn{

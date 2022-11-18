@@ -618,6 +618,74 @@ function getCountDisability($strSessionID){
     }
 }
 
+// GET Rides Towards Reward
+function getRidesToReward($strSessionID){
+    global $connection;
+    $strQuery = "SELECT Reward_Progress FROM cust_account WHERE Cell_Phone_Number = ?";
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+    // Bind Parameters
+    $conAction->bind_param('s', $strSessionID);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrCustomers = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrCustomers[] = $row;
+    }
+    echo json_encode($arrCustomers);
+    $conAction->close();
+}
+
+// GET Rides Towards Reward
+function getRewardRides($strSessionID){
+    global $connection;
+    $strQuery = "SELECT Reward_Rides FROM cust_account WHERE Cell_Phone_Number = ?";
+    if($connection->connect_errno) {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    if($connection->ping()) {
+    } else {
+        $blnError = "true";
+        $strErrorMessage = $connection->error;
+        $arrError = array('error' => $strErrorMessage);
+        echo json_encode($arrError);
+        exit();
+    }
+
+    $conAction = $connection->prepare($strQuery);
+    // Bind Parameters
+    $conAction->bind_param('s', $strSessionID);
+    $conAction->execute();      
+    $result_set = $conAction->get_result();
+    $arrCustomers = array();
+    while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+            $arrCustomers[] = $row;
+    }
+    echo json_encode($arrCustomers);
+    $conAction->close();
+}
+
 // GET Customer Services
 function getCustomerServices(){
     global $connection;

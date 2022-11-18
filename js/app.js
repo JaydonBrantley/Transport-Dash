@@ -64,6 +64,25 @@ function updateSession(){
   })
 }
 
+function deleteSession(){
+  $.ajax({
+    type: "DELETE",
+    contentType:"application/json; charset=utf-8",
+    url: "https://aiw.ojr.mybluehost.me/api/verifyAdminLogin.php",
+    data: { SessionID: sessionStorage.getItem('sessionID') },
+    success:function(result){
+        console.log(result);
+    },
+    error: function(resultError){
+        console.log(resultError);
+    }
+  })
+}
+
+$(document).on('click','#btnAdminLogoutConfirm',function(){
+  deleteSession();
+})
+
 $(document).on('click','#btnAdminLogin',function(){
     var form = new FormData();
     form.append("Email", $("#txtLoginEmail").val());

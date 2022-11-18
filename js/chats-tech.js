@@ -1,7 +1,7 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 
-//NEW FUNCTION
+//PURPLE ROUTE
 function fillavgPassangers(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
@@ -63,29 +63,107 @@ function fillavgTrip(datapoint){
         avgTrips.update();
 } 
 
+//GOLD ROUTE
+function fillavgPassangersGold(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+    
+        avgPassengersGold.data.labels = Stop_ID;
+        avgPassengersGold.data.datasets[0].data = Total_Passengers;
+        avgPassengersGold.update();
+} 
+
+function fillpopularStop(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+
+        popularStopsGold.data.labels = Stop_ID;
+        popularStopsGold.data.datasets[0].data = Total_Passengers;
+        popularStopsGold.update();
+} 
+
+function fillunpopularStop(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+
+        unpopularStopsGold.data.labels = Stop_ID;
+        unpopularStopsGold.data.datasets[0].data = Total_Passengers;
+        unpopularStopsGold.update();
+} 
+
+function fillavgTrip(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Miles_Per_Stop = datapoint.map(
+        function(index){
+            return index.Miles_Per_Stop;
+        })
+
+        console.log(Miles_Per_Stop)
+        avgTripsGold.data.labels = Stop_ID;
+        avgTripsGold.data.datasets[0].data = Miles_Per_Stop;
+        avgTripsGold.update();
+} 
+
 //FETCHES ALL DATAPOINTS
 function updateChart(intdays){
     if(intdays ==null){
         intdays = 365;
     }
     //AVERAGE PASSENGERS
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1003&NumDays='+ intdays, function(result){
         fillavgPassangers(result);
+    })
+    //AVERAGE PASSENGERS GOLD
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
+        fillavgPassangersGold(result);
     })
 
     //POPULAR STOPS
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1003&NumDays='+ intdays, function(result){
         fillpopularStop(result);
+    })
+    //POPULAR STOPS GOLD
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
+        fillpopularStopGold(result);
     })
 
     //UNPOPULAR STOPS
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1003&NumDays='+ intdays, function(result){
         fillunpopularStop(result);
+    })
+    //UNPOPULAR STOPS GOLD
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
+        fillunpopularStopGold(result);
     })
     
     //AVERAGE TRIP PER MILE
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1003&NumDays='+ intdays, function(result){
         fillavgTrip(result);
+    })
+    //AVERAGE TRIP PER MILE GOLD
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
+        fillavgTripGold(result);
     })
     
 }
@@ -112,6 +190,7 @@ $(document).on('click','#btnYearTech', function(){
     updateChart(365);
 })
 
+//PURPLE ROUTE
 const avgPassenger = document.getElementById('tech-101-gold');
 const avgPassengers = new Chart (avgPassenger, {
     type: 'line',
@@ -202,6 +281,125 @@ const unpopularStops = new Chart (unpopularStop, {
 
 const avgTrip = document.getElementById('tech-104-gold');
 const avgTrips = new Chart (avgTrip, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(255,215,0,0.7)'],
+            borderColor: ['rgb(255,215,0)'],
+            borderWidth: 1,
+            borderRadius: 5,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+//GOLD ROUTE
+const avgPassengerGold = document.getElementById('tech-201-gold');
+const avgPassengersGold = new Chart (avgPassengerGold, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(255,215,0,0.7)'],
+            borderColor: ['rgb(255,215,0)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+    });
+
+const popularStopGold = document.getElementById('tech-202-gold');
+const popularStopsGold = new Chart (popularStopGold, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(255,215,0,0.7)'],
+            borderColor: ['rgb(255,215,0)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+const unpopularStopGold = document.getElementById('tech-203-gold');
+const unpopularStopsGold = new Chart (unpopularStopGold, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(255,215,0,0.7)'],
+            borderColor: ['rgb(255,215,0)'],
+            borderWidth: 2,
+            borderRadius: 5,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+    });
+
+const avgTripGold = document.getElementById('tech-204-gold');
+const avgTripsGold = new Chart (avgTripGold, {
     type: 'bar',
     data: {
         labels: [],

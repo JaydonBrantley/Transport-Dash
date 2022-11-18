@@ -1,7 +1,7 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 
-//NEW FUNCTION
+//RED ROUTE
 function fillavgPassangers(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
@@ -62,29 +62,106 @@ function fillavgTrip(datapoint){
         avgTrips.update();
 } 
 
+//BLUE ROUTE
+function fillavgPassangersBlue(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+    
+        avgPassengersBlue.data.labels = Stop_ID;
+        avgPassengersBlue.data.datasets[0].data = Total_Passengers;
+        avgPassengersBlue.update();
+} 
+
+function fillpopularStopBlue(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+
+        popularStopsBlue.data.labels = Stop_ID;
+        popularStopsBlue.data.datasets[0].data = Total_Passengers;
+        popularStopsBlue.update();
+} 
+
+function fillunpopularStopBlue(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Total_Passengers = datapoint.map(
+        function(index){
+            return index.Total_Passengers;
+        })
+
+        unpopularStopsBlue.data.labels = Stop_ID;
+        unpopularStopsBlue.data.datasets[0].data = Total_Passengers;
+        unpopularStopsBlue.update();
+} 
+
+function fillavgTripBlue(datapoint){
+    const Stop_ID = datapoint.map(
+        function(index){
+            return index.Stop_ID;
+        })
+        const Miles_Per_Stop = datapoint.map(
+        function(index){
+            return index.Miles_Per_Stop;
+        })
+
+        avgTripsBlue.data.labels = Stop_ID;
+        avgTripsBlue.data.datasets[0].data = Miles_Per_Stop;
+        avgTripsBlue.update();
+} 
+
 //FETCHES ALL DATAPOINTS
 function updateChart(intdays){
     if(intdays ==null){
         intdays = 365;
     }
     //AVERAGE PASSENGERS
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1007&NumDays='+ intdays, function(result){
         fillavgPassangers(result);
+    })
+    //AVERAGE PASSENGERS BLUE
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1008&NumDays='+ intdays, function(result){
+        fillavgPassangersBlue(result);
     })
 
     //POPULAR STOPS
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1007&NumDays='+ intdays, function(result){
         fillpopularStop(result);
+    })
+    //POPULAR STOPS BLUE
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1008&NumDays='+ intdays, function(result){
+        fillpopularStopBlue(result);
     })
 
     //UNPOPULAR STOPS
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1007&NumDays='+ intdays, function(result){
         fillunpopularStop(result);
+    })
+    //UNPOPULAR STOPS BLUW
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1008&NumDays='+ intdays, function(result){
+        fillunpopularStopBlue(result);
     })
     
     //AVERAGE TRIP PER MILE
-    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1001&NumDays='+ intdays, function(result){
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1007&NumDays='+ intdays, function(result){
         fillavgTrip(result);
+    })
+    //AVERAGE TRIP PER MILE BLUE
+    $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1008&NumDays='+ intdays, function(result){
+        fillavgTripBlue(result);
     })
     
 }

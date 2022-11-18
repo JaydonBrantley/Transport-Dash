@@ -77,21 +77,6 @@ img{
     color: rgb(99, 99, 99);
 }
 
-.action-btn{
-    display: flex;
-    flex-direction: row;
-    height: 100px;
-    width: 100%;
-}
-
-.btn-cancel{
-    width: 50%;
-}
-
-.btn-submit{
-    width: 50%;
-}
-
 /*USER PROFILE PAGE*/
 
 .container-reward{
@@ -128,4 +113,31 @@ img{
 
 .profile-card{
     height: auto;
+}
+
+
+/*CUSTOMER LOGIN*/
+
+.card-login{
+    margin: auto;
+}
+
+.card-body{
+    width: auto;
+    height: auto;
+}
+
+.action-btn{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+}
+
+.btn-cancel{
+    width: 50%;
+}
+
+.btn-submit{
+    width: 50%;
 }

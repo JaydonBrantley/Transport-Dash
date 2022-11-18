@@ -1,7 +1,5 @@
 UCHRA PROJECT TO DO LIST:
-	Test get functions
-	get with jaydon to verify the API URL (SAT OR SUN)
-	
+
 DASHBOARD:
 	add aria lables
 	fix grapgical glitches
@@ -12,9 +10,30 @@ REWARDS SYSTEM:
 	finish reward graph and interface
 
 UI CHANGES - REWARD SYSTEM
-    16:9 aspect ratio
     add how many free rides they have
-	
+
+WHAT TO DO THIS WEEKEND
+    UPDATE FUNCTIONS TO DISPLAY DATA ON COMPARE BTNS (TALK TO TEAM ABOUT ADDING TO DATABASE) 
+    FINISH REWARDS PAGE ON DASHBOARD
+    WORK ON LIGHTHOUSE SUGGESTIONS (POLISH EVERYTHING!)
+    FINISH UI ON REWARDS SYSTEM 
+    
 COMPLETED (COMMENTS ON GITHUB)
-	updated functions
-		added functions to display data on each chart, added fucntions to the filter btn's, and tested functions
+        UPDATE ROUTE_ID TO ALL PAGES, UPDATE FUNCTIONS TO DISPLAY DATA ON BOTH ROUTES, FIXED CUSTOMER LOGIN, 
+
+
+
+
+//1001 -ckv green
+//1002 -ckv blue
+//1000 -alg
+//1005 -cross blue
+//1006 -cros gold
+1007 -minn red
+1008 -minn blue
+1003 -tntech purple
+1004 -tntech gold
+
+Blue
+Gold
+Red

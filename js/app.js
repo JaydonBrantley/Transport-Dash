@@ -36,7 +36,10 @@ $(document).on('click','#btnAdminSignup',function(){
   $.ajax(settings).done(function (response) {
     if(response == 'Error'){
       console.log('Found Error');
-      alert("There was an error with the login.");
+      Swal.fire({
+        icon: 'error',
+        text: 'There was an error with the registration process.',
+      })
     } else {
       console.log('You are verified');
       console.log(response);
@@ -79,7 +82,10 @@ $(document).on('click','#btnAdminLogin',function(){
     $.ajax(settings).done(function (response) {
       if(response == 'Error'){
         console.log('Found Error');
-        alert("There was an error with the login.");
+        Swal.fire({
+          icon: 'error',
+          text: 'There was an error with the login.',
+        })
       } else {
         console.log('You are verified');
         let objSessionID = JSON.parse(response);

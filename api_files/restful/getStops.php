@@ -7,6 +7,6 @@
     $strNumDays = $_GET['NumDays'];
     $strNumDays = strip_tags($strNumDays);
 
-    echo getStops($strSessionID, $strRouteID, $strNumDays);
+    echo getStops($strSessionID,);
 
 ?>

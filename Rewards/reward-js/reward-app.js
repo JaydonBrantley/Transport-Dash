@@ -12,6 +12,22 @@
         })
     }*/
 
+    function updateCustomerRides(){
+      $.ajax({
+        type: "PUT",
+        contentType:"application/json; charset=utf-8",
+        url: "https://aiw.ojr.mybluehost.me/api/updateCustomerRewards.php",
+        data: { Phone: sessionStorage.getItem('customerPhone') },
+        success:function(result){
+            console.log(result);
+        },
+        error: function(resultError){
+            console.log(resultError);
+        }
+      })
+    }
+
+    // On Customer Login
     $(document).on('click','#btnCustomerLogin',function(){
       var form = new FormData();
       form.append("CellNum", $("#txtPhoneLogin").val());
@@ -34,11 +50,13 @@
           console.log('Login validated.');
           console.log(response);
           sessionStorage.setItem("customerPhone", response["Cell_Phone_Number"]);
+          updateCustomerRides();
           window.location="https://aiw.ojr.mybluehost.me/rewards/rewards-profile.html";
         }
       });
     })
 
+    // On Customer Signup
     $(document).on('click','#btnCustomerSignup',function(){
       var form = new FormData();
       form.append("CellNum", $("#txtPhoneSignup").val());

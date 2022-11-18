@@ -11,3 +11,7 @@ SELECT stop FROM historic_data WHERE Total_Passengers >= (SELECT AVG(Total_Passe
 
 Unpopular Stops
 SELECT stop FROM historic_data WHERE Total_Passengers < (SELECT AVG(Total_Passengers) FROM historic_data) GROUP BY stop;
+
+
+Count Veteran
+SELECT COUNT(Veteran_Status) AS Total_Veteran FROM cust_account WHERE Veteran_Status = 'Yes';

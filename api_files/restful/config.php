@@ -462,6 +462,162 @@ function getCustomers(){
     $conAction->close();
 }
 
+// GET COUNT OF VETERANS
+function getCountVeterans($strSessionID){
+    global $connection;
+    $strQuery = "SELECT COUNT(Veteran_Status) AS Total_Veteran FROM cust_account WHERE Veteran_Status = 'Yes'";
+    if(verifySession($strSessionID)){
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param();
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrCustomers = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrCustomers[] = $row;
+        }
+        echo json_encode($arrCustomers);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
+function getCountSpanishOrigin($strSessionID){
+    global $connection;
+    $strQuery = "SELECT COUNT(Spanish_Origin) AS Total_Spanish_Origin FROM cust_account WHERE Spanish_Origin = 'Yes'";
+    
+    if(verifySession($strSessionID)){
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param();
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrCustomers = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrCustomers[] = $row;
+        }
+        echo json_encode($arrCustomers);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
+function getCountAfricanAmerican($strSessionID){
+    global $connection;
+    $strQuery = "SELECT COUNT(African_American) AS Total_African_American FROM cust_account WHERE African_American = 'Yes'";
+    
+    if(verifySession($strSessionID)){
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param();
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrCustomers = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrCustomers[] = $row;
+        }
+        echo json_encode($arrCustomers);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
+function getCountDisability($strSessionID){
+    global $connection;
+    $strQuery = "SELECT COUNT(Disability) AS Total_Disability FROM cust_account WHERE Disability = 'Yes'";
+    
+    if(verifySession($strSessionID)){
+        if($connection->connect_errno) {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        if($connection->ping()) {
+        } else {
+            $blnError = "true";
+            $strErrorMessage = $connection->error;
+            $arrError = array('error' => $strErrorMessage);
+            echo json_encode($arrError);
+            exit();
+        }
+
+        $conAction = $connection->prepare($strQuery);
+        // Bind Parameters
+        $conAction->bind_param();
+        $conAction->execute();      
+        $result_set = $conAction->get_result();
+        $arrCustomers = array();
+        while($row = $result_set->fetch_array(MYSQLI_ASSOC)) {
+                $arrCustomers[] = $row;
+        }
+        echo json_encode($arrCustomers);
+        $conAction->close();
+    }
+    else {
+        return '{"Error":"No SessionID Provided"}';
+    }
+}
+
 // GET Customer Services
 function getCustomerServices(){
     global $connection;

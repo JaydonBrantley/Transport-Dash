@@ -1,8 +1,6 @@
 UCHRA PROJECT TO DO LIST:
 
 DASHBOARD:
-	add aria lables
-	fix grapgical glitches
 
 REWARDS SYSTEM:
 	add aria lables
@@ -13,27 +11,11 @@ UI CHANGES - REWARD SYSTEM
     add how many free rides they have
 
 WHAT TO DO THIS WEEKEND
-    UPDATE FUNCTIONS TO DISPLAY DATA ON COMPARE BTNS (TALK TO TEAM ABOUT ADDING TO DATABASE) 
     FINISH REWARDS PAGE ON DASHBOARD
-    WORK ON LIGHTHOUSE SUGGESTIONS (POLISH EVERYTHING!)
+    WORK ON LIGHTHOUSE SUGGESTIONS (POLISH EVERYTHING!) //DASH COMPLETE
     FINISH UI ON REWARDS SYSTEM 
+    REBUILD TNTECH PAGE
     
 COMPLETED (COMMENTS ON GITHUB)
-        UPDATE ROUTE_ID TO ALL PAGES, UPDATE FUNCTIONS TO DISPLAY DATA ON BOTH ROUTES, FIXED CUSTOMER LOGIN, 
+    add aria lables to dash, fix grapgical glitches on dash, built graphs for rewards data, added features recommended by lighthouse, 
 
-
-
-
-//1001 -ckv green
-//1002 -ckv blue
-//1000 -alg
-//1005 -cross blue
-//1006 -cros gold
-1007 -minn red
-1008 -minn blue
-1003 -tntech purple
-1004 -tntech gold
-
-Blue
-Gold
-Red

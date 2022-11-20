@@ -503,7 +503,7 @@ function getCountVeterans($strSessionID){
 
 function getCountSpanishOrigin($strSessionID){
     global $connection;
-    $strQuery = "SELECT COUNT(Spanish_Origin) AS Total_Spanish_Origin FROM cust_account WHERE Spanish_Origin = 'Yes'";
+    $strQuery = "SELECT COUNT(Ethnicity) AS Total_Spanish_Origin FROM cust_account WHERE Ethnicity = 'Hispanic or Latino'";
     
     if(verifySession($strSessionID)){
         if($connection->connect_errno) {
@@ -542,7 +542,7 @@ function getCountSpanishOrigin($strSessionID){
 
 function getCountAfricanAmerican($strSessionID){
     global $connection;
-    $strQuery = "SELECT COUNT(African_American) AS Total_African_American FROM cust_account WHERE African_American = 'Yes'";
+    $strQuery = "SELECT COUNT(Ethnicity) AS Total_African_American FROM cust_account WHERE Ethnicity = 'Black or African American'";
     
     if(verifySession($strSessionID)){
         if($connection->connect_errno) {
@@ -947,9 +947,10 @@ function addSession($strEmpEmail,$strAdminPass){
 }
 
 // INSERT Customer
-function addCustomer($strCellNum,$strDiscountStatus,$strSpecReq,$strAgeCat){
+function addCustomer($strCellNum, $strSpecReq, $strAgeCat, $strDisability, $strVeteran, $strEthnicity){
     global $connection;
-    $strQuery = "INSERT INTO tblRoutes VALUES (?,?,?,?,0,0,0)";
+    $strDiscountStatus = "Client Side";
+    $strQuery = "INSERT INTO cust_account VALUES (?,?,?,?,?,?,?,0,0,0)";
     // Check Connection
     if ($conRoutes->connect_errno) {
         $blnError = "true";
@@ -967,7 +968,7 @@ function addCustomer($strCellNum,$strDiscountStatus,$strSpecReq,$strAgeCat){
     }
         $statRoutes = $conRoutes->prepare($strQuery);
         // Bind Parameters
-        $statRoutes->bind_param('ssss', $strCellNum, $strDiscountStatus, $strSpecReq, $strAgeCat);
+        $statRoutes->bind_param('sssssss', $strCellNum, $strDiscountStatus, $strSpecReq, $strAgeCat, $strDisability, $strVeteran, $strEthnicity);
         if($statRoutes->execute()){
         return '{"Outcome":"New User Created"}';
         } else {

@@ -61,8 +61,7 @@
       var form = new FormData();
       form.append("CellNum", $("#txtPhoneSignup").val());
       form.append("Veteran", $("#txtVeteranSignup").val());
-      form.append("Spanish", $("#txtSpanishSignup").val());
-      form.append("AfricanAmerican", $("#txtAfricanAmericanSignup").val());
+      form.append("Ethnicity", $("#txtVeteranSignup").val());
       form.append("Disability", $("#txtDisabilitySignup").val());
       form.append("AgeGroup", $("#txtAgeGroupSignup").val());
       form.append("SpecialRequest", $("#txtSpecialRequestSignup").val());

@@ -98,8 +98,8 @@
             //labels: ['HUB', 'JUSTICE CENTER', 'PREMIER MEDICAL', 'NORTHSIDE IGA', 'FIRST HORIZON BANK', 'WALMART', 'ROLLING MEADOWS APTS.', 'ALGOOD HOUSING', 'ALGOOD MANOR', 'SENIOR CENTER', 'GARDEN GROVER APTS.', 'QUINLAND RIDGE APTS.', ' WYNONA','SOCIAL SECURITY OFFICE', 'CHECH', 'EMPLOYMENT SECURITY OFFICE',],
             datasets: [{
             data: [9, 1],
-            backgroundColor: ['rgb(255,215,0, 0.7)', 'rgb(102,102,102,0.2'],
-            borderColor: ['rgb(255,215,0)', 'rgb(102,102,102,0.2'],
+            backgroundColor: ['rgb(189,136,32, 0.7)', 'rgb(102,102,102,0.2'],
+            borderColor: ['rgb(189,136,32)', 'rgb(102,102,102,0.2'],
             borderWidth: 2,
             tension: 0.4,
           }]

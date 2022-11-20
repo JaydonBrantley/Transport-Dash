@@ -168,151 +168,30 @@ function updateChart(intdays){
     
 }
 
-//GREEN ROUTES
-
 //FILTER DAY
-$(document).on('click','#btnDayTech', function(){
+$(document).on('click','#btnDayTnTech', function(){
     updateChart(1);
 })
 
 //FILTER WEEK
-$(document).on('click','#btnWeekTech', function(){
+$(document).on('click','#btnWeekTnTech', function(){
     updateChart(7);
 })
 
 //FILTER MONTH
-$(document).on('click','#btnMonthTech', function(){
+$(document).on('click','#btnMonthTnTech', function(){
     updateChart(31);
 })
 
 //FILTER YEAR
-$(document).on('click','#btnYearTech', function(){
+$(document).on('click','#btnYearTnTech', function(){
     updateChart(365);
 })
 
-//PURPLE ROUTE
-const avgPassenger = document.getElementById('tech-101-gold');
-const avgPassengers = new Chart (avgPassenger, {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
-            borderWidth: 2,
-            tension: 0.4,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-    });
-
-const popularStop = document.getElementById('tech-102-gold');
-const popularStops = new Chart (popularStop, {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
-            borderWidth: 2,
-            tension: 0.4,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-const unpopularStop = document.getElementById('tech-103-gold');
-const unpopularStops = new Chart (unpopularStop, {
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: [{
-            data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
-            borderWidth: 2,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-    });
-
-const avgTrip = document.getElementById('tech-104-gold');
-const avgTrips = new Chart (avgTrip, {
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: [{
-            data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
-            borderWidth: 1,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
 //GOLD ROUTE
-const avgPassengerGold = document.getElementById('tech-201-gold');
+const avgPassengerGold = document.getElementById('tech-101-gold');
 const avgPassengersGold = new Chart (avgPassengerGold, {
-    type: 'line',
+    type: 'bar',
     data: {
         labels: [],
         datasets: [{
@@ -339,7 +218,7 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
     }
     });
 
-const popularStopGold = document.getElementById('tech-202-gold');
+const popularStopGold = document.getElementById('tech-102-gold');
 const popularStopsGold = new Chart (popularStopGold, {
     type: 'line',
     data: {
@@ -368,7 +247,7 @@ const popularStopsGold = new Chart (popularStopGold, {
     }
 });
 
-const unpopularStopGold = document.getElementById('tech-203-gold');
+const unpopularStopGold = document.getElementById('tech-103-gold');
 const unpopularStopsGold = new Chart (unpopularStopGold, {
     type: 'bar',
     data: {
@@ -398,7 +277,7 @@ const unpopularStopsGold = new Chart (unpopularStopGold, {
     }
     });
 
-const avgTripGold = document.getElementById('tech-204-gold');
+const avgTripGold = document.getElementById('tech-104-gold');
 const avgTripsGold = new Chart (avgTripGold, {
     type: 'bar',
     data: {
@@ -414,6 +293,125 @@ const avgTripsGold = new Chart (avgTripGold, {
     },
     options: {
         maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+//PURPLE ROUTE
+const avgPassenger = document.getElementById('tech-201-purple');
+const avgPassengers = new Chart (avgPassenger, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(169,0,230,0.7)'],
+            borderColor: ['rgb(169,0,230)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: true,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+    });
+
+const popularStop = document.getElementById('tech-202-purple');
+const popularStops = new Chart (popularStop, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(169,0,230,0.7)'],
+            borderColor: ['rgb(169,0,230)'],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: true,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+const unpopularStop = document.getElementById('tech-203-purple');
+const unpopularStops = new Chart (unpopularStop, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(169,0,230,0.7)'],
+            borderColor: ['rgb(169,0,230)'],
+            borderWidth: 2,
+            borderRadius: 5,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        maintainAspectRatio: true,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+    });
+
+const avgTrip = document.getElementById('tech-204-purple');
+const avgTrips = new Chart (avgTrip, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(169,0,230,0.7)'],
+            borderColor: ['rgb(169,0,230)'],
+            borderWidth: 1,
+            borderRadius: 5,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        maintainAspectRatio: true,
         plugins: {
             legend: {
                 display: false

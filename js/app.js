@@ -111,7 +111,7 @@ $(document).on('click','#btnAdminLogin',function(){
         console.log("Object: " + objSessionID.SessionID);
         sessionStorage.setItem("sessionID", objSessionID.SessionID);
         console.log(sessionStorage.getItem("sessionID"));
-        window.location="https://aiw.ojr.mybluehost.me/index.html";
+        window.location="https://aiw.ojr.mybluehost.me/Cookeville.html";
       }
     });
 })
@@ -186,30 +186,6 @@ $(document).on('click','#swap-ckv',function(){
   };
 })
 
-//COMPARE VIEWS BTN-COOKEVILLE
-$(document).on('click','#compare-ckv',function(){
-  let delayFirst = 200;
-  let delaySecond = 200;
-
-  let blue = "rgb(71,117,185)";
-  let green = "rgb(50,162,71)";
-
-  if($('.compare-ckv').css('display')=='none') {
-    $('.ckv-green').slideToggle('.ckv-green');
-  setTimeout(function(){
-    $('.compare-ckv').slideToggle('.compare-ckv');
-  }, 500);
-  }
-  
-  else if($('.ckv-green').css('display')=='none') {
-    setColor('#swap-ckv',/*blue*/);
-    $('.compare-ckv').slideToggle('.compare-ckv');
-  setTimeout(function(){
-    $('.ckv-green').slideToggle('.ckv-green');
-  }, 500);
-  };
-})
-
 //SWITCH VIEWS BTN-CROSSVILLE
 $(document).on('click','#swap-cross',function(){
   let delayFirst = 200;
@@ -235,31 +211,6 @@ $(document).on('click','#swap-cross',function(){
   };
 })
 
-//COMPARE VIEWS BTN-CROSSVILLE
-$(document).on('click','#compare-cross',function(){
-  let delayFirst = 200;
-  let delaySecond = 200;
-
-  let blue = "rgb(71,117,185)";
-  let gold = "rgb(167,169,54)";
-
-  if($('.compare-cross').css('display')=='none') {
-    setColor('#swap-cross',/*blue*/);
-    $('.cross-blue').slideToggle('.cross-blue');
-  setTimeout(function(){
-    $('.compare-cross').slideToggle('.compare-cross');
-  }, 500);
-  }
-  
-  else if($('.cross-blue').css('display')=='none') {
-    setColor('#swap-cross',/*gold*/);
-    $('.compare-cross').slideToggle('.compare-cross');
-  setTimeout(function(){
-    $('.cross-blue').slideToggle('.cross-blue');
-  }, 500);
-  };
-})
-
 //SWITCH VIEWS BTN-MCMINNVILLE
 $(document).on('click','#swap-minn',function(){
   let delayFirst = 200;
@@ -269,7 +220,7 @@ $(document).on('click','#swap-minn',function(){
   let red = "rgb(238,29,35)";
 
   if($('.minn-blue').css('display')=='none') {
-    setColor('#swap-minn',/*red*/);
+    setColor('#swap-minn',red);
     $('.minn-red').slideToggle('.minn-red');
   setTimeout(function(){
     $('.minn-blue').slideToggle('.minn-blue');
@@ -277,7 +228,7 @@ $(document).on('click','#swap-minn',function(){
   }
   
   else if($('.minn-red').css('display')=='none') {
-    setColor('#swap-minn',/*blue*/);
+    setColor('#swap-minn',blue);
     $('.minn-blue').slideToggle('.minn-blue');
   setTimeout(function(){
     $('.minn-red').slideToggle('.minn-red');
@@ -285,7 +236,81 @@ $(document).on('click','#swap-minn',function(){
   };
 })
 
-//COMPARE VIEWS BTN-MCMINNVILLE
+//SWITCH VIEWS BTN-TNTECH
+$(document).on('click','#swap-tech',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  let gold = "rgb(255,215,0)";
+  let purple = "rgb(169,0,230)";
+
+  if($('.tech-purple').css('display')=='none') {
+    setColor('#swap-ckv',gold);
+    $('.tech-gold').slideToggle('.tech-gold');
+  setTimeout(function(){
+    $('.tech-purple').slideToggle('.tech-purple');
+  }, 500);
+  }
+  
+  else if($('.tech-gold').css('display')=='none') {
+    setColor('#swap-tech',purple);
+    $('.tech-purple').slideToggle('.tech-purple');
+  setTimeout(function(){
+    $('.tech-gold').slideToggle('.tech-gold');
+  }, 500);
+  };
+})
+
+/*  COMPARE VIEWS BTN-COOKEVILLE
+$(document).on('click','#compare-ckv',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  let blue = "rgb(71,117,185)";
+  let green = "rgb(50,162,71)";
+
+  if($('.compare-ckv').css('display')=='none') {
+    $('.ckv-green').slideToggle('.ckv-green');
+  setTimeout(function(){
+    $('.compare-ckv').slideToggle('.compare-ckv');
+  }, 500);
+  }
+  
+  else if($('.ckv-green').css('display')=='none') {
+    setColor('#swap-ckv',blue);
+    $('.compare-ckv').slideToggle('.compare-ckv');
+  setTimeout(function(){
+    $('.ckv-green').slideToggle('.ckv-green');
+  }, 500);
+  };
+})*/
+
+/*  COMPARE VIEWS BTN-CROSSVILLE
+$(document).on('click','#compare-cross',function(){
+  let delayFirst = 200;
+  let delaySecond = 200;
+
+  let blue = "rgb(71,117,185)";
+  let gold = "rgb(167,169,54)";
+
+  if($('.compare-cross').css('display')=='none') {
+    setColor('#swap-cross',blue);
+    $('.cross-blue').slideToggle('.cross-blue');
+  setTimeout(function(){
+    $('.compare-cross').slideToggle('.compare-cross');
+  }, 500);
+  }
+  
+  else if($('.cross-blue').css('display')=='none') {
+    setColor('#swap-cross',gold);
+    $('.compare-cross').slideToggle('.compare-cross');
+  setTimeout(function(){
+    $('.cross-blue').slideToggle('.cross-blue');
+  }, 500);
+  };
+})*/
+
+/*COMPARE VIEWS BTN-MCMINNVILLE
 $(document).on('click','#compare-minn',function(){
   let delayFirst = 200;
   let delaySecond = 200;
@@ -294,7 +319,7 @@ $(document).on('click','#compare-minn',function(){
   let red = "rgb(238,29,35)";
 
   if($('.compare-minn').css('display')=='none') {
-    setColor('#swap-minn',/*red*/);
+    setColor('#swap-minn',red);
     $('.minn-red').slideToggle('.minn-red');
   setTimeout(function(){
     $('.compare-minn').slideToggle('.compare-minn');
@@ -302,13 +327,13 @@ $(document).on('click','#compare-minn',function(){
   }
   
   else if($('.minn-red').css('display')=='none') {
-    setColor('#swap-minn',/*blue*/);
+    setColor('#swap-minn',blue);
     $('.compare-minn').slideToggle('.compare-minn');
   setTimeout(function(){
     $('.minn-red').slideToggle('.minn-red');
   }, 500);
   };
-})
+})*/
 
 
 //DRAGULA FUNCTION

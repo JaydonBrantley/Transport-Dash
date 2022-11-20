@@ -3,19 +3,16 @@ UCHRA PROJECT TO DO LIST:
 DASHBOARD:
 
 REWARDS SYSTEM:
-	add aria lables
-	fix grapgical glitches
-	finish reward graph and interface
 
 UI CHANGES - REWARD SYSTEM
-    add how many free rides they have
 
 WHAT TO DO THIS WEEKEND
-    FINISH REWARDS PAGE ON DASHBOARD
+    finish functions on rewards data page
     WORK ON LIGHTHOUSE SUGGESTIONS (POLISH EVERYTHING!) //DASH COMPLETE
-    FINISH UI ON REWARDS SYSTEM 
-    REBUILD TNTECH PAGE
+    REBUILD REWARDS SIGNUP TO MAKE INPUTS A LITTLE LONGER
     
 COMPLETED (COMMENTS ON GITHUB)
-    add aria lables to dash, fix grapgical glitches on dash, built graphs for rewards data, added features recommended by lighthouse, 
+    	Rewards: add aria lables, fix grapgical glitches, added how many free rides they have, rewards UI complete
+        Dash: finished rewards page, rebuilt tntech page,
+
 

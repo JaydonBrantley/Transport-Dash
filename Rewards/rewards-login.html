@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="../Rewards/reward-css/reward-style.css">
     <title>Login</title>
 </head>
-
 <body>
 
   <div class="container">
     <div class="card col-11">
       <div class="logo mt-2 mb-2">
-        <img src="../images/publictransportation.png" alt="UCHRA Logo">
+        <img src="../images/publictransportation.png" alt="UCHRA Public Transportation Logo">
       </div>
-      <div class="message mt-2 mb-2">
+      <div class="message mt-2 mb-2" aria-label="Please Enter, Your Phone Number">
         <h5>Please Enter,</h5>
         <h5>Your Phone Number</h5>
       </div>
       <fieldset class="input-set mt-2 mb-2">
         <label for="phone" class="mb-0">Phone Number: </label>
-        <input type="tel" id="phone" name="phone" class="tel-input" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(xxx)-xxx-xxx">
+        <input type="tel" id="phone" name="phone" class="tel-input" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(xxx)-xxx-xxx" aria-label="Enter Phone Number">
       </fieldset>
       <div class="action-btn mt-2 mb-2">
-        <button type="button" class="btn btn-danger btn-lg btn-cancel mt-2 mb-2 mr-2">Cancel</button>
-        <button type="button" class="btn btn-lg btn-submit mt-2 mb-2" style="background-color: rgb(189,136,32); color: white;">Submit</button>
+        <button type="button" id="cancel-btn" class="btn btn-danger btn-lg btn-cancel mt-2 mb-2 mr-2" aria-label="Cancel">Cancel</button>
+        <button type="button" class="btn btn-lg btn-submit mt-2 mb-2" style="background-color: rgb(194,144,48);" aria-label="Submit Number">Submit</button>
       </div>
     </div>
 </div>

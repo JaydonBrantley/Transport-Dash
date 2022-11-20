@@ -11,7 +11,7 @@
     color: white;
 }
 
-/*PHONE NUMBER PAGE*/
+/*CUSTOMER LOGIN (ENTER NUMBER)*/
 
 body{
     background-color: rgb(59,70,83);
@@ -77,6 +77,10 @@ img{
     color: rgb(99, 99, 99);
 }
 
+#cancel-btn{
+    color: black;
+}
+
 /*USER PROFILE PAGE*/
 
 .container-reward{
@@ -111,20 +115,47 @@ img{
     background-color: rgb(59,70,83);
 }
 
+.message-rides{
+    display: flex;
+    flex-direction: row;
+}
+
 .profile-card{
     height: auto;
 }
 
+#redeem-btn{
+    color: black;
+    background-color: rgb(189,136,32);
+}
 
-/*CUSTOMER LOGIN*/
+
+/*CUSTOMER SIGNUP*/
+.container-signup{
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+}
 
 .card-login{
     margin: auto;
 }
 
+.card-signup{
+    width: fit-content;
+    height: fit-content;
+}
+
 .card-body{
     width: auto;
     height: auto;
+}
+
+input{
+    width: 286.25px;
 }
 
 .action-btn{

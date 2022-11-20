@@ -29,7 +29,7 @@
     </nav>
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #121212;" aria-label="Sidebar"><!-- Main Sidebar Container -->
-      <a href="index.html" class="brand-link">
+      <a href="Cookeville.html" class="brand-link">
         <img src="images/publictransportation.png" class="brand-image elevation-3" style="opacity: .8" alt="UCHRA Public Transportation Logo">
         <span class="brand-text font-weight-light" style="color: black;">.</span>
       </a>
@@ -43,7 +43,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item active">
-                    <a href="index.html" class="nav-link" aria-label="Cookeville">
+                    <a href="Cookeville.html" class="nav-link" aria-label="Cookeville">
                       <i class="far fa-city"></i><p> Cookeville</p>
                     </a>
                   </li>
@@ -81,14 +81,18 @@
   
     <div class="content-wrapper pt-3" id="cross-page" style="background-color: rgb(244,246,249);"><!--MAIN BODY-->
       <div class="content-title" aria-label="TnTech"><!--HEADING-->
-        <h2>TnTech</h2>
+        <h2>Tenneseee Tech</h2>
       </div>
-      <div class="container-buttons mr-3 ml-3 mb-3">
+      <div class="container-buttons ml-3 mb-3">
         <div class="filter"><!--TIME FILTER-->
-          <button type="button" id="btnDayTech" class="btn btn-outline-dark" aria-label="Filter Day">Day</button>
-          <button type="button" id="btnWeekTech" class="btn btn-outline-dark" aria-label="Filter Week">Week</button>
-          <button type="button" id="btnWeekTech" class="btn btn-outline-dark" aria-label="Filter Month">Month</button>
-          <button type="button" id="btnYearTech" class="btn btn-outline-dark" aria-label="Filter Year">Year</button>
+          <button type="button" id="btnDayTnTech" class="btn btn-outline-dark" aria-label="Filter Day">Day</button>
+          <button type="button" id="btnWeekTnTech" class="btn btn-outline-dark" aria-label="Filter Week">Week</button>
+          <button type="button" id="btnMonthTnTech" class="btn btn-outline-dark" aria-label="Filter Month">Month</button>
+          <button type="button" id="btnYearTnTech" class="btn btn-outline-dark" aria-label="Filter Year">Year</button>
+        </div>
+        <div class="swap mr-3"><!--SWAP BUTTON-->
+          <!-- <button type="button" id="compare-tech" class="btn btn-outline-dark" aria-label="Both Routes">Both</button> -->
+          <button type="button" id="swap-tech" class="btn btn-outline-dark" aria-label="Blue Route">Routes</button>
         </div>
       </div>
       <div class="content-graphs"><!--GRAPHS-->
@@ -138,6 +142,51 @@
             </div>
           </div>
         </div><!--END GOLD ROUTE-->
+        <div class="tech-purple graph-flexbox col-sm-6 col-md-9 col-lg-12 col-xl-12" style="display: none;"><!--START PURPLE ROUTE-->
+          <div class="card col-12" aria-label="Average Passenger Purple Route">
+            <div class="card-header">
+              <h3 class="card-title">Avg. Passenger</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+                <canvas class="canvas" id="tech-201-purple" width="1235" height="190" style="background-color: white;"></canvas>
+            </div>
+          </div>
+        <div class="card col-5" aria-label="Popular Stops Purple Route">
+          <div class="card-header">
+            <h3 class="card-title">Popular Stops</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+            </div>
+          </div>
+          <div class="card-body">
+              <canvas class="canvas" id="tech-202-purple" width="450" height="190" style="background-color: white;"></canvas>
+          </div>
+        </div>
+        <div class="card col-5" aria-label="Unpopular Stops Purple Route">
+          <div class="card-header">
+            <h3 class="card-title">Unpopular Stops</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+            </div>
+          </div>
+          <div class="card-body">
+              <canvas class="canvas" id="tech-203-purple" width="450" height="190" style="background-color: white;"></canvas>
+          </div>
+        </div>
+        <div class="card col-12" aria-label="Average Trip Per Mile Purple Route">
+          <div class="card-header">
+            <h3 class="card-title">Avg. Trip Per Mile</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+            </div>
+          </div>
+          <div class="card-body">
+              <canvas class="canvas" id="tech-204-purple" width="1235" height="190" style="background-color: white;"></canvas>
+          </div>
+        </div><!--END PURPLE-->
       </div><!--END CONTENT GRAPH-->
     </div><!--END MAIN BODY-->
   </div><!--END WEBPAGE-->
@@ -146,6 +195,7 @@
   <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="js/app.js"></script>
   <script src="js/chats-tech.js"></script>
 </body>
 </html>

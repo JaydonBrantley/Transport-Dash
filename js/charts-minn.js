@@ -424,7 +424,7 @@ const avgTrips = new Chart (avgTrip, {
              }
          }
      });
-
+/*
 //COMPARE ROUTES
   const avgPassengerComapre = document.getElementById('minn-301-compare');
 const avgPassengersComapre = new Chart (avgPassengerComapre, {
@@ -566,4 +566,4 @@ const unpopularStopsCompare = new Chart (unpopularStopCompare, {
             }
         }
     }
-  });
+  }); */

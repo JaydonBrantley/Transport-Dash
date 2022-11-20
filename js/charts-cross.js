@@ -422,7 +422,7 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
                 }
             }
         });
-
+/*
 //COMPARE ROUTES
   const avgPassengerCompare = document.getElementById('cross-301-compare');
   const AvgPassengersCompare = new Chart (avgPassengerCompare, {
@@ -567,4 +567,4 @@ const avgTripsCompare = new Chart (avgTripCompare, {
             }
         }
     }
-  });
+  }); */

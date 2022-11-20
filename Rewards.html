@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Reward Information</title>
 </head>
-<body class="sidebar-mini layout-fixed">
+<body class="sidebar-mini layout-fixed" onload="updateChart()">
   <div class="wrapper">
     <nav class="main-header navbar navbar-expand navbar-white navbar-light" aria-label="Top Navigation"><!-- Top Navbar -->
       <ul class="navbar-nav">
@@ -28,7 +28,7 @@
       </ul>
     </nav>
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #121212;" aria-label="Sidebar"><!-- Main Sidebar Container -->
-            <a href="index.html" class="brand-link">
+            <a href="Cookeville.html" class="brand-link">
               <img src="images/publictransportation.png" class="brand-image elevation-3" style="opacity: .8" alt="UCHRA Public Transportation Logo">
               <span class="brand-text font-weight-light" style="color: black;">.</span>
             </a>
@@ -42,7 +42,7 @@
                       </a>
                       <ul class="nav nav-treeview">
                         <li class="nav-item">
-                          <a href="index.html" class="nav-link" aria-label="Cookeville">
+                          <a href="Cookeville.html" class="nav-link" aria-label="Cookeville">
                             <i class="far fa-city "></i><p> Cookeville</p>
                           </a>
                         </li>
@@ -95,13 +95,13 @@
             <div class="rewards content-graphs"><!--GRAPHS-->
                 <div class="card col-12">
                     <div class="card-header" aria-label="Seniors">
-                      <h3 class="card-title">Seniors</h3>
+                      <h3 class="card-title">Age Group</h3>
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
                       </div>
                     </div>
                     <div class="card-body">
-                        <canvas class="canvas" id="rewards-seniors" width="1235" height="190" style="background-color: white;"></canvas>
+                        <canvas class="canvas" id="ageGroup" width="1235" height="190" style="background-color: white;"></canvas>
                     </div>
                   </div>
                 <div class="card col-5" aria-label="Veterans">
@@ -112,29 +112,29 @@
                     </div>
                   </div>
                   <div class="card-body">
-                      <canvas class="canvas" id="rewards-veterans" width="450" height="190" style="background-color: white;"></canvas>
+                      <canvas class="canvas" id="veterans" width="450" height="190" style="background-color: white;"></canvas>
                   </div>
                 </div>
                 <div class="card col-5" aria-label="Disabled">
                   <div class="card-header">
-                    <h3 class="card-title">Disabled</h3>
+                    <h3 class="card-title">People with disabilities</h3>
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
                     </div>
                   </div>
                   <div class="card-body">
-                      <canvas class="canvas" id="rewards-disabled" width="450" height="190" style="background-color: white;"></canvas>
+                      <canvas class="canvas" id="disability" width="450" height="190" style="background-color: white;"></canvas>
                   </div>
                 </div>
                 <div class="card col-12" aria-label="Minorities">
                   <div class="card-header">
-                    <h3 class="card-title">Minorities</h3>
+                    <h3 class="card-title">Ethnicity</h3>
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
                     </div>
                   </div>
                   <div class="card-body">
-                      <canvas class="canvas" id="rewards-miorities" width="1235" height="190" style="background-color: white;"></canvas>
+                      <canvas class="canvas" id="ethnicity" width="1235" height="190" style="background-color: white;"></canvas>
                   </div>
                 </div>
               </div>
@@ -148,7 +148,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/charts-ckv.js"></script>
+    <script src="js/charts-rewards.js"></script>
     <script src="js/html2pdf.bundle.min.js"></script>
 </body>
 </html>

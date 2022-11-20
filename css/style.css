@@ -75,10 +75,11 @@ img{
 }
 
 /*TNTEC*/
-.tech-gold{
+.tech-gold, .tech-purple{
     display: flex;
     justify-content: space-evenly;
 }
+
 
 /*REWARDS*/
 .rewards{

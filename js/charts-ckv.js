@@ -426,7 +426,7 @@ const avgTripsBlue = new Chart (avgTripBlue, {
         }
     }
   });
-
+/*
   //COMPARE ROUTES
   const avgPassengerBoth = document.getElementById('ckv-301-compare');
   const avgPassengersBoth = new Chart (avgPassengerBoth, {
@@ -570,4 +570,4 @@ const avgTripsBoth = new Chart (avgTripBoth, {
             }
         }
     }
-  });
+  }); */

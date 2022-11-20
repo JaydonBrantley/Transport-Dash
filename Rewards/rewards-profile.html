@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,24 +13,23 @@
 <body>
 
     <div class="container-reward">
-        <div class="logout">
+        <div class="logout mt-1" aria-label="logout button">
             <i class="fas fa-sign-out-alt fa-2x"></i>
         </div>
         <div class="card-reward col-11">
             <div class="logo mt-2 mb-2">
-                <img src="../images/publictransportation.png" alt="UCHRA Logo">
+                <img src="../images/publictransportation.png" alt="UCHRA public Transportation Logo">
             </div>
-            <div class="message mt-2 mb-2">
-                <h5>Welcome, Junior</h5>
-                <h5>You have</h5>
+            <div class="message mt-2 mb-2" aria-label="Welcome, You Have">
+                <h5>Welcome, You have</h5>
             </div>
             <div class="profile-card">
                 <canvas class="rewards-chart" id="total-rides" width="250" height="100"></canvas>
             </div>
-            <div class="message mt-2 mb-2">
-                <h5>until your next ride!</h5>
+            <div class="message-rides mt-2 mb-2" aria-label="0/10">
+                <h5>3 rides left, until your free ride!</h5>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: rgb(189,136,32); color: white;">Redeem</button>
+            <button type="button" id="redeem-btn" class="btn btn-lg btn-block" aria-label="Redeem Reward">Redeem Reward</button>
         </div>
     </div>
 

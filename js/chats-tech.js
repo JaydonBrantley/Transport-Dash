@@ -1,8 +1,8 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
 
-//PURPLE ROUTE
-function fillavgPassangers(datapoint){
+//GOLD ROUTE
+function fillavgPassangersGold(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -63,8 +63,8 @@ function fillavgTrip(datapoint){
         avgTrips.update();
 } 
 
-//GOLD ROUTE
-function fillavgPassangersGold(datapoint){
+//PURPLE ROUTE
+function fillavgPassangers(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -74,9 +74,9 @@ function fillavgPassangersGold(datapoint){
             return index.Total_Passengers;
         })
     
-        avgPassengersGold.data.labels = Stop_ID;
-        avgPassengersGold.data.datasets[0].data = Total_Passengers;
-        avgPassengersGold.update();
+        avgPassengersPurple.data.labels = Stop_ID;
+        avgPassengersPurple.data.datasets[0].data = Total_Passengers;
+        avgPassengersPurple.update();
 } 
 
 function fillpopularStop(datapoint){
@@ -89,9 +89,9 @@ function fillpopularStop(datapoint){
             return index.Total_Passengers;
         })
 
-        popularStopsGold.data.labels = Stop_ID;
-        popularStopsGold.data.datasets[0].data = Total_Passengers;
-        popularStopsGold.update();
+        popularStopsPurple.data.labels = Stop_ID;
+        popularStopsPurple.data.datasets[0].data = Total_Passengers;
+        popularStopsPurple.update();
 } 
 
 function fillunpopularStop(datapoint){
@@ -104,9 +104,9 @@ function fillunpopularStop(datapoint){
             return index.Total_Passengers;
         })
 
-        unpopularStopsGold.data.labels = Stop_ID;
-        unpopularStopsGold.data.datasets[0].data = Total_Passengers;
-        unpopularStopsGold.update();
+        unpopularStopsPurple.data.labels = Stop_ID;
+        unpopularStopsPurple.data.datasets[0].data = Total_Passengers;
+        unpopularStopsPurple.update();
 } 
 
 function fillavgTrip(datapoint){
@@ -119,10 +119,9 @@ function fillavgTrip(datapoint){
             return index.Miles_Per_Stop;
         })
 
-        console.log(Miles_Per_Stop)
-        avgTripsGold.data.labels = Stop_ID;
-        avgTripsGold.data.datasets[0].data = Miles_Per_Stop;
-        avgTripsGold.update();
+        avgTripsPurple.data.labels = Stop_ID;
+        avgTripsPurple.data.datasets[0].data = Miles_Per_Stop;
+        avgTripsPurple.update();
 } 
 
 //FETCHES ALL DATAPOINTS
@@ -189,8 +188,8 @@ $(document).on('click','#btnYearTnTech', function(){
 })
 
 //GOLD ROUTE
-const avgPassengerGold = document.getElementById('tech-101-gold');
-const avgPassengersGold = new Chart (avgPassengerGold, {
+const avgPassenger = document.getElementById('tech-101-gold');
+const avgPassengers = new Chart (avgPassenger, {
     type: 'bar',
     data: {
         labels: [],
@@ -218,8 +217,8 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
     }
     });
 
-const popularStopGold = document.getElementById('tech-102-gold');
-const popularStopsGold = new Chart (popularStopGold, {
+const popularStop = document.getElementById('tech-102-gold');
+const popularStops = new Chart (popularStop, {
     type: 'line',
     data: {
         labels: [],
@@ -247,8 +246,8 @@ const popularStopsGold = new Chart (popularStopGold, {
     }
 });
 
-const unpopularStopGold = document.getElementById('tech-103-gold');
-const unpopularStopsGold = new Chart (unpopularStopGold, {
+const unpopularStop = document.getElementById('tech-103-gold');
+const unpopularStops = new Chart (unpopularStop, {
     type: 'bar',
     data: {
         labels: [],
@@ -277,8 +276,8 @@ const unpopularStopsGold = new Chart (unpopularStopGold, {
     }
     });
 
-const avgTripGold = document.getElementById('tech-104-gold');
-const avgTripsGold = new Chart (avgTripGold, {
+const avgTrip = document.getElementById('tech-104-gold');
+const avgTrips = new Chart (avgTrip, {
     type: 'bar',
     data: {
         labels: [],
@@ -308,8 +307,8 @@ const avgTripsGold = new Chart (avgTripGold, {
 });
 
 //PURPLE ROUTE
-const avgPassenger = document.getElementById('tech-201-purple');
-const avgPassengers = new Chart (avgPassenger, {
+const avgPassengerPurple = document.getElementById('tech-201-purple');
+const avgPassengersPurple = new Chart (avgPassengerPurple, {
     type: 'bar',
     data: {
         labels: [],
@@ -337,8 +336,8 @@ const avgPassengers = new Chart (avgPassenger, {
     }
     });
 
-const popularStop = document.getElementById('tech-202-purple');
-const popularStops = new Chart (popularStop, {
+const popularStopPurple = document.getElementById('tech-202-purple');
+const popularStopsPurple = new Chart (popularStopPurple, {
     type: 'line',
     data: {
         labels: [],
@@ -366,8 +365,8 @@ const popularStops = new Chart (popularStop, {
     }
 });
 
-const unpopularStop = document.getElementById('tech-203-purple');
-const unpopularStops = new Chart (unpopularStop, {
+const unpopularStopPurple = document.getElementById('tech-203-purple');
+const unpopularStopsPurple = new Chart (unpopularStopPurple, {
     type: 'bar',
     data: {
         labels: [],
@@ -396,8 +395,8 @@ const unpopularStops = new Chart (unpopularStop, {
     }
     });
 
-const avgTrip = document.getElementById('tech-204-purple');
-const avgTrips = new Chart (avgTrip, {
+const avgTripPurple = document.getElementById('tech-204-purple');
+const avgTripsPurple = new Chart (avgTripPurple, {
     type: 'bar',
     data: {
         labels: [],

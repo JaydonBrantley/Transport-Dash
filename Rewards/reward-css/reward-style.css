@@ -167,8 +167,11 @@ input{
 
 .btn-cancel{
     width: 50%;
+    color: black;
 }
 
 .btn-submit{
     width: 50%;
+    color: black;
+    background-color: rgb(189,136,32);
 }

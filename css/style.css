@@ -54,6 +54,11 @@ img{
     justify-content: space-evenly;
 }
 
+#swap-ckv{
+    background-color: rgb(50,162,71,0.9);
+    border: none;
+}
+
 
 /*ALG*/
 
@@ -68,16 +73,31 @@ img{
     justify-content: space-evenly;
 }
 
+#swap-cross{
+    background-color: rgb(255,215,0,0.9);
+    border: none;
+}
+
 /*MINN*/
 .minn-red, .minn-blue, .compare-minn{
     display: flex;
     justify-content: space-evenly;
 }
 
+#swap-minn{
+    background-color: rgb(238,29,35,0.9);
+    border: none;
+}
+
 /*TNTEC*/
 .tech-gold, .tech-purple{
     display: flex;
     justify-content: space-evenly;
+}
+
+#swap-tech{
+    background-color: rgb(255,215,0);
+    border: none;
 }
 
 

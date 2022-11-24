@@ -186,6 +186,7 @@ $(document).on('click','#btnYearCross', function(){
     updateChart(365);
 })
 
+//BLUE ROTES
 const avgPassenger = document.getElementById('cross-101-blue');
 const avgPassengers = new Chart(avgPassenger, {
     type: 'line',

@@ -7,12 +7,12 @@ REWARDS SYSTEM:
 UI CHANGES - REWARD SYSTEM
 
 WHAT TO DO THIS WEEKEND
-    finish functions on rewards data page
-    WORK ON LIGHTHOUSE SUGGESTIONS (POLISH EVERYTHING!) //DASH COMPLETE
-    REBUILD REWARDS SIGNUP TO MAKE INPUTS A LITTLE LONGER
+    rebuild login page -- add uchra logo
+    rebuild signup page -- make form shorter
+    rebuild reward data page -- organize chats properly
+    update all charts -- update the font size from the data and styles
+    add data and test functions for missing charts
     
 COMPLETED (COMMENTS ON GITHUB)
-    	Rewards: add aria lables, fix grapgical glitches, added how many free rides they have, rewards UI complete
-        Dash: finished rewards page, rebuilt tntech page,
 
 

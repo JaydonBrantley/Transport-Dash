@@ -1,5 +1,8 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
+Chart.defaults.font.size = 14;
+Chart.defaults.color = 'black';
+Chart.pointRadius = 5;
 
 //NEW FUNCTION
 function fillavgPassangers(datapoint){
@@ -122,6 +125,7 @@ const avgPassengers = new Chart (avgPassenger, {
             borderColor: ['rgb(147,80,159)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -136,6 +140,9 @@ const avgPassengers = new Chart (avgPassenger, {
             y: {
                 beginAtZero: true
             }
+        },
+        datalabels: {
+            color: 'black',
         }
     }
     });
@@ -150,7 +157,6 @@ const popularStops = new Chart (popularStop, {
             backgroundColor: ['rgb(147,80,159,0.7)'],
             borderColor: ['rgb(147,80,159)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -180,7 +186,6 @@ const popularStops = new Chart (popularStop, {
                 backgroundColor: ['rgb(147,80,159,0.7)'],
                 borderColor: ['rgb(147,80,159)'],
                 borderWidth: 1,
-                borderRadius: 5,
                 borderSkipped: false,
             }]
         },
@@ -211,6 +216,7 @@ const popularStops = new Chart (popularStop, {
             borderColor: ['rgb(147,80,159)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {

@@ -1,5 +1,7 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
+Chart.defaults.font.size = 14;
+Chart.defaults.color = 'black';
 
 function fillageGroups(datapoint){
     const Stop_ID = datapoint.map(
@@ -143,11 +145,11 @@ const ageGroup = document.getElementById('ageGroup');
 const ageGroups = new Chart (ageGroup, {
     type: 'bar',
     data: {
-        labels: [],
+        labels: ['red'],
         datasets: [{
-            data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
+            data: [2, 10, 15],
+            backgroundColor: ['rgb(50,162,71,0.7)', 'rgb(70,116,185,0.7)', 'rgb(238,29,35,0.7)', 'rgb(147,80,159,0.7)'],
+            borderColor: ['rgb(50,162,71)', 'rgb(70,116,185)', 'rgb(238,29,35)', 'rgb(147,80,159)'],
             borderWidth: 2,
             tension: 0.4,
         }]
@@ -155,9 +157,32 @@ const ageGroups = new Chart (ageGroup, {
     options: {
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                display: false
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
             }
+        },
+    }
+    });
+
+const veteran = document.getElementById('veterans');
+const veterans = new Chart (veteran, {
+    type: 'pie',
+    data: {
+        labels: [],
+        datasets: [{
+            data: [],
+            backgroundColor: ['rgb(50,162,71,0.7)', 'rgb(238,29,35,0.7)'],
+            borderColor: ['rgb(50,162,71)', 'rgb(238,29,35)' ],
+            borderWidth: 2,
+            tension: 0.4,
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
         },
         responsive: true,
         scales: {
@@ -166,27 +191,24 @@ const ageGroups = new Chart (ageGroup, {
             }
         }
     }
-    });
+});
 
-const veteran = document.getElementById('veterans');
-const veterans = new Chart (veteran, {
+const ethnicity = document.getElementById('ethnicity');
+const ethnicities = new Chart (ethnicity, {
     type: 'bar',
     data: {
         labels: [],
         datasets: [{
             data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
-            borderWidth: 2,
-            tension: 0.4,
+            backgroundColor: ['rgb(54,162,235,0.7)', 'rgb(75,192,192,0.7)', 'rgb(255,159,64,0.7)', 'rgb(153,102,255,0.7)', 'rgb(255,99,132,0.7)'],
+            borderColor: ['rgb(54,162,235)', 'rgb(75,192,192)', 'rgb(255,159,64)', 'rgb(153,102,255)', 'rgb(255,99,132)'],
+            borderWidth: 1,
+            borderSkipped: false,
         }]
     },
     options: {
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                display: false
-            }
         },
         responsive: true,
         scales: {
@@ -199,24 +221,20 @@ const veterans = new Chart (veteran, {
 
 const disability = document.getElementById('disability');
 const disabilities = new Chart (disability, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: [],
         datasets: [{
             data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
+            backgroundColor: ['rgb(50,162,71,0.7)'],
+            borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
     options: {
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                display: false
-            }
         },
         responsive: true,
         scales: {
@@ -226,33 +244,3 @@ const disabilities = new Chart (disability, {
         }
     }
     });
-
-const ethnicity = document.getElementById('ethnicity');
-const ethnicities = new Chart (ethnicity, {
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: [{
-            data: [],
-            backgroundColor: ['rgb(255,215,0,0.7)'],
-            borderColor: ['rgb(255,215,0)'],
-            borderWidth: 1,
-            borderRadius: 5,
-            borderSkipped: false,
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});

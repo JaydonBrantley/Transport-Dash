@@ -7,12 +7,9 @@ REWARDS SYSTEM:
 UI CHANGES - REWARD SYSTEM
 
 WHAT TO DO THIS WEEKEND
-    rebuild login page -- add uchra logo
+    rebuild login page - add uchra logo
     rebuild signup page -- make form shorter
-    rebuild reward data page -- organize chats properly
-    update all charts -- update the font size from the data and styles
     add data and test functions for missing charts
     
 COMPLETED (COMMENTS ON GITHUB)
-
-
+    rebuild reward data page - organized charts properly, update all charts -- update the font size from the data and styles

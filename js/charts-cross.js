@@ -1,5 +1,7 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
+Chart.defaults.font.size = 14;
+Chart.defaults.color = 'black';
 
 //BLUE ROUTE
 function fillavgPassangers(datapoint){
@@ -198,6 +200,7 @@ const avgPassengers = new Chart(avgPassenger, {
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -226,7 +229,6 @@ const popularStops = new Chart (popularStop, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -256,7 +258,6 @@ const unpopularStops = new Chart(unpopularStop, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -287,6 +288,7 @@ const avgTrips = new Chart(avgTrip, {
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -317,6 +319,7 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -345,7 +348,6 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
                 backgroundColor: ['rgb(255,215,0,0.7)'],
                 borderColor: ['rgb(255,215,0)'],
                 borderWidth: 1,
-                borderRadius: 5,
                 borderSkipped: false,
             }]
         },
@@ -375,7 +377,6 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
                 backgroundColor: ['rgb(255,215,0,0.7)'],
                 borderColor: ['rgb(255,215,0)'],
                 borderWidth: 2,
-                borderRadius: 5,
                 borderSkipped: false,
             }]
         },
@@ -406,6 +407,7 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
                     borderColor: ['rgb(255,215,0)'],
                     borderWidth: 2,
                     tension: 0.4,
+                    pointRadius: 8,
                 }]
             },
             options: {
@@ -437,6 +439,7 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
           borderColor: ['rgb(70,116,185)'],
           borderWidth: 2,
           tension: 0.4,
+          pointRadius: 8,
       },
       {
           label: 'Gold Route',
@@ -471,7 +474,6 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         },
         {
@@ -510,7 +512,6 @@ const avgPassengersGold = new Chart (avgPassengerGold, {
               backgroundColor: ['rgb(70,116,185,0.7)'],
               borderColor: ['rgb(70,116,185)'],
               borderWidth: 2,
-              borderRadius: 5,
               borderSkipped: false,
           },
           {
@@ -547,6 +548,7 @@ const avgTripsCompare = new Chart (avgTripCompare, {
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         },
         {
             label: 'Gold Route',

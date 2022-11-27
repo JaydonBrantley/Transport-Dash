@@ -1,5 +1,7 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
+Chart.defaults.font.size = 14;
+Chart.defaults.color = 'black';
 
 //GOLD ROUTE
 function fillavgPassangersGold(datapoint){
@@ -228,6 +230,7 @@ const popularStops = new Chart (popularStop, {
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -256,7 +259,6 @@ const unpopularStops = new Chart (unpopularStop, {
             backgroundColor: ['rgb(255,215,0,0.7)'],
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -286,7 +288,6 @@ const avgTrips = new Chart (avgTrip, {
             backgroundColor: ['rgb(255,215,0,0.7)'],
             borderColor: ['rgb(255,215,0)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -347,6 +348,7 @@ const popularStopsPurple = new Chart (popularStopPurple, {
             borderColor: ['rgb(169,0,230)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -375,7 +377,6 @@ const unpopularStopsPurple = new Chart (unpopularStopPurple, {
             backgroundColor: ['rgb(169,0,230,0.7)'],
             borderColor: ['rgb(169,0,230)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -405,7 +406,6 @@ const avgTripsPurple = new Chart (avgTripPurple, {
             backgroundColor: ['rgb(169,0,230,0.7)'],
             borderColor: ['rgb(169,0,230)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },

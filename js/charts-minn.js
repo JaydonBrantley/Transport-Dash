@@ -1,5 +1,7 @@
 // Register the plugin to all charts:
 Chart.register(ChartDataLabels);
+Chart.defaults.font.size = 14;
+Chart.defaults.color = 'black';
 
 //RED ROUTE
 function fillavgPassangers(datapoint){
@@ -199,6 +201,7 @@ $(document).on('click','#btnYearMinn', function(){
              borderColor: ['rgb(238,29,35)'],
              borderWidth: 2,
              tension: 0.4,
+             pointRadius: 8,
          }]
      },
      options: {
@@ -227,7 +230,6 @@ $(document).on('click','#btnYearMinn', function(){
                  backgroundColor: ['rgb(238,29,35,0.7)'],
                  borderColor: ['rgb(238,29,35)'],
                  borderWidth: 1,
-                 borderRadius: 5,
                  borderSkipped: false,
              }]
          },
@@ -257,7 +259,6 @@ const unpopularStops = new Chart (unpopularStop, {
              backgroundColor: ['rgb(238,29,35,0.7)'],
              borderColor: ['rgb(238,29,35)'],
              borderWidth: 2,
-             borderRadius: 5,
              borderSkipped: false,
          }]
      },
@@ -288,6 +289,7 @@ const avgTrips = new Chart (avgTrip, {
              borderColor: ['rgb(238,29,35)'],
              borderWidth: 2,
              tension: 0.4,
+             pointRadius: 8,
          }]
      },
      options: {
@@ -318,6 +320,7 @@ const avgTrips = new Chart (avgTrip, {
              borderColor: ['rgb(37,79,162)'],
              borderWidth: 2,
              tension: 0.4,
+             pointRadius: 8,
          }]
      },
      options: {
@@ -346,7 +349,6 @@ const avgTrips = new Chart (avgTrip, {
                  backgroundColor: ['rgb(37,79,162,0.7)'],
                  borderColor: ['rgb(37,79,162)'],
                  borderWidth: 1,
-                 borderRadius: 5,
                  borderSkipped: false,
              }]
          },
@@ -376,7 +378,6 @@ const avgTrips = new Chart (avgTrip, {
              backgroundColor: ['rgb(37,79,162,0.7)'],
              borderColor: ['rgb(37,79,162)'],
              borderWidth: 2,
-             borderRadius: 5,
              borderSkipped: false,
          }]
      },
@@ -407,6 +408,7 @@ const avgTrips = new Chart (avgTrip, {
                  borderColor: ['rgb(37,79,162)'],
                  borderWidth: 2,
                  tension: 0.4,
+                 pointRadius: 8,
              }]
          },
          options: {
@@ -438,6 +440,7 @@ data: {
         borderColor: ['rgb(238,29,35)'],
         borderWidth: 2,
         tension: 0.4,
+        pointRadius: 8,
     },
     {
         label: 'Blue Route',
@@ -473,6 +476,7 @@ const popularStopsCompare = new Chart (popularStopCompare, {
             borderColor: ['rgb(238,29,35)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         },
         {
             label: 'Blue Route',
@@ -507,7 +511,6 @@ const unpopularStopsCompare = new Chart (unpopularStopCompare, {
             backgroundColor: ['rgb(238,29,35,0.7)'],
             borderColor: ['rgb(238,29,35)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         },
         {
@@ -543,7 +546,6 @@ const unpopularStopsCompare = new Chart (unpopularStopCompare, {
             backgroundColor: ['rgb(238,29,35,0.7)'],
             borderColor: ['rgb(238,29,35)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         },
         {

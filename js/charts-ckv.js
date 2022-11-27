@@ -1,5 +1,7 @@
  // REGISTERS ALL THE PLUGINS TO EACH CHART
-Chart.register(ChartDataLabels);
+ Chart.register(ChartDataLabels);
+ Chart.defaults.font.size = 14;
+ Chart.defaults.color = 'black';
 
 //GREEN ROUTES
 function fillavgPassangers(datapoint){
@@ -199,6 +201,7 @@ const avgPassengers = new Chart(avgPassenger, {
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -227,7 +230,6 @@ const popularStops = new Chart (popularStop, {
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -257,7 +259,6 @@ const unpopularStops = new Chart (unpopularStop, {
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -288,6 +289,7 @@ const avgTrips = new Chart (avgTrip, {
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -320,6 +322,7 @@ data: {
         borderColor: ['rgb(70,116,185)'],
         borderWidth: 2,
         tension: 0.4,
+        pointRadius: 8,
     }]
 },
 options: {
@@ -348,7 +351,6 @@ const popularStopsBlue = new Chart (popularStopBlue, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -378,7 +380,6 @@ const popularStopsBlue = new Chart (popularStopBlue, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         }]
     },
@@ -409,6 +410,7 @@ const avgTripsBlue = new Chart (avgTripBlue, {
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         }]
     },
     options: {
@@ -440,6 +442,7 @@ data: {
         borderColor: ['rgb(70,116,185)'],
         borderWidth: 2,
         tension: 0.4,
+        pointRadius: 8,
     },
     {
         label: 'Green Route',
@@ -474,7 +477,6 @@ const popularStopsBoth = new Chart (popularStopBoth, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         },
         {
@@ -483,7 +485,7 @@ const popularStopsBoth = new Chart (popularStopBoth, {
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
-            borderRadius: 5,
+            
             borderSkipped: false,
         }]
     },
@@ -511,7 +513,6 @@ const unpopularStopsBoth = new Chart (unpopularStopBoth, {
             backgroundColor: ['rgb(70,116,185,0.7)'],
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 1,
-            borderRadius: 5,
             borderSkipped: false,
         },
         {
@@ -520,7 +521,7 @@ const unpopularStopsBoth = new Chart (unpopularStopBoth, {
             backgroundColor: ['rgb(50,162,71,0.7)'],
             borderColor: ['rgb(50,162,71)'],
             borderWidth: 1,
-            borderRadius: 5,
+            
             borderSkipped: false,
         }]
     },
@@ -549,6 +550,7 @@ const avgTripsBoth = new Chart (avgTripBoth, {
             borderColor: ['rgb(70,116,185)'],
             borderWidth: 2,
             tension: 0.4,
+            pointRadius: 8,
         },
         {
             label: 'Green Route',

@@ -77,23 +77,20 @@
             </div>
         </aside>
         <div class="content-wrapper pt-3" id="ckv-page" style="background-color: rgb(244,246,249);"><!--MAIN BODY-->
-            <div class="content-title" aria-label="Reward Data">
+            <div class="content-title mb-2" aria-label="Reward Data">
                 <h2>Rewards</h2>
             </div>
-            <div class="container-buttons ml-3 mb-3">
-                <div class="filter"><!--TIME FILTER-->
+            <!-- <div class="container-buttons ml-3 mb-3">
+                <div class="filter">TIME FILTER
                   <button type="button" id="btnDayCkv" class="btn btn-outline-dark" aria-label="Filter Day">Day</button>
                   <button type="button" id="btnWeekCkv" class="btn btn-outline-dark" aria-label="Filter Week">Week</button>
                   <button type="button" id="btnWeekCkv" class="btn btn-outline-dark" aria-label="Filter Month">Month</button>
                   <button type="button" id="btnYearCkv" class="btn btn-outline-dark" aria-label="Filter Year">Year</button>
                 </div>
-                <!--<div class="swap mr-3">SWAP BUTTON
-                  <button type="button" id="compare-ckv" class="btn btn-outline-dark">Compare</button>
-                  <button type="button" id="swap-ckv" class="btn btn-outline-dark">Routes</button>
-                </div>-->
-            </div>
+            </div> -->
             <div class="rewards content-graphs"><!--GRAPHS-->
-                <div class="card col-12">
+              <div class="section-one">
+                  <div class="card col-8 ml-2 mr-2">
                     <div class="card-header" aria-label="Seniors">
                       <h3 class="card-title">Age Group</h3>
                       <div class="card-tools">
@@ -101,32 +98,23 @@
                       </div>
                     </div>
                     <div class="card-body">
-                        <canvas class="canvas" id="ageGroup" width="1235" height="190" style="background-color: white;"></canvas>
+                        <canvas class="canvas" id="ageGroup" style="background-color: white;"></canvas>
                     </div>
                   </div>
-                <div class="card col-5" aria-label="Veterans">
-                  <div class="card-header">
-                    <h3 class="card-title">Veterans</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+                  <div class="card col-3 ml-2" aria-label="Veterans">
+                    <div class="card-header">
+                      <h3 class="card-title">Veterans</h3>
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas class="canvas" id="veterans" style="background-color: white;"></canvas>
                     </div>
                   </div>
-                  <div class="card-body">
-                      <canvas class="canvas" id="veterans" width="450" height="190" style="background-color: white;"></canvas>
-                  </div>
-                </div>
-                <div class="card col-5" aria-label="Disabled">
-                  <div class="card-header">
-                    <h3 class="card-title">People with disabilities</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                      <canvas class="canvas" id="disability" width="450" height="190" style="background-color: white;"></canvas>
-                  </div>
-                </div>
-                <div class="card col-12" aria-label="Minorities">
+              </div>
+              <div class="section-two">
+                <div class="card col-8 ml-2 mr-2" aria-label="Minorities">
                   <div class="card-header">
                     <h3 class="card-title">Ethnicity</h3>
                     <div class="card-tools">
@@ -134,9 +122,21 @@
                     </div>
                   </div>
                   <div class="card-body">
-                      <canvas class="canvas" id="ethnicity" width="1235" height="190" style="background-color: white;"></canvas>
+                      <canvas class="canvas" id="ethnicity" style="background-color: white;"></canvas>
                   </div>
                 </div>
+                <div class="card col-3 ml-2" aria-label="Disabled">
+                  <div class="card-header">
+                    <h3 class="card-title">People with disabilities</h3>
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool maximize" data-card-widget="maximize" aria-label="Maximize button"><i class="fas fa-expand"></i></button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                      <canvas class="canvas" id="disability" style="background-color: white;"></canvas>
+                  </div>
+                </div>
+              </div>
               </div>
             </div><!--END CONTENT GRAPH-->
         </div><!--END MAIN BODY-->

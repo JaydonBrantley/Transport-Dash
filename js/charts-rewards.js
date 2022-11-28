@@ -145,9 +145,9 @@ const ageGroup = document.getElementById('ageGroup');
 const ageGroups = new Chart (ageGroup, {
     type: 'bar',
     data: {
-        labels: ['red'],
+        labels: [],
         datasets: [{
-            data: [2, 10, 15],
+            data: [],
             backgroundColor: ['rgb(50,162,71,0.7)', 'rgb(70,116,185,0.7)', 'rgb(238,29,35,0.7)', 'rgb(147,80,159,0.7)'],
             borderColor: ['rgb(50,162,71)', 'rgb(70,116,185)', 'rgb(238,29,35)', 'rgb(147,80,159)'],
             borderWidth: 2,

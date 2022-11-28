@@ -202,7 +202,7 @@ $(document).on('click','#swap-cross',function(){
   let gold = "rgb(255,215,0,0.9)";
 
   if($('.cross-gold').css('display')=='none') {
-    setColor('#swap-cross',blue);
+    setColor('#swap-cross',gold);
     $('.cross-blue').slideToggle('.cross-blue');
   setTimeout(function(){
     $('.cross-gold').slideToggle('.cross-gold');
@@ -210,7 +210,7 @@ $(document).on('click','#swap-cross',function(){
   }
   
   else if($('.cross-blue').css('display')=='none') {
-    setColor('#swap-cross',gold);
+    setColor('#swap-cross',blue);
     $('.cross-gold').slideToggle('.cross-gold');
   setTimeout(function(){
     $('.cross-blue').slideToggle('.cross-blue');

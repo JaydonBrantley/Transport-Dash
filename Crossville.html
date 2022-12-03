@@ -21,7 +21,7 @@
     
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="#" role="button" aria-label="Logout button">
+            <a class="nav-link" id="btnLogout" href="#" role="button" aria-label="Logout button">
         <i class="far fa-sign-out"></i>
             </a>
         </li>
@@ -86,10 +86,10 @@
       </div>
       <div class="container-buttons ml-3 mb-3">
         <div class="filter"><!--TIME FILTER-->
-          <button type="button" id="btnDayCross" class="btn btn-outline-dark" aria-label="Filter Day">Day</button>
-          <button type="button" id="btnWeekCross" class="btn btn-outline-dark" aria-label="Filter Week">Week</button>
+          <button type="button" id="btnYearCross" class="btn btn-outline-dark active" aria-label="Filter Year">Year</button>
           <button type="button" id="btnMonthCross" class="btn btn-outline-dark" aria-label="Filter Month">Month</button>
-          <button type="button" id="btnYearCross" class="btn btn-outline-dark" aria-label="Filter Year">Year</button>
+          <button type="button" id="btnWeekCross" class="btn btn-outline-dark" aria-label="Filter Week">Week</button>
+          <button type="button" id="btnDayCross" class="btn btn-outline-dark" aria-label="Filter Day">Day</button>
         </div>
         <div class="swap mr-3"><!--SWAP BUTTON-->
           <!-- <button type="button" id="compare-cross" class="btn btn-outline-dark">Compare</button> -->
@@ -244,6 +244,7 @@
   <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/app.js"></script>
   <script src="js/charts-cross.js"></script>
 </body>

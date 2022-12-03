@@ -9,7 +9,12 @@ UI CHANGES - REWARD SYSTEM
 WHAT TO DO THIS WEEKEND
     rebuild login page - add uchra logo
     rebuild signup page -- make form shorter
+
+
     add data and test functions for missing charts -- must wait on api's
-    
+
 COMPLETED (COMMENTS ON GITHUB)
     rebuild reward data page - organized charts properly, update all charts -- update the font size from the data and styles
+
+    dash: fixed functions for charts-tech.js and charts-rewards.js, re-organized button layout for the filters, fixed the logout button
+    rewards: 

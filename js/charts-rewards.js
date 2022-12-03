@@ -122,22 +122,22 @@ function updateChart(intdays){
 
 //FILTER DAY
 $(document).on('click','#btnDayTech', function(){
-    updateChart(1);
+    updateChart(1)
 })
 
 //FILTER WEEK
 $(document).on('click','#btnWeekTech', function(){
-    updateChart(7);
+    updateChart(7)
 })
 
 //FILTER MONTH
 $(document).on('click','#btnMonthTech', function(){
-    updateChart(31);
+    updateChart(31)
 })
 
 //FILTER YEAR
 $(document).on('click','#btnYearTech', function(){
-    updateChart(365);
+    updateChart(365)
 })
 
 //PURPLE ROUTE

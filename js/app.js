@@ -78,10 +78,24 @@ function deleteSession(){
     }
   })
 }
-
-$(document).on('click','#btnAdminLogoutConfirm',function(){
-  deleteSession();
-})
+// //ADMIN LOGOUT BTN
+// $('#adminLogout').on('click',function(){
+//   Swal.fire({
+//     title: 'Are you sure you want to logout??',
+//     showDenyButton: true,
+//     showCancelButton: true,
+//     confirmButtonText: 'Logout',
+//     denyButtonText: `Don't save`,
+//   }).then((result) => {
+//     /* Read more about isConfirmed, isDenied below */
+//     if (result.isConfirmed) {
+//       Swal.fire('Saved!', '', 'success')
+//     } else if (result.isDenied) {
+//       Swal.fire('Changes are not saved', '', 'info')
+//     }
+//   })
+//   deleteSession();
+// });
 
 $(document).on('click','#btnAdminLogin',function(){
     var form = new FormData();
@@ -118,8 +132,8 @@ $(document).on('click','#btnAdminLogin',function(){
 
 $(document).on('click','#btnLogout',function(){
     Swal.fire({
-        title: 'Logout?',
-        icon: 'warning',
+        title: 'Are you sure you want to logout?',
+        icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#d33',
         cancelButtonColor: '#bfbfbf',
@@ -142,6 +156,7 @@ $(document).on('click','#btnLogout',function(){
             'Logged Out!',
           )
         }
+        window.location="https://aiw.ojr.mybluehost.me/index.html";
       })
       
 })
@@ -154,7 +169,6 @@ $(document).on('click','#saveToPDF',function(){
 })*/
 
 //ACTIVE FUNCTION FOR FILTER BTN
-
 $(document).on('click', 'button', function(){
   $(this).addClass('active').siblings().removeClass('active')
 });
@@ -170,11 +184,8 @@ $(document).on('click','#swap-ckv',function(){
   let delayFirst = 200;
   let delaySecond = 200;
 
-  //CHANGE COLOR
   let blue = "rgb(71,117,185,0.9)";
   let green = "rgb(50,162,71,0.9)";
-
-  //CHANGE TEXT
 
   if($('.ckv-blue').css('display')=='none') {
     setColor('#swap-ckv',blue);

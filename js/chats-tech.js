@@ -4,7 +4,7 @@ Chart.defaults.font.size = 14;
 Chart.defaults.color = 'black';
 
 //GOLD ROUTE
-function fillavgPassangersGold(datapoint){
+function fillavgPassangers(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -66,7 +66,7 @@ function fillavgTrip(datapoint){
 } 
 
 //PURPLE ROUTE
-function fillavgPassangers(datapoint){
+function fillavgPassangersPurple(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -81,7 +81,7 @@ function fillavgPassangers(datapoint){
         avgPassengersPurple.update();
 } 
 
-function fillpopularStop(datapoint){
+function fillpopularStopPurple(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -96,7 +96,7 @@ function fillpopularStop(datapoint){
         popularStopsPurple.update();
 } 
 
-function fillunpopularStop(datapoint){
+function fillunpopularStopPurple(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -111,7 +111,7 @@ function fillunpopularStop(datapoint){
         unpopularStopsPurple.update();
 } 
 
-function fillavgTrip(datapoint){
+function fillavgTripPurple(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
             return index.Stop_ID;
@@ -137,7 +137,7 @@ function updateChart(intdays){
     })
     //AVERAGE PASSENGERS GOLD
     $.getJSON('https://aiw.ojr.mybluehost.me/api/getPassengersPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
-        fillavgPassangersGold(result);
+        fillavgPassangersPurple(result);
     })
 
     //POPULAR STOPS
@@ -146,7 +146,7 @@ function updateChart(intdays){
     })
     //POPULAR STOPS GOLD
     $.getJSON('https://aiw.ojr.mybluehost.me/api/getPopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
-        fillpopularStopGold(result);
+        fillpopularStopPurple(result);
     })
 
     //UNPOPULAR STOPS
@@ -155,7 +155,7 @@ function updateChart(intdays){
     })
     //UNPOPULAR STOPS GOLD
     $.getJSON('https://aiw.ojr.mybluehost.me/api/getUnpopularStops.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
-        fillunpopularStopGold(result);
+        fillunpopularStopPurple(result);
     })
     
     //AVERAGE TRIP PER MILE
@@ -164,30 +164,30 @@ function updateChart(intdays){
     })
     //AVERAGE TRIP PER MILE GOLD
     $.getJSON('https://aiw.ojr.mybluehost.me/api/getMilesPerStop.php?SessionID='+ sessionStorage.getItem('sessionID') + '&RouteID=1004&NumDays='+ intdays, function(result){
-        fillavgTripGold(result);
+        fillavgTripPurple(result);
     })
     
 }
 
 //FILTER DAY
 $(document).on('click','#btnDayTnTech', function(){
-    updateChart(1);
-})
+    updateChart(1)
+});
 
 //FILTER WEEK
 $(document).on('click','#btnWeekTnTech', function(){
-    updateChart(7);
-})
+    updateChart(7)
+});
 
 //FILTER MONTH
 $(document).on('click','#btnMonthTnTech', function(){
-    updateChart(31);
-})
+    updateChart(31)
+});
 
 //FILTER YEAR
 $(document).on('click','#btnYearTnTech', function(){
-    updateChart(365);
-})
+    updateChart(365)
+});
 
 //GOLD ROUTE
 const avgPassenger = document.getElementById('tech-101-gold');

@@ -27,12 +27,15 @@ body {
     position: relative;
     max-width: 430px;
     width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.forms {
+#logo{
+    display: flex;
+    width: 100;
+    height: 100;
+}
+
+.forms-login {
     display: flex;
     align-items: center;
     height: 440px;
@@ -41,7 +44,22 @@ body {
     transition: height 0.2s ease;
 }
 
-.form {
+.forms-signup {
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    /*background-color: red;*/
+    transition: height 0.2s ease;
+}
+
+.form-login {
+    width: 50%;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.form-signup {
     width: 50%;
     padding: 30px;
     background-color: #fff;

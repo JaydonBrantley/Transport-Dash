@@ -111,6 +111,7 @@ function fillunpopularStopPurple(datapoint){
         unpopularStopsPurple.update();
 } 
 
+
 function fillavgTripPurple(datapoint){
     const Stop_ID = datapoint.map(
         function(index){
